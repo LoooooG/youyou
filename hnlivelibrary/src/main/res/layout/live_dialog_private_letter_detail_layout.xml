@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/shap_white_radius_6_top"
+
+    >
+    <RelativeLayout android:id="@+id/top_container"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_alignParentTop="true"
+        >
+
+        <ImageView android:id="@+id/private_chat_back"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:padding="10dp"
+            android:src="@mipmap/live_back"/>
+
+        <TextView android:id="@+id/private_chat_nick"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:ellipsize="end"
+            android:maxWidth="200dp"
+            android:singleLine="true"
+            android:text="对比艺术"
+            android:textSize="@dimen/comm_text_size_h"
+            android:textColor="?attr/text_color_333"/>
+
+        <ImageView android:id="@+id/private_chat_close"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:padding="10dp"
+            android:src="@mipmap/tuichu_liaotian"/>
+    </RelativeLayout>
+
+    <com.hn.library.loadstate.HnLoadingLayout
+        android:id="@+id/mHnLoadingLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/ll_root"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="?attr/pageBg_color" />
+
+
+            <LinearLayout
+                android:id="@+id/outcontainer"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+
+                <RelativeLayout
+                    android:id="@+id/rl_add_follow"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:background="#fdf7dc"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:visibility="visible">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="@string/live_add_fri_tips"
+                        android:textColor="@color/main_color"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/iv_add_follow"
+                        android:layout_width="@dimen/def_height"
+                        android:layout_height="@dimen/dp_25"
+                        android:background="@drawable/shape_orgen_s"
+                        android:gravity="center"
+                        android:paddingLeft="@dimen/dp_5"
+                        android:text="@string/main_follow"
+                        android:textSize="@dimen/comm_text_size_s"
+                        android:paddingRight="@dimen/dp_5"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:textColor="@color/main_color"
+                        android:visibility="visible" />
+                </RelativeLayout>
+
+
+                <com.hn.library.refresh.PtrClassicFrameLayout
+                    android:id="@+id/swiperefresh"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="?attr/pageBg_color"
+                    app:ptr_mode="refresh">
+
+                    <ListView
+                        android:id="@+id/private_chat_listview"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:divider="@null"
+                        android:transcriptMode="normal">
+
+                    </ListView>
+
+                </com.hn.library.refresh.PtrClassicFrameLayout>
+
+            </LinearLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/mRlPay"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="@color/white"
+                android:visibility="gone">
+
+                <CheckBox
+                    android:id="@+id/mBoxTips"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:button="@drawable/box_agree"
+                    android:checked="true"
+                    android:paddingLeft="4dp"
+                    android:text="不再提醒"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/mTvPayCoin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="50dp"
+                    android:text="与主播聊天，需要支付x金币/条"
+                    android:textColor="@color/comm_text_color_black"
+                    android:textSize="16sp" />
+
+                <LinearLayout
+                    android:id="@+id/tag_vip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/mTvPayCoin"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="12dp">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="提示：开通VIP后可免费聊天哦"
+                        android:textSize="12sp" />
+
+
+                    <TextView
+                        android:id="@+id/mTv2bVip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="12dp"
+                        android:background="@drawable/shape_stoke_main_4"
+                        android:paddingTop="2dp"
+                        android:paddingBottom="2dp"
+                        android:paddingLeft="8dp"
+                        android:paddingRight="8dp"
+                        android:text="开通"
+                        android:textColor="@color/main_color"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+
+                <TextView
+                    android:id="@+id/mTvPay"
+                    android:layout_width="150dp"
+                    android:layout_height="35dp"
+                    android:layout_below="@+id/tag_vip"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/verify_shape_main"
+                    android:gravity="center"
+                    android:text="确定"
+                    android:textColor="@color/white" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/mLLInput"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_48"
+                android:background="?attr/item_bg_color"
+                >
+
+                <EditText
+                    android:id="@+id/et_pri"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/design_margin"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:hint="@string/live_say_someting"
+                    android:imeOptions="actionSend"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="10dp"
+                    android:singleLine="true"
+                    android:textColor="?attr/text_color_333"
+                    android:textColorHint="?attr/text_color_666"
+                    android:textSize="15sp" />
+
+                <ImageView
+                    android:id="@+id/private_chat_emoj"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:src="@mipmap/smile" />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    >
+
+                    <ImageView
+                        android:id="@+id/iv_gift"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:src="@mipmap/addphoto_icon"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/private_chat_send"
+                        android:layout_width="@dimen/dp_56"
+                        android:layout_height="@dimen/dp_30"
+                        android:layout_marginLeft="@dimen/design_margin_h"
+                        android:layout_centerVertical="true"
+                        android:gravity="center"
+                        android:layout_marginRight="@dimen/design_margin_h"
+                        android:text="@string/live_send"
+                        android:background="@drawable/select_main_gray_bg_max"
+                        android:textSize="@dimen/comm_text_size"
+                        android:visibility="visible" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/bottom_con"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0.5dp"
+                >
+
+                <LinearLayout
+                    android:id="@+id/dialog_emoji_containers"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:visibility="gone"
+                    android:background="?attr/item_bg_color"
+                    />
+            </RelativeLayout>
+
+        </LinearLayout>
+    </com.hn.library.loadstate.HnLoadingLayout>
+</LinearLayout>

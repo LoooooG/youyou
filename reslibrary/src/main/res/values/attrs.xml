@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="Banner">
+        <attr name="default_image" format="reference"/>
+        <attr name="delay_time" format="dimension"/>
+        <attr name="is_auto_play" format="boolean"/>
+        <attr name="indicator_width" format="dimension"/>
+        <attr name="indicator_height" format="dimension"/>
+        <attr name="indicator_margin" format="dimension"/>
+        <attr name="indicator_drawable_selected" format="reference"/>
+        <attr name="indicator_drawable_unselected" format="reference"/>
+    </declare-styleable>
+
+
+    <declare-styleable name="InputView">
+        <attr name="isShow"  format="boolean"/>
+        <!--字体大小-->
+        <attr name="textSize" format="dimension" />
+        <!--字体颜色-->
+        <attr name="text_Color" format="reference"/>
+        <!--分割线大小-->
+        <attr name="segment_line_width"  format="dimension"/>
+        <!--分割线颜色-->
+        <attr name="segment_line_color"  format="reference"/>
+        <!--背景色-->
+        <attr name="bgColor" format="reference"/>
+        <!--输入框的个数-->
+        <attr name="length" format="integer"/>
+
+        <!--空布局的宽度-->
+        <attr name="empty_view_width"  format="dimension"/>
+        <!--空布局的高度-->
+        <attr name="empty_view_heigh"  format="dimension"/>
+        <!--空布局的宽度-->
+        <attr name="empty_view_bg"  format="reference"/>
+    </declare-styleable>
+
+</resources>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/design_margin_h"
+    android:background="?attr/item_bg_color"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <com.hotniao.livelibrary.widget.SquareLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/dp_10"
+        android:paddingRight="@dimen/dp_10">
+
+        <com.hn.library.view.FrescoImageView xmlns:fresco="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/mIvImg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            fresco:failureImage="@drawable/default_live_head"
+            fresco:failureImageScaleType="centerCrop"
+            fresco:placeholderImageScaleType="centerCrop"
+            fresco:roundAsCircle="true" />
+    </com.hotniao.livelibrary.widget.SquareLayout>
+
+    <!-- shap_radius_max_pink-->
+    <TextView
+        style="@style/comm_text"
+        android:layout_width="@dimen/dp_56"
+        android:layout_height="@dimen/dp_22"
+        android:layout_marginTop="@dimen/design_margin_h"
+        android:background="@drawable/shap_radius_max_yellow"
+        android:gravity="center"
+        android:text="约Ta"
+        android:textColor="@color/comm_text_color_white" />
+</LinearLayout>

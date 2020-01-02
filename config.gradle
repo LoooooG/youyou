@@ -1,0 +1,66 @@
+//***************************Gradle配置信息统一管理*******************************/
+def supportVersion = "26.1.0" //24.2.1 25.1.1
+def glideVersion = "3.7.0"
+def frescoVersion = "0.14.1"
+def butterknifeVersion = "8.4.0" //7.0.1
+def gsonVersion = "2.7"
+def RecyclerViewAdapterHelperVersion = "2.9.28"
+def rxAndroidVersion = "2.0.1"
+def rxJavaVersion = "2.1.2"
+def rxBindingVersion = "2.0.0"
+def eventBusVersion = "3.0.0"
+def arouterVersion = "1.2.2"
+def arouterComplieVersion = "1.1.3"
+def retrofit2Version = "2.2.0"
+def convertergsonVersion = "2.1.0"
+def PersistentCookieJarVersion = "v1.0.1"
+def immersionbarVersion = "2.3.3-beta09"
+
+//根据项目修改应用ID，修改后重启As
+def appId = "com.hotniao.live.youyou"
+
+ext {
+    appName = "悠悠直播"
+    compileSdkVersion = 26
+    buildToolsVersion = "26.0.2"
+    applicationId = appId
+    minSdkVersion = 19
+    targetSdkVersion = 21
+    versionCode = 1
+    versionName = "1.0"
+
+    //官方库  support包使用时版本统一
+    supportV4 = "com.android.support:support-v4:${supportVersion}"
+    supportAppcompatV7 = "com.android.support:appcompat-v7:${supportVersion}"
+    supportDesign = "com.android.support:design:${supportVersion}"
+    supportRecyclerView = "com.android.support:recyclerview-v7:${supportVersion}"
+    //图片加载框架
+    glide = "com.github.bumptech.glide:glide:${glideVersion}"
+    fresco = "com.facebook.fresco:fresco:${frescoVersion}"
+    //butterknife
+    butterknife = "com.jakewharton:butterknife:${butterknifeVersion}"
+    butterknifeCompiler = "com.jakewharton:butterknife-compiler:$butterknifeVersion"
+    //适配器
+    recyclerViewAdapterHelper = "com.github.CymChad:BaseRecyclerViewAdapterHelper:${RecyclerViewAdapterHelperVersion}"
+    //网络请求库
+    async_http = "com.loopj.android:android-async-http:1.4.9"
+    retrofit2 = "com.squareup.retrofit2:retrofit:${retrofit2Version}"
+    convertergson = "com.squareup.retrofit2:converter-gson:${convertergsonVersion}"
+    PersistentCookieJar = "com.github.franmontiel:PersistentCookieJar:${PersistentCookieJarVersion}"
+    //数据解析库
+    gson = "com.google.code.gson:gson:${gsonVersion}"
+    //multidex  分包  解决65535
+    multidex = "com.android.support:multidex:1.0.1"
+    //阿里路由框架
+    arouter = "com.alibaba:arouter-api:${arouterVersion}"
+    areoutetCompile = "com.alibaba:arouter-compiler:${arouterComplieVersion}"
+    //eventBus
+    eventbus = "org.greenrobot:eventbus:${eventBusVersion}"
+    //Rx 系列
+    rxAndroid = "io.reactivex.rxjava2:rxandroid:${rxAndroidVersion}"
+    rxJava = "io.reactivex.rxjava2:rxjava:${rxJavaVersion}"
+    rxBinding = "com.jakewharton.rxbinding2:rxbinding:${rxBindingVersion}"
+    immersionbar = "com.gyf.immersionbar:immersionbar:${immersionbarVersion}"
+
+
+}

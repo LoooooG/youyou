@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/pageBg_color"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/mRlTop"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/def_height"
+        android:background="@color/main_color_bg">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/def_height"
+            android:background="@color/main_color_bg"
+            android:layout_alignParentBottom="true">
+            <ImageView
+                android:id="@+id/iv_shoot"
+                android:layout_width="@dimen/dp_22"
+                android:layout_height="@dimen/dp_22"
+                android:src="@drawable/icon_shoot"
+                android:layout_marginLeft="10dp"
+                android:layout_centerVertical="true"/>
+            <ImageView
+                android:id="@+id/iv_search"
+                android:layout_width="@dimen/dp_22"
+                android:layout_height="@dimen/dp_22"
+                android:src="@drawable/icon_search"
+                android:layout_marginRight="8dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:padding="2dp"/>
+
+            <TextView
+                style="@style/comm_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/small_video"
+                android:textColor="@color/white"
+                android:textSize="@dimen/comm_title_text_size" />
+
+        </RelativeLayout>
+        </RelativeLayout>
+
+    <com.hn.library.refresh.PtrClassicFrameLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/mRefresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:ptr_mode="refresh">
+
+        <com.hotniao.live.widget.scollorlayout.ScrollableLayout
+            android:id="@+id/scrollable_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <include
+                android:id="@+id/mViewHead"
+                layout="@layout/head_home_child_layout"
+                android:visibility="gone"/>
+
+
+            <com.hn.library.tab.SlidingTabLayout xmlns:tl="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/mTab"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_44"
+                android:background="@color/white"
+                tl:tl_divider_color="#1Affffff"
+                tl:tl_divider_padding="12dp"
+                tl:tl_indicator_color="@color/main_color"
+                tl:tl_indicator_height="2dp"
+                tl:tl_indicator_width="@dimen/dp_48"
+                tl:tl_indicator_width_equal_title="false"
+                tl:tl_tab_space_equal="true"
+                tl:tl_textBold="BOTH"
+                tl:tl_textDrawableRightSet="true"
+                tl:tl_textSelectColor="@color/main_color"
+                tl:tl_textUnselectColor="@color/comm_text_color_black_s"
+                tl:tl_textsize="16sp"
+                tl:tl_underline_color="#1Affffff"
+                tl:tl_underline_height="1dp"
+                tl:tl_untextsize="14sp"
+                android:visibility="gone"/>
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/view_pager"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </com.hotniao.live.widget.scollorlayout.ScrollableLayout>
+
+    </com.hn.library.refresh.PtrClassicFrameLayout>
+</LinearLayout>

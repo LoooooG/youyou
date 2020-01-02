@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/live_frame_bg"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/transparent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.hotniao.livelibrary.widget.KeyboardLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#000000">
+
+            <com.tencent.rtmp.ui.TXCloudVideoView
+                android:id="@+id/video_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:visibility="visible" />
+
+        </com.hotniao.livelibrary.widget.KeyboardLayout>
+
+        <com.hn.library.view.FrescoImageView
+            android:id="@+id/fiv_header"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:visibility="visible"
+            app:actualImageScaleType="centerCrop"
+            app:placeholderImage="@drawable/default_live"
+            app:placeholderImageScaleType="centerCrop"
+            app:roundAsCircle="false" />
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/mLlLoad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+
+        <com.hotniao.livelibrary.widget.HnLoadingAnimView
+            android:id="@+id/mLoadAnim"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        </com.hotniao.livelibrary.widget.HnLoadingAnimView>
+
+        <TextView
+            android:id="@+id/mTvLoad"
+            style="@style/comm_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/comm_text_color_black_s" />
+    </LinearLayout>
+
+
+</RelativeLayout>

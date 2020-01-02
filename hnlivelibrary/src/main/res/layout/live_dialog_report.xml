@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:orientation="vertical">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/mRecycler"
+        android:layout_width="match_parent"
+        android:layout_height="145dp"
+        android:background="?attr/pageBg_color"></android.support.v7.widget.RecyclerView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_10"
+        android:background="?attr/pageBg_color" />
+
+    <TextView
+        android:id="@+id/mTvBack"
+        style="@style/comm_text"
+        android:layout_width="match_parent"
+        android:background="?attr/item_bg_color"
+        android:gravity="center"
+        android:padding="@dimen/design_margin"
+        android:text="取消"
+        android:textColor="?attr/text_color_333" />
+</LinearLayout>

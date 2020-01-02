@@ -1,0 +1,42 @@
+apply plugin: 'com.android.library'
+def config = rootProject.ext
+android {
+    compileSdkVersion config.compileSdkVersion
+    defaultConfig {
+        minSdkVersion config.minSdkVersion
+        targetSdkVersion config.targetSdkVersion
+        versionCode config.versionCode
+        versionName config.versionName
+        multiDexEnabled true
+        //Arouter 路由框架配置，用于在module之内、或不同module之间进行跳转
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [moduleName: project.getName()]
+            }
+        }
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            resValue "string", "file_authorities", config.applicationId + ".fileprovider"
+            resValue "string", "app_name", config.appName
+        }
+        debug {
+            resValue "string", "file_authorities", config.applicationId + ".fileprovider"
+            resValue "string", "app_name", config.appName
+        }
+    }
+
+}
+
+dependencies {
+    api fileTree(include: ['*.jar'], dir: 'libs')
+
+    //路由框架 用于在module之内、或不同module之间进行跳转    若只有一个模块可以不采用此种方式
+    api config.arouter
+    annotationProcessor config.areoutetCompile
+    api project(':hnlivelibrary')
+}

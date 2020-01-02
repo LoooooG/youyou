@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--换肤模式styles-->
+
+    <!--白天主题，此处直接和AppTheme一样-->
+    <style name="DayTheme" parent="BaseTheme">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <!--RecyclerView默认分割线-->
+        <item name="android:listDivider">@drawable/item_divider</item>
+        <!--标题栏颜色-->
+        <item name="toolbar_title_color">@color/toolbar_title</item>
+        <!--页面背景色-->
+        <item name="pageBg_color">@color/windows_bg</item>
+        <item name="color_f5f5f5">@color/f5f5f5</item>
+        <item name="color_f0f0f0">@color/f0f0f0</item>
+        <item name="text_color_333">@color/black_tran</item>
+        <item name="text_color_666">@color/color_666666</item>
+        <!--条目背景色-->
+        <item name="item_bg_color">@color/white</item>
+        <!--身份证图片边框色-->
+        <item name="id_image_stroke_color">@color/id_image_stroke</item>
+
+        <!--默认返回箭头-->
+        <item name="ic_toolbar_back">@drawable/ic_back_black</item>
+        <item name="ic_toolbar_back2">@drawable/ic_back_white</item>
+        <!--默认Banner图-->
+        <item name="default_banner">@drawable/default_banner</item>
+        <!--列表item默认图-->
+        <item name="default_live_list_bg">@drawable/default_live</item>
+        <!--列表item默认小图-->
+        <item name="default_live_list_little_bg">@drawable/default_nearby</item>
+
+        <item name="ic_tab_home">@drawable/main_video</item>
+        <item name="ic_tab_msg">@drawable/msg_noselect</item>
+        <item name="ic_tab_me">@drawable/my_notselected</item>
+        <item name="ic_tab_live">@drawable/zhib_noselect</item>
+        <item name="ic_tab_chat">@drawable/home_notselected</item>
+
+        <item name="sys_msg_bg">@drawable/sys_msg</item>
+
+        <item name="shap_white_radius_4">@drawable/shape_white_radius_4</item>
+        <item name="shap_white_radius_6_top">@drawable/shape_white_radius_6_top</item>
+    </style>
+
+    <!--夜间主题-->
+    <style name="NightTheme" parent="BaseTheme">
+        <item name="colorPrimary">@color/colorPrimary_dark</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark_dark</item>
+        <item name="colorAccent">@color/colorAccent_dark</item>
+        <item name="android:listDivider">@drawable/item_divider_dark</item>
+        <item name="toolbar_title_color">@color/white</item>
+        <item name="pageBg_color">@color/windows_dark_bg</item>
+        <item name="color_f5f5f5">@color/windows_dark_bg</item>
+        <item name="color_f0f0f0">@color/colorPrimary_dark</item>
+        <item name="text_color_333">@color/white</item>
+        <item name="text_color_666">@color/color_999999</item>
+        <item name="item_bg_color">@color/main_dark_color</item>
+        <item name="id_image_stroke_color">@color/id_image_stroke_dark</item>
+
+        <item name="ic_toolbar_back">@drawable/ic_back_white</item>
+        <item name="ic_toolbar_back2">@drawable/ic_back_black</item>
+        <item name="default_banner">@drawable/default_banner_dark</item>
+        <item name="default_live_list_bg">@drawable/default_live</item>
+        <item name="default_live_list_little_bg">@drawable/default_nearby_dark</item>
+
+        <item name="ic_tab_home">@drawable/home_notselected</item>
+        <item name="ic_tab_msg">@drawable/msg_noselect</item>
+        <item name="ic_tab_me">@drawable/my_notselected</item>
+        <item name="ic_tab_live">@drawable/zhib_noselect</item>
+        <item name="ic_tab_chat">@drawable/kuailiao_noselect</item>
+
+
+        <item name="sys_msg_bg">@drawable/sys_msg_dark</item>
+
+
+        <item name="shap_white_radius_4">@drawable/shape_dark_radius_4</item>
+        <item name="shap_white_radius_6_top">@drawable/shape_dark_radius_6_top</item>
+    </style>
+</resources>

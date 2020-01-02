@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="5dp">
+
+        <com.reslibrarytwo.HnSkinTextView
+            android:id="@+id/tv_level"
+            android:layout_width="@dimen/design_margin_lv_w"
+            android:layout_height="@dimen/design_margin_lv_h"
+            android:layout_marginLeft="5dp"
+            android:background="@drawable/tv_level_shape_1"
+            android:drawableLeft="@drawable/stars"
+            android:gravity="center"
+            android:paddingLeft="2dp"
+            android:singleLine="true"
+            android:text="0"
+            android:textColor="@color/comm_text_color_white"
+            android:textSize="@dimen/comm_text_size_sh"/>
+
+        <TextView
+            android:id="@+id/tv_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/tv_level"
+            android:ellipsize="end"
+            android:layout_marginTop="1.5dp"
+            android:shadowColor="@color/live_color_66000000"
+            android:shadowDx="0.5"
+            android:shadowDy="1"
+            android:shadowRadius="1"
+            android:textColor="@color/white"
+            android:textSize="@dimen/comm_text_size_h"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

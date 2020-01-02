@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!--直播容器-->
+    <com.hotniao.livelibrary.widget.KeyboardLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#000000">
+
+        <com.tencent.rtmp.ui.TXCloudVideoView
+            android:id="@+id/video_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:visibility="visible" />
+    </com.hotniao.livelibrary.widget.KeyboardLayout>
+
+    <com.hn.library.view.FrescoImageView
+        android:id="@+id/fiv_header"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        app:actualImageScaleType="centerCrop"
+        app:placeholderImage="@drawable/default_live"
+        app:placeholderImageScaleType="centerCrop"
+        app:roundAsCircle="false" />
+
+
+
+</FrameLayout>
+

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/mTvTime"
+        style="@style/comm_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/design_margin"
+        android:textColor="@color/comm_text_color_black_s"
+        android:textSize="@dimen/comm_text_size_s"
+        tools:text="shjshdjkdka" />
+
+    <LinearLayout
+        android:id="@+id/mLlLeft"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dp_10"
+        android:layout_marginLeft="@dimen/design_margin"
+        android:layout_marginRight="@dimen/design_margin"
+        android:layout_marginTop="@dimen/dp_10"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <com.hn.library.view.FrescoImageView xmlns:fresco="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/mIvLeftHead"
+            android:layout_width="@dimen/dp_40"
+            android:layout_height="@dimen/dp_40"
+            android:scaleType="centerCrop"
+            fresco:actualImageScaleType="centerCrop"
+            fresco:actualImageUri="@drawable/default_live_head"
+            fresco:failureImage="@drawable/default_live_head"
+            fresco:failureImageScaleType="centerCrop"
+            fresco:placeholderImageScaleType="centerCrop"
+            fresco:progressBarImage="@drawable/default_live_head"
+            fresco:roundAsCircle="true" />
+
+
+        <com.reslibrarytwo.HnSkinTextView
+            android:id="@+id/mTvLeftContent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:background="@drawable/shape_white_radius_4"
+            android:drawablePadding="@dimen/design_margin_ss"
+            android:paddingBottom="@dimen/design_margin_s"
+            android:paddingLeft="@dimen/dp_10"
+            android:paddingRight="@dimen/design_margin"
+            android:paddingTop="@dimen/design_margin_s"
+            android:textColor="@color/comm_text_color_black"
+            android:textSize="@dimen/comm_text_size_s"
+            tools:text="ssssssssssssssssssssss" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/mLlRight"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dp_10"
+        android:layout_marginLeft="@dimen/design_margin"
+        android:layout_marginRight="@dimen/design_margin"
+        android:layout_marginTop="@dimen/dp_10"
+        android:gravity="center_vertical|right"
+        android:orientation="horizontal">
+
+        <com.reslibrarytwo.HnSkinTextView
+            android:id="@+id/mTvRightContent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/dp_10"
+            android:background="@drawable/shape_white_radius_4"
+            android:drawablePadding="@dimen/design_margin_ss"
+            android:paddingBottom="@dimen/design_margin_s"
+            android:paddingLeft="@dimen/dp_10"
+            android:paddingRight="@dimen/design_margin"
+            android:paddingTop="@dimen/design_margin_s"
+            android:textColor="@color/comm_text_color_black"
+            android:textSize="@dimen/comm_text_size_s"
+            tools:text="ssssssssssssssssssssss" />
+
+        <com.hn.library.view.FrescoImageView xmlns:fresco="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/mIvRightHead"
+            android:layout_width="@dimen/dp_40"
+            android:layout_height="@dimen/dp_40"
+            android:scaleType="centerCrop"
+            fresco:actualImageScaleType="centerCrop"
+            fresco:actualImageUri="@drawable/default_live_head"
+            fresco:failureImage="@drawable/default_live_head"
+            fresco:failureImageScaleType="centerCrop"
+            fresco:placeholderImageScaleType="centerCrop"
+            fresco:progressBarImage="@drawable/default_live_head"
+            fresco:roundAsCircle="true" />
+
+
+    </LinearLayout>
+</LinearLayout>

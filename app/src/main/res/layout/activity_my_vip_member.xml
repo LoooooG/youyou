@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.hn.library.loadstate.HnLoadingLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_my_vip"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:isFirstVisible="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/mRlBottom"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/def_height"
+            android:layout_alignParentBottom="true"
+            android:background="?attr/item_bg_color"
+            android:elevation="1dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/mtv1"
+                style="@style/comm_text"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/design_margin"
+                android:text="@string/all"
+                android:textColor="?attr/text_color_333"
+                android:textSize="@dimen/comm_text_size_h" />
+
+            <TextView
+                android:id="@+id/mTvCoin"
+                style="@style/comm_text"
+                android:layout_alignBaseline="@+id/mTvPrice"
+                android:layout_toRightOf="@id/mtv1"
+                android:layout_weight="1"
+                android:text="¥"
+                android:textColor="@color/comm_text_color_main"
+                android:textSize="@dimen/comm_text_size_h" />
+            <TextView
+                android:id="@+id/mTvPrice"
+                style="@style/comm_text"
+                android:layout_width="wrap_content"
+                android:layout_alignBaseline="@id/mtv1"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/design_margin_top"
+                android:maxWidth="120dp"
+                android:text="0"
+                android:layout_toRightOf="@id/mTvCoin"
+                android:textColor="@color/comm_text_color_main"
+                android:textSize="@dimen/comm_title_text_size" />
+
+
+            <TextView
+                android:id="@+id/mTvOpen"
+                style="@style/comm_text"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:background="@color/comm_bg_main"
+                android:gravity="center"
+                android:text="@string/now_to_open"
+                android:textColor="@color/comm_text_color_white"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.8dp"
+
+                android:background="?attr/pageBg_color" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/mRlTop"
+            android:layout_width="match_parent"
+            android:layout_height="136dp"
+            android:background="@drawable/member_center_bg">
+
+            <android.support.v7.widget.Toolbar xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center_vertical"
+                app:contentInsetLeft="0dp"
+                app:contentInsetStart="0dp">
+
+                <android.support.v7.widget.AppCompatImageButton
+                    android:id="@+id/mIvBack"
+                    style="@style/Widget.AppCompat.Toolbar.Button.Navigation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_back_white" />
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/toolbar_title"
+                    style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:text="@string/vip_center"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/toolbar_subtitle"
+                    style="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="right"
+                    android:layout_marginRight="12dp"
+                    android:background="?attr/actionBarItemBackground"
+                    android:singleLine="true"
+                    android:text="@string/sub_title"
+                    android:textColor="?attr/text_color_666"
+                    android:visibility="gone" />
+
+            </android.support.v7.widget.Toolbar>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@id/toolbar"
+                android:layout_marginLeft="@dimen/design_margin"
+                android:layout_marginRight="@dimen/design_margin"
+                android:layout_marginTop="@dimen/dp_10">
+
+
+                <com.hn.library.view.FrescoImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/mIvImg"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    app:actualImageScaleType="centerCrop"
+                    app:placeholderImage="@drawable/default_live_head"
+                    app:placeholderImageScaleType="centerCrop"
+                    app:roundAsCircle="true" />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_toRightOf="@id/mIvImg">
+
+
+                    <TextView
+                        android:id="@+id/mTvName"
+                        style="@style/comm_text"
+                        android:ellipsize="end"
+                        android:maxWidth="150dp"
+                        android:textColor="@color/comm_text_color_yellow"
+                        android:textSize="@dimen/comm_text_size_h" />
+
+                    <com.reslibrarytwo.HnSkinTextView
+                        android:id="@+id/tv_level"
+                        android:layout_width="@dimen/design_margin_lv_w"
+                        android:layout_height="@dimen/design_margin_lv_h"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="3dp"
+                        android:layout_toRightOf="@id/mTvName"
+                        android:background="@drawable/tv_level_shape_1"
+                        android:drawableLeft="@drawable/stars"
+                        android:gravity="center"
+                        android:paddingLeft="2dp"
+                        android:singleLine="true"
+                        android:text="1"
+                        android:textColor="@color/comm_text_color_white"
+                        android:textSize="@dimen/comm_text_size_sh" />
+
+                    <TextView
+                        android:id="@+id/mTvLong"
+                        style="@style/comm_text"
+                        android:layout_below="@id/mTvName"
+                        android:layout_marginTop="@dimen/design_margin_h"
+                        android:ellipsize="end"
+                        android:textColor="@color/comm_text_color_black_s"
+                        android:textSize="@dimen/comm_text_size_s" />
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/mTvRenew"
+                    style="@style/comm_text"
+                    android:layout_width="70dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/shap_radius_max_yellow"
+                    android:gravity="center"
+                    android:text="@string/now_renew"
+                    android:textSize="@dimen/comm_text_size_s"
+                    android:visibility="gone" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/mRlBottom"
+            android:layout_below="@id/mRlTop">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:id="@+id/mLlMeal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?attr/item_bg_color"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/comm_text"
+                        android:layout_width="match_parent"
+                        android:paddingBottom="@dimen/design_margin_s"
+                        android:paddingLeft="@dimen/design_margin"
+                        android:paddingTop="@dimen/design_margin"
+                        android:text="@string/vip_member_meal"
+                        android:textColor="?attr/text_color_333"
+                        android:textSize="@dimen/comm_text_size_h"
+                        android:textStyle="bold" />
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/mRecycler"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="@dimen/dp_10"
+                        android:paddingLeft="@dimen/dp_10"
+                        android:paddingRight="@dimen/dp_10">
+
+                    </android.support.v7.widget.RecyclerView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/design_margin"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:background="?attr/item_bg_color"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/comm_text"
+                        android:layout_width="match_parent"
+                        android:paddingBottom="@dimen/design_margin"
+                        android:paddingLeft="@dimen/design_margin"
+                        android:paddingTop="@dimen/design_margin"
+                        android:text="会员特权"
+                        android:textColor="?attr/text_color_333"
+                        android:textSize="@dimen/comm_text_size_h"
+                        android:textStyle="bold" />
+
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/mRecyclerPrivilege"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/design_margin">
+
+                    </android.support.v7.widget.RecyclerView>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+        </ScrollView>
+
+    </RelativeLayout>
+</com.hn.library.loadstate.HnLoadingLayout>

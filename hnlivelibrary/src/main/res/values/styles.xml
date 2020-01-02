@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="live_LibTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/live_black2b2d3a</item>
+        <item name="colorPrimaryDark">@color/live_black2b2d3a</item>
+        <item name="colorAccent">@color/live_black2b2d3a</item>
+        <!-- 自定义的AlertDialog主题 -->
+        <item name="alertDialogTheme">@style/AlertDialogCustom</item>
+    </style>
+
+    <!--加载中样式-->
+    <style name="live_Dialog_Style" parent="Theme.AppCompat.Light.Dialog">
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+    <style name="live_PayTip" parent="live_LibTheme">
+
+        <!-- 背景透明 -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <!-- 浮于Activity之上 -->
+        <item name="android:windowIsFloating">true</item>
+        <!-- 边框 -->
+        <item name="android:windowFrame">@null</item>
+        <!-- Dialog以外的区域模糊效果 -->
+        <item name="android:backgroundDimEnabled">false</item>
+        <!-- 无标题 -->
+        <item name="android:windowNoTitle">true</item>
+        <!-- 半透明 -->
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
+
+
+    <style name="live_bottom_style" parent="live_LibTheme">
+
+        <!-- 背景透明 -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <!-- 浮于Activity之上 -->
+        <item name="android:windowIsFloating">true</item>
+        <!-- 边框 -->
+        <item name="android:windowFrame">@null</item>
+        <!-- Dialog以外的区域模糊效果 -->
+        <item name="android:backgroundDimEnabled">false</item>
+        <!-- 无标题 -->
+        <item name="android:windowNoTitle">true</item>
+        <!-- 半透明 -->
+        <item name="android:windowIsTranslucent">true</item>
+        <!-- Dialog进入及退出动画 -->
+        <item name="android:windowAnimationStyle">@style/AnimBottom</item>
+    </style>
+
+    <declare-styleable name="MagicTextView">
+        <attr name="innerShadowColor" format="color"/>
+        <attr name="innerShadowRadius" format="float"/>
+        <attr name="innerShadowDx" format="float"/>
+        <attr name="innerShadowDy" format="float"/>
+
+        <attr name="outerShadowColor" format="color"/>
+        <attr name="outerShadowRadius" format="float"/>
+        <attr name="outerShadowDx" format="float"/>
+        <attr name="outerShadowDy" format="float"/>
+
+        <attr name="typeface" format="string"/>
+
+        <attr name="foreground" format="reference|color"/>
+
+        <attr name="strokeWidth1" format="float"/>
+        <attr name="strokeMiter1" format="float"/>
+        <attr name="strokeColor1" format="color"/>
+        <attr name="strokeJoinStyle1">
+            <enum name="miter" value="0"/>
+            <enum name="bevel" value="1"/>
+            <enum name="round" value="2"/>
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="LeftGiftsItemLayout">
+        <attr name="left_gift_layout_index" format="integer"/>
+    </declare-styleable>
+
+
+    <style name="InputDialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:background">#00000000</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="colorControlNormal">@color/colorAccent</item>
+        <item name="android:textColorHint">@color/comm_text_color_black_s</item>
+        <item name="colorControlActivated">@color/colorAccent</item>
+    </style>
+</resources>

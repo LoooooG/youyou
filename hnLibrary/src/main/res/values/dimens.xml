@@ -1,0 +1,71 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <!--下拉刷新控件配置-->
+    <dimen name="indicator_right_padding">10dp</dimen>
+    <dimen name="indicator_corner_radius">12dp</dimen>
+    <dimen name="indicator_internal_padding">4dp</dimen>
+    <dimen name="header_footer_left_right_padding">24dp</dimen>
+    <dimen name="header_footer_top_bottom_padding">12dp</dimen>
+
+
+
+
+    <!--公共字体-->
+    <dimen name="comm_text_size_ss">8sp</dimen>
+    <dimen name="comm_text_size_sh">10sp</dimen>
+    <dimen name="comm_text_size_s">12sp</dimen>
+    <dimen name="comm_text_size">14sp</dimen>
+    <dimen name="comm_text_size_h">16sp</dimen>
+    <dimen name="comm_title_text_size">18sp</dimen>
+    <dimen name="comm_text_size_sub_title">20sp</dimen>
+    <dimen name="comm_text_size_title">24sp</dimen>
+    <dimen name="comm_text_size_xh">34sp</dimen>
+    <dimen name="comm_text_size_xxh">44sp</dimen>
+    <!--外边距-->
+    <dimen name="design_margin_top">4dp</dimen>
+    <dimen name="design_margin_h">6dp</dimen>
+    <dimen name="design_margin_s">8dp</dimen>
+    <dimen name="design_margin_ss">14dp</dimen>
+    <dimen name="design_margin">16dp</dimen>
+    <dimen name="design_margin_lv_h">16dp</dimen>
+    <dimen name="design_margin_lv_w">36dp</dimen>
+    <dimen name="design_margin_lv_h_s">14dp</dimen>
+    <dimen name="design_margin_lv_radius">16dp</dimen>
+
+    <!--文字所占控件高度-->
+    <dimen name="com_text_widget_head_ss">20dp</dimen>
+    <dimen name="com_text_widget_head_s">25dp</dimen>
+    <dimen name="com_text_widget_head_h">30dp</dimen>
+
+    <dimen name="com_image_hight">90dp</dimen>
+    <!--nanner高度-->
+    <dimen name="com_banner_hight">120dp</dimen>
+    <!--圆形头像高度-->
+    <dimen name="com_hci_head_hight_s">24dp</dimen>
+    <dimen name="com_hci_head_hight">44dp</dimen>
+    <dimen name="com_hci_head_hight_h">36dp</dimen>
+    <!--dp-->
+    <dimen name="dp_1">1dp</dimen>
+    <dimen name="dp_one_half">0.5dp</dimen>
+    <dimen name="dp_2">2dp</dimen>
+    <dimen name="dp_10">10dp</dimen>
+    <dimen name="dp_12">12dp</dimen>
+    <dimen name="dp_18">18dp</dimen>
+    <dimen name="dp_20">20dp</dimen>
+    <dimen name="dp_22">22dp</dimen>
+    <dimen name="dp_24">24dp</dimen>
+    <dimen name="dp_28">28dp</dimen>
+    <dimen name="dp_30">30dp</dimen>
+    <dimen name="dp_48">48dp</dimen>
+    <dimen name="dp_76">76dp</dimen>
+    <dimen name="dp_60">60dp</dimen>
+    <dimen name="dp_34">34dp</dimen>
+
+    <dimen name="min_panel_height">220dp</dimen>
+    <dimen name="max_panel_height">380dp</dimen>
+
+    <dimen name="min_keyboard_height">80dp</dimen>
+
+</resources>

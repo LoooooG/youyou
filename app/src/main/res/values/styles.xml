@@ -1,0 +1,39 @@
+<resources>
+
+    <style name="AppTheme" parent="BaseTheme">
+    </style>
+
+
+    <style name="SplashTheme" parent="AppTheme">
+        <!--<item table_name="android:windowBackground">@drawabg_slpashh_bg</item>-->
+        <item name="android:windowBackground">@drawable/guide_bg</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <!--加载中样式-->
+    <style name="ProgressDialog" parent="Theme.AppCompat.Light.Dialog">
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <!--vewView进度条样式-->
+    <declare-styleable name="WebViewWithProgress">
+        <attr name="progressStyle" format="enum">
+            <enum name="horizontal" value="0"/>
+            <enum name="circle" value="1"/>
+        </attr>
+        <attr name="barHeight" format="dimension"/>
+    </declare-styleable>
+
+    <style name="Transparent">
+        <item name="android:windowBackground">@color/transparent</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Translucent</item>
+    </style>
+
+
+
+</resources>

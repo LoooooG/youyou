@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/transparent"
+    android:orientation="vertical">
+
+    <com.hotniao.livelibrary.widget.gift.bigGift.BigGiftChannel
+        android:id="@+id/ani_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/transparent" />
+
+    <LinearLayout
+        android:id="@+id/room_bottom_rela"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/transparent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/ll_content"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <!--点赞-->
+                <com.hotniao.livelibrary.widget.periscope.PeriscopeLayout
+                    android:id="@+id/mPlGreat"
+                    android:layout_width="120dp"
+                    android:layout_height="320dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginBottom="50dp"
+                    android:layout_marginRight="@dimen/design_margin" />
+
+
+                <!--房间信息-->
+                <include layout="@layout/live_layout_audience_title" />
+
+                <!--聊天容器-->
+                <include layout="@layout/live_layout_audience_message" />
+
+                <com.hotniao.livelibrary.widget.periscope.PeriscopeLayout
+                    android:id="@+id/periscope_star"
+                    android:layout_width="100dp"
+                    android:layout_height="300dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginBottom="50dp"
+                    android:layout_marginRight="40dp" />
+
+                <com.hotniao.livelibrary.widget.gift.LeftGiftControlLayout
+                    android:id="@+id/giftLl"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/containerVG"
+                    android:layout_marginBottom="@dimen/design_margin_top"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical">
+
+
+                    <com.hotniao.livelibrary.widget.gift.LeftGiftsItemLayout
+                        android:id="@+id/gift1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:visibility="invisible"
+                        app:left_gift_layout_index="0" />
+
+                    <com.hotniao.livelibrary.widget.gift.LeftGiftsItemLayout
+                        android:id="@+id/gift2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:visibility="invisible"
+                        app:left_gift_layout_index="1" />
+
+                </com.hotniao.livelibrary.widget.gift.LeftGiftControlLayout>
+
+                <LinearLayout
+                    android:id="@+id/containerVG"
+                    android:layout_width="match_parent"
+                    android:layout_height="98dp"
+                    android:layout_above="@+id/rl_enter_effect"
+                    android:layout_marginBottom="8dp"
+                    android:clipChildren="false"
+                    android:gravity="bottom"
+                    android:orientation="vertical">
+
+                    <com.hotniao.livelibrary.widget.danmu.DanmakuChannel
+                        android:id="@+id/danA"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <com.hotniao.livelibrary.widget.danmu.DanmakuChannel
+                        android:id="@+id/danB"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp" />
+
+                </LinearLayout>
+
+                <include layout="@layout/live_layout_live_effect" />
+
+                <FrameLayout
+                    android:id="@+id/bottom_fra"
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    android:layout_alignParentBottom="true">
+
+                    <!--消息列表容器-->
+                    <ListView
+                        android:id="@+id/lv_message"
+                        android:layout_width="270dp"
+                        android:layout_height="120dp"
+                        android:layout_above="@+id/bottom_con"
+                        android:layout_below="@+id/containerVG"
+                        android:layout_marginLeft="10dp"
+                        android:background="@color/transparent"
+                        android:cacheColorHint="@color/transparent"
+                        android:divider="@null"
+                        android:listSelector="@color/transparent"
+                        android:scrollbars="none"
+                        android:transcriptMode="alwaysScroll"></ListView>
+
+
+                    <!--底部控制容器-->
+                    <LinearLayout
+                        android:id="@+id/bottom_con"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_gravity="bottom"
+                        android:background="@color/transparent"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/room_notifi_img"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_marginLeft="@dimen/dp_10"
+                            android:background="@mipmap/xinxi" />
+
+                        <RelativeLayout
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_marginLeft="@dimen/design_margin">
+
+                            <ImageButton
+                                android:id="@+id/iv_privateletter"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:background="@drawable/selector_live_comment"
+                                android:gravity="center_horizontal" />
+
+                            <TextView
+                                android:id="@+id/tv_unread_pri"
+                                android:layout_width="@dimen/design_margin_s"
+                                android:layout_height="@dimen/design_margin_s"
+                                android:layout_alignParentRight="true"
+                                android:layout_margin="3dp"
+                                android:background="@mipmap/live_red_dian"
+                                android:gravity="center"
+                                android:textSize="6sp"
+                                android:visibility="visible" />
+                        </RelativeLayout>
+
+
+                        <ImageButton
+                            android:id="@+id/mIvShare"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_marginLeft="@dimen/design_margin"
+                            android:background="@drawable/sharing" />
+
+                        <ImageButton
+                            android:id="@+id/ib_gift"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_marginLeft="@dimen/design_margin"
+                            android:background="@mipmap/zhibojian_liwu" />
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="right"
+                            android:paddingRight="10dp">
+
+
+                            <ImageButton
+                                android:id="@+id/tv_close"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_marginLeft="10dp"
+                                android:background="@mipmap/tuichu_zhibojian" />
+
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                </FrameLayout>
+
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+        <com.lqr.emoji.EmotionLayout
+            android:id="@+id/elEmotion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+
+    <ImageView
+        android:id="@+id/mIvMask"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:scaleType="fitXY"
+        android:src="@drawable/bg_live"
+        android:visibility="gone" />
+
+    <FrameLayout
+        android:id="@+id/mFramePay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:visibility="gone">
+
+    </FrameLayout>
+
+    <include
+        android:id="@+id/not_live_bg"
+        layout="@layout/live_activity_audience_not_live_mask_layout"
+        android:visibility="gone"></include>
+
+
+</FrameLayout>

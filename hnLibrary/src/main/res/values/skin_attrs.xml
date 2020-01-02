@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="pageBg_color" format="color" />
+    <attr name="color_f5f5f5" format="color" />
+    <attr name="color_f0f0f0" format="color" />
+    <attr name="toolbar_title_color" format="color" />
+    <attr name="text_color_333" format="color" />
+    <attr name="text_color_666" format="color" />
+    <attr name="item_bg_color" format="color" />
+    <attr name="id_image_stroke_color" format="color" />
+    <attr name="default_banner" format="reference" />
+    <attr name="default_live_list_bg" format="reference" />
+    <attr name="default_live_list_little_bg" format="reference" />
+    <attr name="ic_toolbar_back" format="reference" />
+    <attr name="ic_toolbar_back2" format="reference" />
+
+
+    <attr name="ic_tab_home" format="reference" />
+    <attr name="ic_tab_msg" format="reference" />
+    <attr name="ic_tab_me" format="reference" />
+    <attr name="ic_tab_live" format="reference" />
+    <attr name="ic_tab_chat" format="reference" />
+
+    <attr name="sys_msg_bg" format="reference" />
+
+    <!--半径为4的背景-->
+    <attr name="shap_white_radius_4" format="reference" />
+    <!--上面半径为6的背景-->
+    <attr name="shap_white_radius_6_top" format="reference" />
+</resources>

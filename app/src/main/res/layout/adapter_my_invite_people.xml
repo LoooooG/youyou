@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:background="?attr/item_bg_color"
+
+    android:orientation="vertical">
+
+
+    <com.hn.library.view.FrescoImageView xmlns:fresco="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/mIvImg"
+        android:layout_width="@dimen/dp_44"
+        android:layout_height="@dimen/dp_44"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/design_margin"
+        android:scaleType="centerCrop"
+        fresco:actualImageScaleType="centerCrop"
+        fresco:actualImageUri="@drawable/default_home_head"
+        fresco:failureImage="@drawable/default_home_head"
+        fresco:failureImageScaleType="centerCrop"
+        fresco:placeholderImageScaleType="centerCrop"
+        fresco:progressBarImage="@drawable/default_home_head"
+        fresco:roundAsCircle="true" />
+
+    <TextView
+        android:id="@+id/mTvJuniorNum"
+        style="@style/comm_text"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/design_margin"
+        android:layout_marginRight="@dimen/design_margin"
+        android:text="Ta有dsadksd"
+
+        android:textColor="@color/comm_text_color_black_s" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_toLeftOf="@id/mTvJuniorNum"
+        android:layout_toRightOf="@id/mIvImg">
+
+        <TextView
+            android:id="@+id/mTvName"
+            style="@style/comm_text"
+            android:layout_centerVertical="true"
+            android:ellipsize="end"
+            android:maxWidth="150dp"
+            android:text="加上发送旅客登机拉"
+            android:textColor="?attr/text_color_333"
+            android:textSize="@dimen/comm_text_size_h" />
+
+        <com.reslibrarytwo.HnSkinTextView
+            android:id="@+id/tv_level"
+            android:layout_width="@dimen/design_margin_lv_w"
+            android:layout_height="@dimen/design_margin_lv_h"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:background="@drawable/tv_level_shape_1"
+            android:drawableLeft="@drawable/stars"
+            android:gravity="center"
+            android:paddingLeft="2dp"
+            android:singleLine="true"
+            android:text="0"
+            android:textColor="@color/comm_text_color_white"
+            android:textSize="@dimen/comm_text_size_sh" />
+
+    </LinearLayout>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="@dimen/design_margin"
+        android:background="?attr/pageBg_color" />
+</RelativeLayout>

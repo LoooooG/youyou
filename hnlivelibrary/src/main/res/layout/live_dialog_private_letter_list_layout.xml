@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/shap_white_radius_6_top"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/tv_commu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/live_msg_commu"
+            android:textColor="@color/comm_text_color_main"
+            android:textSize="15sp"
+            android:visibility="gone" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="@string/live_msg"
+            android:textColor="?attr/text_color_333"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tv_ignore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/design_margin"
+            android:text="@string/live_letter_list_ignore"
+            android:textColor="@color/live_colcor_f21b1b"
+            android:textSize="12sp" />
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="?attr/pageBg_color" />
+
+
+    <com.hn.library.loadstate.HnLoadingLayout
+        android:id="@+id/loading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <com.hn.library.refresh.PtrClassicFrameLayout
+                android:id="@+id/ptr_refresh"
+                android:layout_width="match_parent"
+                android:background="?attr/pageBg_color"
+                android:layout_height="match_parent"
+                app:ptr_mode="both">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/mRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:divider="@null"></android.support.v7.widget.RecyclerView>
+
+            </com.hn.library.refresh.PtrClassicFrameLayout>
+
+        </LinearLayout>
+
+    </com.hn.library.loadstate.HnLoadingLayout>
+
+
+</LinearLayout>

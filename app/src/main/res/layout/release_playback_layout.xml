@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/pageBg_color"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/ll_release_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/rl_type"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_50"
+            android:background="?attr/item_bg_color"
+            android:paddingLeft="@dimen/design_margin">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="观看类型"
+                android:textColor="?attr/text_color_333"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/tv_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/design_margin"
+                android:drawableRight="@mipmap/more_list"
+                android:drawablePadding="@dimen/dp_10"
+                android:gravity="right"
+                android:text="免费"
+                android:textColor="@color/comm_text_color_black_s"
+                android:textSize="14sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_price"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_50"
+            android:layout_below="@id/rl_type"
+            android:background="?attr/item_bg_color"
+            android:paddingLeft="@dimen/design_margin"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="观看金额"
+                android:textColor="?attr/text_color_333"
+                android:textSize="15sp" />
+
+            <com.hn.library.view.HnEditText
+                android:id="@+id/et_price"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/design_margin"
+                android:background="@null"
+                android:digits="0123456789"
+                android:drawablePadding="@dimen/dp_10"
+                android:gravity="center_vertical|right"
+                android:inputType="number"
+                android:textColor="@color/comm_text_color_black"
+                android:textColorHint="@color/color_999999"
+                android:textSize="14sp"
+                app:content_length="8" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_release"
+            android:layout_width="240dp"
+            android:layout_height="@dimen/dp_44"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="300dp"
+            android:background="@drawable/shap_radius_max_yellow"
+            android:gravity="center"
+            android:text="@string/release"
+            android:textColor="@color/comm_text_color_white"
+            android:textSize="14sp" />
+    </RelativeLayout>
+    <LinearLayout
+        android:id="@+id/ll_success_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:paddingTop="110dp"
+        android:visibility="gone">
+        <ImageView
+            android:layout_width="@dimen/dp_90"
+            android:layout_height="@dimen/dp_90"
+            android:src="@drawable/icon_release_success"/>
+        <TextView
+            style="@style/comm_text"
+            android:text="发布成功！"
+            android:layout_marginTop="34dp"/>
+    </LinearLayout>
+</RelativeLayout>

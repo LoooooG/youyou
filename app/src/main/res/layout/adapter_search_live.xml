@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <com.hotniao.livelibrary.widget.SquareLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <com.hn.library.view.FrescoImageView
+                android:id="@+id/mIvImg"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:actualImageScaleType="centerCrop"
+                app:failureImageScaleType="centerCrop"
+                app:placeholderImage="@drawable/default_nearby"
+                app:placeholderImageScaleType="centerCrop"
+                app:roundAsCircle="false"
+                app:roundedCornerRadius="6dp" />
+
+
+            <ImageView
+                android:id="@+id/mIvType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/icon_free" />
+
+            <LinearLayout
+                android:id="@+id/mLLBottom"
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/home_gradient">
+
+                <TextView
+                    android:id="@+id/mTvTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="@dimen/dp_10"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:gravity="bottom"
+                    android:shadowColor="#40000000"
+                    android:shadowDx="1"
+                    android:shadowDy="1"
+                    android:shadowRadius="2"
+                    android:singleLine="true"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/comm_text_size_s" />
+
+                <TextView
+                    android:id="@+id/mTvNum"
+                    style="@style/comm_text"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/dp_10"
+                    android:layout_marginLeft="@dimen/design_margin"
+                    android:layout_marginRight="@dimen/dp_10"
+                    android:gravity="bottom"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/comm_text_size_s" />
+            </LinearLayout>
+
+            <com.hn.library.view.FrescoImageView
+                android:id="@+id/mIvGameLogo"
+                android:layout_width="70dp"
+                android:layout_height="60dp"
+                android:layout_above="@id/mLLBottom"
+                android:layout_marginLeft="10dp"
+                app:actualImageScaleType="centerCrop"
+                app:failureImageScaleType="centerCrop"
+                app:placeholderImageScaleType="centerCrop"
+                app:roundAsCircle="false" />
+
+
+        </RelativeLayout>
+    </com.hotniao.livelibrary.widget.SquareLayout>
+</LinearLayout>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/mTvSign"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/sign_in_the_pop_up"
+        android:paddingBottom="@dimen/design_margin"
+        android:paddingLeft="@dimen/dp_14"
+        android:paddingRight="@dimen/dp_14"
+        android:paddingTop="@dimen/dp_12"
+        android:text="是大撒旦撒旦撒旦撒"
+        android:textColor="@color/comm_text_color_white"
+        android:textSize="@dimen/comm_text_size_s" />
+</LinearLayout>

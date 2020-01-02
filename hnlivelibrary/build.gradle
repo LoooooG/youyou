@@ -1,0 +1,51 @@
+apply plugin: 'com.android.library'
+def config = rootProject.ext
+android {
+    compileSdkVersion config.compileSdkVersion
+    defaultConfig {
+        minSdkVersion config.minSdkVersion
+        targetSdkVersion config.targetSdkVersion
+        versionCode config.versionCode
+        versionName config.versionName
+        multiDexEnabled true
+
+        //Arouter 路由框架配置，用于在module之内、或不同module之间进行跳转
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [moduleName: project.getName()]
+            }
+        }
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            resValue "string", "file_authorities", config.applicationId + ".fileprovider"
+            resValue "string", "app_name", config.appName
+        }
+        debug {
+            resValue "string", "file_authorities", config.applicationId + ".fileprovider"
+            resValue "string", "app_name", config.appName
+        }
+    }
+
+    resourcePrefix "live_"
+}
+
+dependencies {
+    api fileTree(include: ['*.jar'], dir: 'libs')
+    //七牛直播
+    //公共库
+    api project(':hnLibrary')
+    api project(':reslibrary')
+    //资源库
+    //路由框架 用于在module之内、或不同module之间进行跳转    若只有一个模块可以不采用此种方式
+    api config.arouter
+    annotationProcessor config.areoutetCompile
+    // 导入腾讯云直播SDK aar
+    api(name: 'LiteAVSDK_Professional_4.3.3610', ext: 'aar')
+//    api(name: 'LiteAVSDK_Professional_3.4.1797', ext: 'aar')
+    api project(':imlibrary')
+}

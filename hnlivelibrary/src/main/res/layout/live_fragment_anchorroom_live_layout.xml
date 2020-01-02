@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <!--直播容器-->
+    <com.hotniao.livelibrary.widget.KeyboardLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#000000">
+
+        <com.qiniu.pili.droid.streaming.widget.AspectFrameLayout
+            android:id="@+id/cameraPreview_afl"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.opengl.GLSurfaceView
+                android:id="@+id/cameraPreview_surfaceView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"/>
+
+        </com.qiniu.pili.droid.streaming.widget.AspectFrameLayout>
+
+    </com.hotniao.livelibrary.widget.KeyboardLayout>
+
+</LinearLayout>

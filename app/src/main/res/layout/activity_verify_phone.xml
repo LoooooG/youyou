@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        style="@style/comm_text"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/def_height"
+        android:text="@string/hava_bind_phone"
+        android:textColor="@color/comm_text_color_black_s" />
+
+    <TextView
+
+        android:id="@+id/mTvPhone"
+        style="@style/comm_text"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/dp_20"
+        android:text="@string/hava_bind_phone"
+        android:textColor="?attr/text_color_666"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="@dimen/def_height"
+        android:layout_marginRight="@dimen/def_height"
+        android:layout_marginTop="@dimen/dp_56"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+
+        <com.hn.library.view.HnEditText xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/mEtCode"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginRight="6dp"
+            android:layout_weight="1"
+            android:hint="@string/log_input_ver"
+            android:inputType="number"
+            android:background="@null"
+            android:lines="1"
+            android:paddingBottom="15dp"
+            android:paddingRight="10dp"
+            android:paddingTop="15dp"
+            android:textColor="?attr/text_color_333"
+            android:textColorHint="@color/color_999999"
+            android:textSize="14dp"
+            app:content_length="11" />
+
+        <com.hn.library.view.HnSendVerifyCodeButton
+            android:id="@+id/mBtnSendCode"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:gravity="center" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginLeft="@dimen/def_height"
+        android:layout_marginRight="@dimen/def_height"
+        android:background="?attr/color_f0f0f0" />
+
+    <TextView
+        android:id="@+id/mTvNext"
+        android:layout_width="140dp"
+        android:layout_height="@dimen/dp_39"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="@dimen/dp_50"
+        android:layout_marginRight="@dimen/dp_50"
+        android:layout_marginTop="@dimen/dp_45"
+        android:background="@drawable/shape_violet_bg_recentage"
+        android:enabled="false"
+        android:gravity="center"
+        android:text="@string/next_step"
+        android:textColor="@color/comm_text_color_black" />
+</LinearLayout>

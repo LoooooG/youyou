@@ -1,0 +1,33 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+    <ListView
+        android:id="@+id/listview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@null"
+        />
+
+    <TextView
+
+        android:id="@+id/dialog"
+        android:layout_width="80dip"
+        android:layout_height="80dip"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:background="@drawable/center_layout"
+        android:gravity="center"
+        android:textColor="#ffffffff"
+        android:textSize="30.0dip"
+        android:visibility="invisible" />
+
+    <com.hn.library.sideindex.SideBar
+        android:id="@+id/sidebar"
+        android:layout_width="20dip"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true" />
+
+</RelativeLayout>

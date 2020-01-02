@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <color name="transparent">#00000000</color>
+    <color name="live_main_color_f0f0f0">#f0f0f0</color>
+    <color name="live_main_bg_color_press">#10000000</color>
+    <color name="live_line">#f0f0f0</color>
+
+    <color name="live_black2b2d3a">#2b2d3a</color>
+    <color name="live_color_66000000">#66000000</color>
+    <color name="live_color_ff3a3a">#ff3a3a</color>
+    <color name="live_colcor_66000000">#66000000</color>
+    <color name="live_colcor_2b2b2b">#2b2b2b</color>
+    <color name="live_colcor_f21b1b">#f21b1b</color>
+    <color name="live_color_ff5d52">#ff5d52</color>
+    <color name="live_color_fdd2af">#fdd2af</color>
+    <color name="live_color_fafafa">#fafafa</color>
+
+
+    <color name="live_colors_9f2ce7">#9f2ce7</color>
+
+
+
+    <!--用户等级颜色 10级一区分-->
+    <color name="live_user_level_1">#16b8b6</color>
+    <color name="live_user_level_1_stroke">#16b8b6</color>
+
+    <color name="live_user_level_2">#01e6fd</color>
+    <color name="live_user_level_2_stroke">#0bc1d3</color>
+
+    <color name="live_user_level_3">#ff5cb5</color>
+    <color name="live_user_level_3_stroke">#be347f</color>
+
+    <color name="live_user_level_4">#Fd7371</color>
+    <color name="live_user_level_4_stroke">#bd4746</color>
+
+    <color name="live_user_level_5">#c22ef2</color>
+    <color name="live_user_level_5_stroke">#9121b5</color>
+
+    <color name="live_user_level_6">#c22ef2</color>
+    <color name="live_user_level_6_stroke">#9121b5</color>
+
+    <color name="live_user_level_7">#9705ca</color>
+    <color name="live_user_level_7_stroke">#661084</color>
+
+    <color name="live_user_level_8">#d9177e</color>
+    <color name="live_user_level_8_stroke">#8f1656</color>
+
+    <color name="live_user_level_9">#f3b00e</color>
+    <color name="live_user_level_9_stroke">#e0a413</color>
+
+    <color name="live_user_level_10">#f34c35</color>
+    <color name="live_user_level_10_stroke">#ed3d24</color>
+
+
+    <color name="live_ancher_level_1">#1890fe</color>
+    <color name="live_ancher_level_1_stroke">#1c609f</color>
+
+    <color name="live_ancher_level_2">#a954ec</color>
+    <color name="live_ancher_level_2_stroke">#7226af</color>
+
+    <color name="live_ancher_level_3">#d70eea</color>
+    <color name="live_ancher_level_3_stroke">#9e15ab</color>
+
+    <color name="live_ancher_level_4">#f34c35</color>
+    <color name="live_ancher_level_4_stroke">#c23e2b</color>
+
+    <color name="live_ancher_level_5">#f17633</color>
+    <color name="live_ancher_level_5_stroke">#d97036</color>
+
+    <color name="live_ancher_level_6">#fc7c00</color>
+    <color name="live_ancher_level_6_stroke">#c07023</color>
+
+    <color name="live_ancher_level_7">#69c9fb</color>
+    <color name="live_ancher_level_8">#fd7371</color>
+    <color name="live_ancher_level_9">#8582e9</color>
+    <color name="live_ancher_level_10">#d9177e</color>
+
+
+
+    <color name="black">#000000</color>
+    <color name="white">#ffffff</color>
+    <color name="first_text_525252">#ff525252</color>
+    <color name="color_d9d9d9">#d9d9d9</color>
+    <color name="line_bg">#f5f5f5</color>
+    <color name="color_f5f5f5">#f5f5f5</color>
+
+
+</resources>

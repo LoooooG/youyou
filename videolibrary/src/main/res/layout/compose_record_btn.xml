@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="124dp"
+    android:layout_height="124dp">
+
+    <ImageView
+        android:id="@+id/iv_record"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/paoshe"/>
+    <ImageView
+        android:id="@+id/iv_record_pause"
+        android:layout_width="15dp"
+        android:layout_height="17dp"
+        android:layout_centerInParent="true"
+        android:visibility="gone"/>
+
+</RelativeLayout>

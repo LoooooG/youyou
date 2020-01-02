@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/item_bg_color"
+    android:orientation="vertical">
+
+    <RadioGroup
+        android:id="@+id/mRg"
+        android:layout_width="150dp"
+        android:layout_height="@dimen/dp_28"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/dp_22"
+        android:background="@drawable/shap_radius_max_bg"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/mRbAnchor"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/selector_check_yellow_transparency"
+            android:button="@null"
+            android:checked="true"
+            android:gravity="center"
+            android:text="@string/anchor_platfrom_list"
+            android:textColor="@drawable/selector_check_color_black_s" />
+
+        <RadioButton
+            android:id="@+id/mRbUser"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/selector_check_yellow_transparency"
+            android:button="@null"
+            android:gravity="center"
+            android:text="@string/user_platfrom_list"
+            android:textColor="@drawable/selector_check_color_black_s" />
+    </RadioGroup>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/design_margin"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/comm_text"
+            android:text="@string/list_the_reset"
+            android:textColor="@color/comm_text_color_black_s"
+            android:textSize="@dimen/comm_text_size_s" />
+
+        <TextView
+            style="@style/comm_text"
+            android:layout_marginLeft="@dimen/design_margin_ss"
+            android:text="@string/zhou_bang_as"
+            android:textColor="?attr/text_color_333"
+            android:textSize="@dimen/comm_text_size_s" />
+
+        <TextView
+            android:id="@+id/mTvTime"
+            style="@style/comm_text"
+            android:textColor="?attr/text_color_333"
+            android:textSize="@dimen/comm_text_size_s" />
+
+    </LinearLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/mVp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/dp_10"></android.support.v4.view.ViewPager>
+
+</LinearLayout>
+
+
+

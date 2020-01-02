@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/design_margin_top"
+    android:gravity="center">
+    <com.hn.library.view.FrescoImageView xmlns:fresco="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/mIvImage"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:padding="@dimen/dp_3"
+        android:scaleType="centerCrop"
+        fresco:actualImageScaleType="centerCrop"
+        fresco:actualImageUri="@drawable/default_live"
+        fresco:failureImage="@drawable/default_live"
+        fresco:failureImageScaleType="centerCrop"
+        fresco:placeholderImageScaleType="centerCrop"
+        fresco:progressBarImage="@drawable/default_live"
+        fresco:roundAsCircle="true"
+        fresco:roundedCornerRadius="4dp" />
+</LinearLayout>

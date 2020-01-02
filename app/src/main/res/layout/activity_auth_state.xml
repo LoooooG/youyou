@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.hn.library.loadstate.HnLoadingLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/loading"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    app:isFirstVisible="true">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?attr/colorPrimary"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/iv_state"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:scaleType="centerCrop"
+                android:src="@drawable/under_review"
+                android:visibility="visible" />
+
+            <ImageView
+                android:id="@+id/mIvState2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="60dp"
+                android:src="@drawable/real_name_authentication"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/mIvBack"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_marginLeft="@dimen/design_margin"
+                android:scaleType="center"
+                android:src="@drawable/ic_back_white"
+                android:visibility="visible"
+
+                />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/mTvState"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/def_height"
+            android:gravity="center"
+            android:textColor="?attr/text_color_333"
+            android:textSize="@dimen/comm_text_size_h" />
+
+        <TextView
+            android:id="@+id/tv_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/design_margin"
+            android:gravity="center"
+            android:textColor="@color/color_999999"
+            android:textSize="@dimen/comm_text_size" />
+
+        <TextView
+            android:id="@+id/tv_reauth"
+            android:layout_width="140dp"
+            android:layout_height="@dimen/dp_39"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="@dimen/dp_40"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:layout_marginTop="@dimen/dp_56"
+            android:background="@drawable/shap_radius_max_yellow"
+            android:gravity="center"
+            android:text="@string/auth_imm"
+            android:textColor="@color/white" />
+
+
+    </LinearLayout>
+</com.hn.library.loadstate.HnLoadingLayout>
+

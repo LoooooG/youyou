@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/pageBg_color"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/dp_10">
+
+    <com.bigkoo.convenientbanner.ConvenientBanner xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/convenientBanner"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/com_banner_hight"
+        android:background="@drawable/default_banner"
+        app:canLoop="true" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/item_bg_color"
+        android:orientation="horizontal"
+        android:padding="@dimen/design_margin"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/mTvVideoShow"
+            style="@style/comm_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawablePadding="@dimen/dp_10"
+            android:drawableTop="@drawable/icon_spx"
+            android:gravity="center"
+            android:text="@string/video_show" />
+
+        <TextView
+            android:id="@+id/mTvNear"
+            style="@style/comm_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawablePadding="@dimen/dp_10"
+            android:drawableTop="@drawable/icon_nearby"
+            android:gravity="center"
+            android:text="@string/main_near" />
+
+        <TextView
+            android:id="@+id/mTvSignIn"
+            style="@style/comm_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawablePadding="@dimen/dp_10"
+            android:drawableTop="@drawable/icon_qiandao"
+            android:gravity="center"
+            android:text="@string/sign_in" />
+
+        <TextView
+            android:id="@+id/mTvInvite"
+            style="@style/comm_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawablePadding="@dimen/dp_10"
+            android:drawableTop="@drawable/icon_yaoqing"
+            android:gravity="center"
+            android:text="@string/share" />
+    </LinearLayout>
+
+</LinearLayout>

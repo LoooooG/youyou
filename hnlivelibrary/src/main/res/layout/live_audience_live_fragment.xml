@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/live_frame_bg"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/transparent"
+                android:orientation="vertical">
+
+     <RelativeLayout
+         android:layout_width="match_parent"
+         android:layout_height="match_parent">
+    <com.hotniao.livelibrary.widget.KeyboardLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#000000">
+
+        <com.pili.pldroid.player.widget.PLVideoView
+            android:id="@+id/VideoView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"/>
+
+    </com.hotniao.livelibrary.widget.KeyboardLayout>
+
+    <com.hn.library.view.FrescoImageView
+        android:id="@+id/fiv_header"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        app:actualImageScaleType="centerCrop"
+        app:placeholderImage="@drawable/default_live"
+        app:placeholderImageScaleType="centerCrop"
+        app:roundAsCircle="false"/>
+
+
+     </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/fiv_zhezhao"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:scaleType="fitXY"
+            android:visibility="gone"
+          />
+
+
+
+
+</RelativeLayout>

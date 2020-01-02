@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/item_bg_color"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/mLlClick"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <FrameLayout
+            android:id="@+id/mFl123"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/design_margin_top"
+            android:layout_marginLeft="@dimen/design_margin"
+            android:layout_marginTop="@dimen/design_margin_s"
+            android:orientation="horizontal"
+
+            android:visibility="visible">
+
+
+            <com.hn.library.view.FrescoImageView
+                android:id="@+id/mIvImg"
+                android:layout_width="49dp"
+                android:layout_height="49dp"
+                android:layout_gravity="center"
+                app:actualImageScaleType="centerCrop"
+                app:placeholderImage="@drawable/default_live_head"
+                app:placeholderImageScaleType="centerCrop"
+                app:roundAsCircle="true" />
+
+            <ImageView
+                android:id="@+id/mIvRank"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/no1" />
+
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/mTvNumber"
+            style="@style/comm_text"
+            android:layout_width="@dimen/dp_24"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/design_margin"
+            android:text="1"
+            android:textColor="@color/comm_text_color_black_s"
+            android:textSize="@dimen/comm_text_size_h"
+            android:visibility="gone" />
+
+        <com.hn.library.view.FrescoImageView
+            android:id="@+id/mIvOther"
+            android:layout_width="@dimen/dp_42"
+            android:layout_height="@dimen/dp_42"
+            android:layout_gravity="bottom|center"
+            android:layout_marginBottom="@dimen/dp_10"
+            android:layout_marginRight="@dimen/design_margin_h"
+            android:layout_marginTop="@dimen/dp_10"
+            android:visibility="gone"
+            app:actualImageScaleType="centerCrop"
+            app:placeholderImage="@drawable/default_live_head"
+            app:placeholderImageScaleType="centerCrop"
+            app:roundAsCircle="true" />
+
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:id="@+id/recy_user_liner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/mTvName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:maxWidth="110dp"
+                    android:singleLine="true"
+                    android:text="太美太美了"
+                    android:textColor="?attr/text_color_333"
+                    android:textSize="15sp" />
+
+                <!--用户等级-->
+                <com.reslibrarytwo.HnSkinTextView
+                    android:id="@+id/mTvLv"
+                    android:layout_width="@dimen/design_margin_lv_w"
+                    android:layout_height="@dimen/design_margin_lv_h"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="5dp"
+                    android:background="@drawable/tv_level_shape_1"
+                    android:drawableLeft="@drawable/stars"
+                    android:gravity="center"
+                    android:paddingLeft="2dp"
+                    android:singleLine="true"
+                    android:textColor="@color/comm_text_color_white"
+                    android:textSize="@dimen/comm_text_size_sh" />
+
+                <ImageView
+                    android:id="@+id/mIvVip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/design_margin_lv_h"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/design_margin_top"
+                    android:src="@drawable/vip_contribution"
+                    android:visibility="gone" />
+
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/mTvPay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/recy_user_liner"
+                android:layout_marginTop="8dp"
+                android:text=""
+                android:textColor="#999999"
+                android:textSize="12sp" />
+
+        </RelativeLayout>
+
+        <com.reslibrarytwo.HnSkinTextView
+            android:id="@+id/mTvFocus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="@dimen/design_margin"
+            android:drawableLeft="@drawable/select_focus_user"
+            android:drawablePadding="@dimen/dp_5"
+            android:paddingBottom="@dimen/design_margin_h"
+            android:paddingTop="@dimen/design_margin_h"
+            android:text="@string/main_follow_on"
+            android:textColor="@drawable/select_main_black_s_color"
+            android:textSize="@dimen/comm_text_size"
+            android:visibility="visible" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.8dp"
+        android:background="?attr/pageBg_color" />
+
+</LinearLayout>

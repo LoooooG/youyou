@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="36dp"
+    android:layout_marginTop="10dp"
+    android:clipChildren="false"
+    android:gravity="center"
+    android:orientation="horizontal">
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="18dp"
+            android:layout_marginLeft="40dp"
+            android:layout_toRightOf="@+id/fiv_avatar"
+            android:clipChildren="false"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_nick"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="4dp"
+                android:maxLength="15"
+                android:shadowColor="@color/live_colcor_2b2b2b"
+                android:shadowDx="1"
+                android:shadowDy="1"
+                android:singleLine="true"
+                android:text="walkingMen"
+                android:textColor="@color/comm_text_color_main"
+                android:textSize="10sp" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_content"
+            android:layout_width="match_parent"
+            android:layout_height="18dp"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/danmu_shape"
+            android:ellipsize="none"
+            android:focusable="false"
+            android:gravity="center_vertical"
+            android:paddingLeft="20dp"
+            android:paddingRight="10dp"
+            android:shadowColor="@color/live_colcor_66000000"
+            android:shadowDx="0.5"
+            android:shadowDy="1"
+            android:shadowRadius="1"
+            android:singleLine="true"
+            android:text="字字"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/mTvContent2"
+            android:layout_width="match_parent"
+            android:layout_height="18dp"
+            android:layout_marginLeft="32dp"
+            android:background="@drawable/danmu_shape_tow"
+            android:ellipsize="none"
+            android:focusable="false"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/design_margin_s"
+            android:paddingRight="10dp"
+            android:shadowColor="@color/live_colcor_66000000"
+            android:shadowDx="0.5"
+            android:shadowDy="1"
+            android:shadowRadius="1"
+            android:singleLine="true"
+            android:text="字字"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:visibility="gone" />
+
+
+    </LinearLayout>
+
+    <com.hn.library.view.FrescoImageView
+        android:id="@+id/fiv_avatar"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        fresco:actualImageScaleType="centerCrop"
+        fresco:placeholderImage="@drawable/default_live_head"
+        fresco:placeholderImageScaleType="centerCrop"
+        fresco:roundAsCircle="true" />
+</RelativeLayout>

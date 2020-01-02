@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.hn.library.loadstate.HnLoadingLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/loading"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:isFirstVisible="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/mTvHead"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_36"
+            android:background="#fdf7dc"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/design_margin"
+            android:paddingRight="@dimen/design_margin"
+            android:text="@string/can_not_notice_you_to_setting_open"
+            android:textColor="#f69728" />
+
+        <com.hn.library.refresh.PtrClassicFrameLayout
+            android:id="@+id/ptr_refresh"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:ptr_mode="refresh">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recyclerview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:overScrollMode="never" />
+
+        </com.hn.library.refresh.PtrClassicFrameLayout>
+    </LinearLayout>
+
+</com.hn.library.loadstate.HnLoadingLayout>

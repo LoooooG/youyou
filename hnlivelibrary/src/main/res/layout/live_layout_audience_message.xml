@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rl_message"
+    android:layout_width="match_parent"
+    android:layout_height="48dp"
+    android:layout_alignParentBottom="true"
+    android:background="@color/white"
+    android:visibility="gone">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ToggleButton
+            android:id="@+id/message_talk_tb"
+            android:layout_width="60dp"
+            android:layout_height="32dp"
+            android:background="@drawable/selector_butn_toggle"
+            android:checked="false"
+            android:text=""
+            android:textOff=""
+            android:textOn="" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="7dp"
+            android:layout_weight="1"
+            android:background="@drawable/live_room_input_shape"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/message_input_et"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:background="@null"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:hint="@string/live_input_chat_content"
+                android:imeOptions="actionSend"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:singleLine="true"
+                android:textColorHint="@color/comm_text_color_black_s"
+                android:textSize="15sp" />
+
+            <ImageView
+                android:id="@+id/iv_emoji"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:paddingLeft="5dp"
+                android:src="@mipmap/smile" />
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/message_send_tv"
+            android:layout_width="@dimen/dp_56"
+            android:layout_height="@dimen/dp_30"
+            android:layout_marginLeft="@dimen/design_margin_h"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:text="@string/live_send"
+            android:background="@drawable/select_main_gray_bg_max"
+            android:textSize="14sp"
+            android:visibility="visible" />
+
+    </LinearLayout>
+
+</RelativeLayout>

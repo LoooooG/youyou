@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/line"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/mTvDelete"
+        style="@style/comm_text"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_48"
+        android:layout_marginBottom="@dimen/dp_one_half"
+        android:background="?attr/item_bg_color"
+        android:gravity="center"
+        android:text="@string/delete" />
+
+    <TextView
+        android:id="@+id/mTvReport"
+        style="@style/comm_text"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_48"
+        android:layout_marginBottom="@dimen/dp_one_half"
+        android:background="?attr/item_bg_color"
+        android:gravity="center"
+        android:text="@string/live_report" />
+
+    <TextView
+        android:id="@+id/mTvBlack"
+        style="@style/comm_text"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_48"
+        android:background="?attr/item_bg_color"
+        android:gravity="center"
+        android:text="@string/blacklist" />
+
+    <TextView
+        android:id="@+id/mTvCancel"
+        style="@style/comm_text"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_48"
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="?attr/item_bg_color"
+        android:gravity="center"
+        android:text="@string/cancel" />
+</LinearLayout>

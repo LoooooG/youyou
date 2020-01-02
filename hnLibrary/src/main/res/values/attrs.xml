@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--自定义圆型图片-->
+    <declare-styleable name="CircleImageView">
+        <!--图片边框的的宽度-->
+        <attr name="border_width" format="dimension"/>
+        <!--边框颜色-->
+        <attr name="border_color" format="color"/>
+    </declare-styleable>
+
+    <!--带有过滤表情功能的输入框-->
+    <declare-styleable name="HnEditText">
+        <!--输入框内容的长度-->
+        <attr name="content_length" format="integer"/>
+    </declare-styleable>
+
+    <!--带图标文字button-->
+    <declare-styleable name="ImageTextButton">
+        <attr name="iconId" format="reference"/>
+        <attr name="text" format="string"/>
+        <attr name="textColor" format="color"/>
+        <attr name="iconSize" format="dimension"/>
+        <attr name="iMarginTop" format="dimension"/>
+        <attr name="iMarginBottom" format="dimension"/>
+        <attr name="iDivider" format="dimension"/>
+    </declare-styleable>
+
+    <declare-styleable name="HnLoadingLayout">
+        <attr name="isFirstVisible" format="boolean"/>
+    </declare-styleable>
+
+    <!--Banner布局的自定义属性-->
+    <declare-styleable name="BannerLayoutStyle">
+        <!--指示器选中和未选中的颜色-->
+        <attr name="selectedIndicatorColor" format="color|reference"/>
+        <attr name="unSelectedIndicatorColor" format="color|reference"/>
+        <!--指示器的形状-->
+        <attr name="indicatorShape" format="enum">
+            <enum name="rect" value="0"/>
+            <enum name="oval" value="1"/>
+        </attr>
+        <!--指示器选中时的大小-->
+        <attr name="selectedIndicatorHeight" format="dimension|reference"/>
+        <attr name="selectedIndicatorWidth" format="dimension|reference"/>
+        <!--指示器未选中时的大小-->
+        <attr name="unSelectedIndicatorHeight" format="dimension|reference"/>
+        <attr name="unSelectedIndicatorWidth" format="dimension|reference"/>
+        <!--指示器的摆放的位置-->
+        <attr name="indicatorPosition" format="enum">
+            <enum name="centerBottom" value="0"/>
+            <enum name="rightBottom" value="1"/>
+            <enum name="leftBottom" value="2"/>
+            <enum name="centerTop" value="3"/>
+            <enum name="rightTop" value="4"/>
+            <enum name="leftTop" value="5"/>
+        </attr>
+        <!--指示器的间隔-->
+        <attr name="indicatorSpace" format="dimension|reference"/>
+        <attr name="indicatorMargin" format="dimension|reference"/>
+         <!--轮播间隔时间-->
+        <attr name="autoPlayDuration" format="integer|reference"/>
+        <!--ViewPager滑动切换时间-->
+        <attr name="scrollDuration" format="integer|reference"/>
+        <!--是否自动轮播-->
+        <attr name="isAutoPlay" format="boolean|reference"/>
+        <!--是否是Header-->
+        <attr name="isHeader" format="boolean|reference"/>
+    </declare-styleable>
+
+    <!--刷新View的自定义属性-->
+    <declare-styleable name="SpringView">
+        <attr name="type">
+            <enum name="overlap" value="0"/>
+            <enum name="follow" value="1"/>
+        </attr>
+        <attr name="give">
+            <enum name="both" value="0"/>
+            <enum name="top" value="1"/>
+            <enum name="bottom" value="2"/>
+            <enum name="none" value="3"/>
+        </attr>
+        <attr name="header" format="reference"/>
+        <attr name="footer" format="reference"/>
+    </declare-styleable>
+
+
+    <declare-styleable name="UltraViewPager">
+        <attr name="upv_autoscroll" format="integer" />
+        <attr name="upv_infiniteloop" format="boolean" />
+        <attr name="upv_ratio" format="float" />
+        <attr name="upv_scrollmode" format="enum">
+            <enum name="horizontal" value="0" />
+            <enum name="vertical" value="1" />
+        </attr>
+        <attr name="upv_disablescroll" format="enum">
+            <enum name="none" value="0" />
+            <enum name="backward" value="1" />
+            <enum name="forward" value="2" />
+        </attr>
+        <attr name="upv_multiscreen" format="boolean" />
+        <attr name="upv_automeasure" format="boolean" />
+        <attr name="upv_itemratio" format="float" />
+    </declare-styleable>
+
+    <declare-styleable name="KPSwitchPanelLayout">
+        <attr name="ignore_recommend_height" format="boolean" />
+    </declare-styleable>
+</resources>

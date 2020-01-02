@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="310dp"
+    android:orientation="vertical">
+
+    <com.hn.library.view.FrescoImageView xmlns:fresco="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/mIvImg"
+        android:layout_width="match_parent"
+        android:layout_height="310dp"
+        android:scaleType="centerCrop"
+        fresco:actualImageScaleType="centerCrop"
+        fresco:actualImageUri="@drawable/default_live"
+        fresco:failureImage="@drawable/default_live"
+        fresco:failureImageScaleType="centerCrop"
+        fresco:placeholderImageScaleType="centerCrop"
+        fresco:roundAsCircle="false" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:background="#80000000"
+        android:padding="@dimen/design_margin">
+
+        <TextView
+            android:id="@+id/mTvUserState"
+            style="@style/comm_text"
+            android:layout_width="66dp"
+            android:layout_height="34dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/shap_radius_max_yellow"
+            android:gravity="center"
+            android:text="@string/onlines"
+            android:textColor="@color/comm_text_color_black" />
+
+        <LinearLayout
+            android:id="@+id/mLlFans"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="?attr/actionBarItemBackground"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/mTvFansNum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="0"
+                android:textColor="@color/comm_text_color_white"
+                android:textSize="@dimen/comm_text_size_h" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/design_margin_h"
+                android:text="@string/fans"
+                android:textColor="@color/comm_text_color_white"
+                android:textSize="@dimen/comm_text_size_s" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/mLLFouse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+
+            android:layout_marginLeft="@dimen/dp_34"
+            android:layout_toRightOf="@id/mLlFans"
+            android:background="?attr/actionBarItemBackground"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/mTvFouseNum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="0"
+                android:textColor="@color/comm_text_color_white"
+                android:textSize="@dimen/comm_text_size_h" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/design_margin_h"
+                android:text="@string/care"
+                android:textColor="@color/comm_text_color_white"
+                android:textSize="@dimen/comm_text_size_s" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/mTvId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/mLlFans"
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/design_margin"
+            android:text="0"
+            android:textColor="@color/comm_text_color_white"
+            android:textSize="@dimen/comm_text_size" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/mTvId"
+            android:layout_marginBottom="@dimen/design_margin"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+
+            <com.reslibrarytwo.HnSkinTextView
+                android:id="@+id/mTvLv"
+                android:layout_width="@dimen/design_margin_lv_w"
+                android:layout_height="@dimen/design_margin_lv_h"
+                android:layout_gravity="center"
+                android:background="@drawable/tv_level_shape_1"
+                android:drawableLeft="@drawable/stars"
+                android:gravity="center"
+                android:paddingLeft="3dp"
+                android:singleLine="true"
+                android:text="1"
+                android:textColor="@color/comm_text_color_white"
+                android:textSize="@dimen/comm_text_size_sh" />
+
+            <com.reslibrarytwo.HnSkinTextView
+                android:id="@+id/mTvAnchorLv"
+                android:layout_width="@dimen/design_margin_lv_w"
+                android:layout_height="@dimen/design_margin_lv_h"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/design_margin_h"
+                android:background="@drawable/tv_level_shape_1"
+                android:drawableLeft="@drawable/stars"
+                android:gravity="center"
+                android:paddingLeft="4dp"
+                android:singleLine="true"
+                android:text="1"
+                android:textColor="@color/comm_text_color_white"
+                android:textSize="@dimen/comm_text_size_sh"
+                android:visibility="gone" />
+
+
+            <ImageView
+                android:id="@+id/mIvVip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/design_margin_h"
+                android:background="@drawable/icon_vip"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/mIvSex"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/design_margin_h"
+                android:background="@mipmap/man" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_10"
+        android:layout_alignParentBottom="true"
+        android:background="?attr/pageBg_color" />
+</RelativeLayout>

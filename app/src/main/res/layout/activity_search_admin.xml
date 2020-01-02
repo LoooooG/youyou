@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <!--顶部-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="?attr/item_bg_color">
+
+
+        <TextView
+            android:id="@+id/mTvCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:gravity="center"
+            android:paddingLeft="10dp"
+            android:paddingRight="@dimen/design_margin"
+            android:text="@string/cancel"
+            android:textColor="?attr/text_color_333"
+            android:textSize="@dimen/comm_text_size" />
+
+
+        <com.hn.library.view.HnEditText
+            android:id="@+id/mEtSearch"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/design_margin"
+            android:layout_toLeftOf="@id/mTvCancel"
+            android:background="@drawable/et_cursor_white_bg_shape"
+            android:drawableLeft="@mipmap/icon_search_grey"
+            android:drawablePadding="10dp"
+            android:hint="@string/search_hint"
+            android:imeOptions="actionSearch"
+            android:paddingBottom="6dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="6dp"
+            android:singleLine="true"
+            android:textColor="?attr/text_color_333"
+            android:textColorHint="@color/color_999999"
+            android:textSize="@dimen/comm_text_size" />
+
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="?attr/pageBg_color" />
+
+    <include layout="@layout/comm_list" />
+
+</LinearLayout>

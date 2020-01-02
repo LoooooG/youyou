@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rl_play_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/comm_text_color_black"
+    android:onClick="onClick"
+    tools:ignore="contentDescription">
+
+    <ImageView
+        android:id="@+id/background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop" />
+
+    <com.tencent.rtmp.ui.TXCloudVideoView
+        android:id="@+id/video_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true" />
+
+    <FrameLayout
+        android:id="@+id/mask"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+
+            />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom" />
+    </FrameLayout>
+
+    <!--录制-->
+    <RelativeLayout
+        android:id="@+id/record_layout"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="35dp">
+
+
+        <com.videolibrary.view.ComposeRecordBtn
+            android:id="@+id/compose_record_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            />
+
+
+        <TextView
+            android:id="@+id/btn_confirm"
+            android:layout_width="@dimen/def_height"
+            android:layout_height="@dimen/def_height"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp_40"
+            android:layout_toRightOf="@id/compose_record_btn"
+            android:background="@drawable/shape_cricle_translucence_white_s_bg"
+            android:gravity="center"
+            android:onClick="onClick"
+            android:visibility="gone"
+            android:text="预览"
+            android:textColor="@color/black"
+            android:textSize="@dimen/comm_text_size" />
+
+        <ImageView
+            android:id="@+id/btn_delete_last_part"
+            android:layout_width="@dimen/def_height"
+            android:layout_height="@dimen/def_height"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dp_40"
+            android:layout_toLeftOf="@id/compose_record_btn"
+            android:onClick="onClick"
+            android:visibility="gone"
+            android:src="@drawable/fanhui" />
+
+        <ImageView
+            android:id="@+id/mIvChooseVIdeo"
+            android:layout_width="@dimen/def_height"
+            android:layout_height="@dimen/def_height"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp_40"
+            android:layout_toRightOf="@id/compose_record_btn"
+            android:onClick="onClick"
+            android:src="@drawable/xuangce" />
+
+
+    </RelativeLayout>
+
+
+    <ImageView
+        android:id="@+id/mIvBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:padding="@dimen/design_margin"
+        android:src="@drawable/ugc_record_back" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.videolibrary.view.RecordProgressView
+            android:id="@+id/record_progress_view"
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:layout_alignParentStart="true" />
+        <TextView
+            android:id="@+id/progress_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/record_progress_view"
+            android:layout_marginRight="14dp"
+            android:text="00:00"
+            android:textColor="#fff" />
+    </RelativeLayout>
+
+
+    <LinearLayout
+
+        android:id="@+id/mLlFun"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/design_margin"
+        android:layout_centerVertical="true"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/btn_switch_camera"
+            android:layout_width="@dimen/dp_44"
+            android:layout_height="@dimen/dp_44"
+            android:layout_gravity="center_vertical"
+            android:onClick="onClick"
+            android:src="@drawable/xiangji" />
+
+        <ImageView
+            android:id="@+id/btn_beauty"
+            android:layout_width="@dimen/dp_44"
+            android:layout_height="@dimen/dp_44"
+            android:layout_marginTop="@dimen/dp_20"
+            android:onClick="onClick"
+            android:src="@drawable/meiyan" />
+
+        <ImageView
+            android:id="@+id/btn_music_pannel"
+            android:layout_width="@dimen/dp_44"
+            android:layout_height="@dimen/dp_44"
+            android:layout_marginTop="@dimen/dp_20"
+            android:onClick="onClick"
+            android:src="@drawable/yinyue_noselect" />
+
+
+        <ImageView
+            android:id="@+id/btn_torch"
+            android:layout_width="@dimen/dp_44"
+            android:layout_height="@dimen/dp_44"
+            android:layout_gravity="center_vertical"
+            android:onClick="onClick"
+            android:src="@drawable/selector_torch_close"
+            android:visibility="gone" />
+    </LinearLayout>
+</RelativeLayout>
+
+

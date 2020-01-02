@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <!--设置字体大小 -->
+    <style name="textSize18">
+        <item name="android:textSize">18sp</item>
+    </style>
+    <style name="textSize16">
+        <item name="android:textSize">16sp</item>
+    </style>
+    <style name="textSize14">
+        <item name="android:textSize">14sp</item>
+    </style>
+    <style name="textSize12">
+        <item name="android:textSize">12sp</item>
+    </style>
+    <style name="textSize10">
+        <item name="android:textSize">10sp</item>
+    </style>
+
+</resources>

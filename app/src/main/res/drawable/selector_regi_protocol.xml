@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/elect_registration" android:state_checked="true"/>
+    <item android:drawable="@drawable/not_checked_registration" android:state_checked="false"/>
+</selector>

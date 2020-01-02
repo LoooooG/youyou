@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<com.hn.library.loadstate.HnLoadingLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/loading"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="@dimen/dp_10"
+    app:isFirstVisible="true">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_48"
+            android:id="@+id/mTvSeting"
+            android:textColor="?attr/text_color_333"
+            android:background="?attr/item_bg_color"
+            android:gravity="center_vertical"
+            android:paddingRight="@dimen/design_margin"
+            android:paddingLeft="@dimen/design_margin"
+            android:drawableRight="@drawable/select_remind_live"
+            android:text="@string/str_live_notice"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_40"
+            android:textColor="@color/comm_text_color_black_s"
+            android:gravity="center_vertical"
+            android:paddingRight="@dimen/design_margin"
+            android:paddingLeft="@dimen/design_margin"
+            android:text="@string/closeed_cannot_notice_you"/>
+        <com.hn.library.refresh.PtrClassicFrameLayout
+            android:id="@+id/ptr_refresh"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:ptr_mode="refresh">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recyclerview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:overScrollMode="never" />
+
+        </com.hn.library.refresh.PtrClassicFrameLayout>
+    </LinearLayout>
+
+</com.hn.library.loadstate.HnLoadingLayout>

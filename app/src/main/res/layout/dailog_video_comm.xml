@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.hotniao.livelibrary.widget.KeyboardLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/transparent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <View
+            android:id="@+id/mViewCancle"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@color/transparent" />
+
+        <RelativeLayout
+            android:id="@+id/mRlBottom"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2">
+
+            <RelativeLayout
+                android:id="@+id/mRlTop"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_40"
+                android:background="?attr/item_bg_color">
+
+                <TextView
+                    android:id="@+id/mTvCommNum"
+                    style="@style/comm_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/design_margin"
+                    android:gravity="center_vertical"
+                    android:text="@string/video_comm_num"
+                    android:textColor="@color/comm_text_color_black" />
+
+                <ImageView
+                    android:id="@+id/mIvClose"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/dp_10"
+                    android:padding="@dimen/design_margin_h"
+                    android:src="@drawable/shipingxiangqingguanbi" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_one_half"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/line_bg" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/mLLInput"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_56"
+                android:layout_alignParentBottom="true"
+                android:background="#ffffff"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_one_half"
+                    android:background="@color/line_bg" />
+
+                <TextView
+                    android:id="@+id/tvsend"
+                    android:layout_width="70dp"
+                    android:layout_height="@dimen/dp_34"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:layout_marginRight="@dimen/dp_10"
+                    android:background="@drawable/shap_radius_max_yellow"
+                    android:gravity="center"
+                    android:text="@string/send"
+                    android:textColor="@color/comm_text_color_black"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_36"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_toLeftOf="@id/tvsend"
+                    android:background="@drawable/shap_gray_raudio_4_tras"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="6dp"
+                    android:paddingRight="6dp"
+                    android:singleLine="true"
+                    android:text="评论一下"
+                    android:textColor="@color/comm_text_color_black_hs"
+                    android:textColorHint="@color/comm_text_color_black_s"
+                    android:textSize="14dp" />
+
+
+            </RelativeLayout>
+
+            <com.hn.library.loadstate.HnLoadingLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/mHnLoadingLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/mLLInput"
+                android:layout_below="@id/mRlTop"
+                android:background="?attr/pageBg_color"
+                app:isFirstVisible="true">
+
+                <com.hn.library.refresh.PtrClassicFrameLayout
+                    android:id="@+id/mRefresh"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:ptr_mode="both">
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/mRecycler"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                </com.hn.library.refresh.PtrClassicFrameLayout>
+
+
+            </com.hn.library.loadstate.HnLoadingLayout>
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+</com.hotniao.livelibrary.widget.KeyboardLayout>

@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/ll_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <com.hotniao.livelibrary.widget.gift.bigGift.BigGiftChannel
+                    android:id="@+id/ani_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+                <!--主播信息显示容器-->
+                <include layout="@layout/live_layout_audience_title" />
+                <!--推流状态显示-->
+                <TextView
+                    android:id="@+id/mTvPushStatue"
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:background="@color/main_color"
+                    android:gravity="center"
+                    android:text="@string/live_net_busy_change_wifi_live"
+                    android:textColor="@color/comm_text_color_black"
+                    android:textSize="@dimen/comm_text_size_sh"
+                    android:visibility="gone" />
+                <!--聊天容器-->
+                <include layout="@layout/live_layout_audience_message" />
+
+                <com.hotniao.livelibrary.widget.periscope.PeriscopeLayout
+                    android:id="@+id/receive_star"
+                    android:layout_width="100dp"
+                    android:layout_height="300dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginBottom="55dp"
+                    android:layout_marginRight="40dp" />
+
+                <com.hotniao.livelibrary.widget.gift.LeftGiftControlLayout
+                    android:id="@+id/giftLl"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/containerVG"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical">
+
+
+                    <com.hotniao.livelibrary.widget.gift.LeftGiftsItemLayout
+                        android:id="@+id/gift1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="invisible"
+                        app:left_gift_layout_index="0" />
+
+                    <com.hotniao.livelibrary.widget.gift.LeftGiftsItemLayout
+                        android:id="@+id/gift2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:visibility="invisible"
+                        app:left_gift_layout_index="1" />
+
+                </com.hotniao.livelibrary.widget.gift.LeftGiftControlLayout>
+
+                <LinearLayout
+                    android:id="@+id/containerVG"
+                    android:layout_width="match_parent"
+                    android:layout_height="98dp"
+                    android:layout_above="@+id/rl_enter_effect"
+                    android:layout_marginBottom="@dimen/design_margin_s"
+                    android:clipChildren="false"
+                    android:gravity="bottom"
+                    android:orientation="vertical">
+
+                    <com.hotniao.livelibrary.widget.danmu.DanmakuChannel
+                        android:id="@+id/danA"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp" />
+
+                    <com.hotniao.livelibrary.widget.danmu.DanmakuChannel
+                        android:id="@+id/danB"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="@dimen/design_margin_s">
+
+
+                    </com.hotniao.livelibrary.widget.danmu.DanmakuChannel>
+                </LinearLayout>
+
+                <include layout="@layout/live_layout_live_effect" />
+
+                <FrameLayout
+                    android:id="@+id/bottom_fra"
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    android:layout_alignParentBottom="true">
+
+                    <!--消息列表容器-->
+                    <ListView
+                        android:id="@+id/message_listview"
+                        android:layout_width="270dp"
+                        android:layout_height="120dp"
+                        android:layout_above="@+id/bottom_container"
+                        android:layout_marginLeft="10dp"
+                        android:background="@color/transparent"
+                        android:cacheColorHint="@color/transparent"
+                        android:divider="@null"
+                        android:listSelector="@color/transparent"
+                        android:scrollbars="none"
+                        android:transcriptMode="alwaysScroll"></ListView>
+                    <!--控制容器-->
+                    <LinearLayout
+                        android:id="@+id/bottom_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_gravity="bottom"
+                        android:background="@color/transparent"
+                        android:orientation="horizontal">
+
+                        <ImageButton
+                            android:id="@+id/ib_message"
+                            android:layout_width="@dimen/dp_40"
+                            android:layout_height="@dimen/dp_40"
+                            android:layout_marginLeft="10dp"
+                            android:background="@mipmap/xinxi"
+                            android:gravity="center_horizontal" />
+
+                        <RelativeLayout
+                            android:layout_width="@dimen/dp_40"
+                            android:layout_height="@dimen/dp_40"
+                            android:layout_marginLeft="@dimen/dp_10">
+
+                            <ImageButton
+                                android:id="@+id/iv_privateletter"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+
+                                android:background="@drawable/selector_live_comment" />
+
+                            <TextView
+                                android:id="@+id/tv_unread_pri"
+                                android:layout_width="@dimen/design_margin_s"
+                                android:layout_height="@dimen/design_margin_s"
+                                android:layout_alignParentRight="true"
+                                android:layout_margin="3dp"
+                                android:background="@mipmap/live_red_dian"
+                                android:gravity="center"
+                                android:textSize="6sp"
+                                android:visibility="invisible" />
+                        </RelativeLayout>
+
+                        <ImageButton
+                            android:id="@+id/mIvShare"
+                            android:layout_width="@dimen/dp_40"
+                            android:layout_height="@dimen/dp_40"
+                            android:layout_marginLeft="@dimen/dp_10"
+
+                            android:background="@drawable/sharing" />
+
+                        <ImageButton
+                            android:id="@+id/opengl"
+                            android:layout_width="@dimen/dp_40"
+                            android:layout_height="@dimen/dp_40"
+                            android:layout_marginLeft="@dimen/dp_10"
+                            android:background="@drawable/selector_live_beauty" />
+
+                        <ImageButton
+                            android:id="@+id/camera"
+                            android:layout_width="@dimen/dp_40"
+                            android:layout_height="@dimen/dp_40"
+                            android:layout_marginLeft="@dimen/dp_10"
+
+                            android:background="@mipmap/xiangji_noselect" />
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="right"
+                            android:paddingRight="10dp">
+
+
+                            <ImageButton
+                                android:id="@+id/tv_close"
+                                android:layout_width="@dimen/dp_40"
+                                android:layout_height="@dimen/dp_40"
+                                android:layout_marginLeft="10dp"
+                                android:background="@mipmap/tuichu_zhibojian" />
+
+
+                            <ImageButton
+                                android:id="@+id/switchBtn"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:background="@color/transparent"
+                                android:gravity="center_horizontal"
+                                android:src="@mipmap/xiangji"
+                                android:visibility="gone" />
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                </FrameLayout>
+
+                <!--点赞-->
+                <com.hotniao.livelibrary.widget.periscope.PeriscopeLayout
+                    android:id="@+id/mPlGreat"
+                    android:layout_width="120dp"
+                    android:layout_height="320dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginBottom="50dp"
+                    android:layout_marginRight="@dimen/design_margin" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <com.lqr.emoji.EmotionLayout
+            android:id="@+id/elEmotion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+
+</RelativeLayout>

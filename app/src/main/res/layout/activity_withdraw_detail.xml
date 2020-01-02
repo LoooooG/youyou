@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/item_bg_color"
+    android:orientation="vertical">
+
+
+
+
+
+    <ListView
+        android:id="@+id/mListView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="#00000000"
+        android:scrollbars="none"
+        android:dividerHeight="0dip"
+        android:layout_margin="@dimen/design_margin"></ListView>
+
+    <TextView
+        android:id="@+id/mTvBack"
+        android:layout_width="match_parent"
+        android:layout_below="@id/mListView"
+        android:layout_height="@dimen/dp_39"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="@dimen/dp_50"
+        android:layout_marginRight="@dimen/dp_50"
+        android:layout_marginTop="@dimen/dp_70"
+        android:background="@drawable/shap_radius_max_yellow"
+        android:gravity="center"
+        android:text="@string/back_accout"
+        android:textColor="@color/comm_text_color_black" />
+
+</RelativeLayout>

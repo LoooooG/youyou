@@ -1,0 +1,14 @@
+<resources>
+    <dimen name="h6">14sp</dimen>
+
+
+    <dimen name="live_btn_size">35dp</dimen>
+    <dimen name="ugc_aspect_width">44dp</dimen>
+    <dimen name="ugc_aspect_divider">18dp</dimen>
+    <dimen name="ugc_progress_cursor">2dp</dimen>
+    <dimen name="ugc_progress_min_pos">2dp</dimen>
+    <dimen name="ugc_progress_divider">1dp</dimen>
+    <dimen name="ugc_item_thumb_height">66dp</dimen>
+    <!-- 视频进度条 -->
+    <dimen name="video_thumbnail_width">50dp</dimen>
+</resources>

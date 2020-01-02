@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/design_margin"
+        android:background="@color/background_gray1"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/dp_20"
+        android:paddingRight="@dimen/dp_20">
+
+
+        <TextView
+            android:id="@+id/tv_user"
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center|left"
+            android:text="兑换时间"
+            android:textColor="@color/comm_text_color_black"
+            android:textSize="@dimen/comm_text_size_h" />
+
+        <TextView
+            android:id="@+id/tv_type"
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="兑换套餐"
+            android:textColor="@color/comm_text_color_black"
+            android:textSize="@dimen/comm_text_size_h" />
+
+
+        <TextView
+            android:id="@+id/tv_money"
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center|right"
+            android:text="扣除收入"
+            android:textColor="@color/comm_text_color_black"
+            android:textSize="@dimen/comm_text_size_h" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/line_bg"/>
+
+
+    <com.hn.library.loadstate.HnLoadingLayout
+        android:id="@+id/mHnLoadingLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.hn.library.refresh.PtrClassicFrameLayout
+            android:id="@+id/ptr_refresh"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:ptr_mode="both">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recyclerview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </com.hn.library.refresh.PtrClassicFrameLayout>
+
+
+    </com.hn.library.loadstate.HnLoadingLayout>
+
+</LinearLayout>

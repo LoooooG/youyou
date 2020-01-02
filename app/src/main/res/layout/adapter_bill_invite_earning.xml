@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="?attr/item_bg_color"
+    android:layout_height="60dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/design_margin"
+        android:layout_marginRight="@dimen/design_margin"
+        android:orientation="horizontal"
+        >
+
+        <LinearLayout
+            android:id="@+id/mLlTop"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/mTvDay"
+                style="@style/comm_text"
+                android:layout_weight="1"
+                android:text="今天"
+                android:textColor="?attr/text_color_333" />
+
+            <TextView
+                android:id="@+id/mTvPrice"
+                style="@style/comm_text"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="@dimen/design_margin"
+                android:text="54464654646"
+                android:textColor="?attr/text_color_333" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/mTvTime"
+            style="@style/comm_text"
+            android:layout_below="@id/mLlTop"
+            android:layout_marginTop="@dimen/design_margin_h"
+            android:text="54464654646"
+            android:textColor="@color/comm_text_color_black_s" />
+
+    </RelativeLayout>
+
+    <View
+        style="@style/home_line"
+        android:layout_height="1dp"
+        android:layout_alignParentBottom="true" />
+</RelativeLayout>

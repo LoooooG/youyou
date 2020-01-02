@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.hn.library.view.FrescoImageView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/mIvImg"
+    android:layout_width="@dimen/def_height"
+    android:layout_height="@dimen/def_height"
+    android:layout_marginLeft="@dimen/design_margin_h"
+    android:scaleType="centerCrop"
+    fresco:actualImageScaleType="centerCrop"
+    fresco:actualImageUri="@drawable/default_nearby"
+    fresco:failureImage="@drawable/default_nearby"
+    fresco:failureImageScaleType="centerCrop"
+    fresco:placeholderImageScaleType="centerCrop"
+    fresco:progressBarImage="@drawable/default_nearby"
+    fresco:roundAsCircle="false" />

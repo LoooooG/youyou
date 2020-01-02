@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/mRlTop"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        android:background="@color/main_color">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_48"
+            android:background="@color/main_color_bg"
+            android:layout_alignParentBottom="true">
+
+
+            <ImageView
+                android:id="@+id/mIvRight"
+                android:layout_width="@dimen/dp_22"
+                android:layout_height="@dimen/dp_22"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:src="@drawable/xiaoship_drak" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true">
+                <com.hn.library.tab.SlidingTabLayout xmlns:tl="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/mSlidTab"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/dp_10"
+                    android:paddingRight="@dimen/dp_10"
+                    tl:tl_divider_color="#1Affffff"
+                    tl:tl_divider_padding="16dp"
+                    tl:tl_indicator_color="@color/white"
+                    tl:tl_indicator_height="0dp"
+                    tl:tl_indicator_width_equal_title="true"
+                    tl:tl_tab_padding="@dimen/dp_20"
+                    tl:tl_tab_space_equal="false"
+                    tl:tl_textBold="BOTH"
+                    tl:tl_textSelectColor="@color/white"
+                    tl:tl_textUnselectColor="@color/white_tran"
+                    tl:tl_textsize="@dimen/comm_title_text_size"/>
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/mIvLeft"
+                android:layout_width="@dimen/dp_22"
+                android:layout_height="22dp"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/icon_search"
+                android:padding="@dimen/dp_2"/>
+
+            <ImageView
+                android:id="@+id/mIvFollow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@id/mIvRight"
+                android:padding="10dp"
+                android:scaleType="center"
+                android:src="@drawable/guanzhu"
+                android:visibility="gone" />
+        </RelativeLayout>
+        <!--<View-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="0.5dp"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:background="@color/line_bg" />-->
+    </RelativeLayout>
+
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/home_viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/mRlTop" />
+
+</RelativeLayout>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<com.hn.library.loadstate.HnLoadingLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/loading"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="@dimen/dp_10"
+    app:isFirstVisible="true">
+
+
+    <com.hn.library.refresh.PtrClassicFrameLayout
+        android:id="@+id/ptr_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:ptr_mode="refresh">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:overScrollMode="never" />
+
+    </com.hn.library.refresh.PtrClassicFrameLayout>
+
+</com.hn.library.loadstate.HnLoadingLayout>

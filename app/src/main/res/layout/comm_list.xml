@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.hn.library.loadstate.HnLoadingLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/mHnLoadingLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:isFirstVisible="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/mTvHead"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_36"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/design_margin"
+            android:paddingRight="@dimen/design_margin"
+            android:text="哈登花式吊打数据库的合适的借口和"
+            android:textColor="@color/comm_text_color_black_s"
+            android:visibility="gone" />
+
+        <com.hn.library.refresh.PtrClassicFrameLayout
+            android:id="@+id/mRefresh"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:ptr_mode="refresh">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/mRecycler"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </com.hn.library.refresh.PtrClassicFrameLayout>
+    </LinearLayout>
+
+
+</com.hn.library.loadstate.HnLoadingLayout>

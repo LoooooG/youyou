@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rl_root"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/item_bg_color">
+
+    <RelativeLayout
+        android:id="@+id/rl_msg"
+        android:layout_width="match_parent"
+        android:layout_height="64dp">
+
+        <com.hn.library.view.FrescoImageView
+            android:id="@+id/fiv_header"
+            android:layout_width="46dp"
+            android:layout_height="46dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/design_margin"
+            fresco:actualImageScaleType="centerCrop"
+            fresco:placeholderImage="@drawable/default_live_head"
+            fresco:placeholderImageScaleType="centerCrop"
+            fresco:roundAsCircle="true" />
+
+        <ImageView
+            android:id="@+id/mIvVip"
+            android:layout_width="@dimen/dp_14"
+
+            android:layout_height="@dimen/dp_14"
+            android:layout_alignBottom="@+id/fiv_header"
+            android:layout_alignRight="@+id/fiv_header"
+            android:layout_marginBottom="@dimen/dp_3"
+            android:background="@mipmap/icon_v"
+            android:visibility="gone" />
+
+
+        <com.reslibrarytwo.HnSkinTextView
+            android:id="@+id/mTvFocus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/design_margin"
+            android:drawableLeft="@drawable/select_focus_user"
+            android:drawablePadding="@dimen/dp_5"
+            android:text="@string/main_follow_on"
+            android:textColor="@drawable/select_main_black_s_color"
+            android:textSize="@dimen/comm_text_size" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_10"
+            android:layout_toLeftOf="@+id/mTvFocus"
+            android:layout_toRightOf="@+id/fiv_header"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/tv_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxWidth="120dp"
+                    android:singleLine="true"
+                    android:textColor="?attr/text_color_333"
+                    android:textSize="@dimen/comm_text_size_h"
+                    tools:text="爱德华" />
+
+
+                <com.reslibrarytwo.HnSkinTextView
+                    android:id="@+id/tv_user_level"
+                    android:layout_width="@dimen/design_margin_lv_w"
+                    android:layout_height="@dimen/design_margin_lv_h"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:background="@drawable/tv_level_shape_1"
+                    android:drawableLeft="@drawable/stars"
+                    android:gravity="center"
+                    android:paddingLeft="2dp"
+                    android:singleLine="true"
+                    android:text="0"
+                    android:textColor="@color/comm_text_color_white"
+                    android:textSize="@dimen/comm_text_size_sh" />
+
+                <TextView
+                    android:id="@+id/tv_level"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:background="@mipmap/level_bg"
+                    android:drawablePadding="2dp"
+                    android:gravity="center_vertical"
+                    android:paddingBottom="0.6dp"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingTop="0.6dp"
+                    android:text="16"
+                    android:textColor="@color/white"
+                    android:textSize="10sp"
+                    android:visibility="gone" />
+
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_des"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/design_margin_h"
+                android:singleLine="true"
+                android:text="相识就是缘分，安顿好空间撒货到付款撒爱迪生卡号速度快阿斯达所多"
+                android:textColor="@color/comm_text_color_black_s"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_below="@+id/rl_msg"
+        android:background="?attr/pageBg_color" />
+
+</RelativeLayout>

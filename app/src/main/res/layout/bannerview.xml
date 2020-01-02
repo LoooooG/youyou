@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <com.bigkoo.convenientbanner.ConvenientBanner
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/convenientBanner"
+        android:layout_width="match_parent"
+        android:background="@drawable/default_banner"
+        android:layout_height="@dimen/com_banner_hight"
+        app:canLoop="true"
+        android:visibility="visible"/>
+
+    <RelativeLayout
+        android:id="@+id/rl_empty"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+
+        <TextView
+            android:id="@+id/mTvEmpty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="140dp"
+            android:drawablePadding="15dp"
+            android:drawableTop="@drawable/home_live"
+            android:gravity="center_horizontal"
+            android:text="@string/anchor_rest_now_come"
+            android:textColor="@color/color_999999" />
+
+
+    </RelativeLayout>
+
+
+</LinearLayout>

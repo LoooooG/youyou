@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/item_bg_color"
+    android:orientation="vertical">
+
+    <com.hn.library.view.FrescoImageView xmlns:fresco="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/mIvImg"
+        android:layout_width="@dimen/dp_44"
+        android:layout_height="@dimen/dp_44"
+        android:layout_marginLeft="@dimen/design_margin"
+        android:layout_marginTop="@dimen/dp_10"
+        android:scaleType="centerCrop"
+        fresco:actualImageScaleType="centerCrop"
+        fresco:actualImageUri="@drawable/default_live_head"
+        fresco:failureImage="@drawable/default_live_head"
+        fresco:failureImageScaleType="centerCrop"
+        fresco:placeholderImageScaleType="centerCrop"
+        fresco:progressBarImage="@drawable/default_live_head"
+        fresco:roundAsCircle="true" />
+
+    <LinearLayout
+        android:id="@+id/mLlTop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_12"
+        android:layout_toRightOf="@id/mIvImg"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/mTvName"
+            style="@style/comm_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/design_margin"
+            android:layout_weight="1"
+            android:text="378273"
+            android:textColor="?attr/text_color_333" />
+
+        <TextView
+            android:id="@+id/mTvTime"
+            style="@style/comm_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/design_margin"
+            android:text="378273"
+            android:textColor="@color/comm_text_color_black_s" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/mTvContent"
+        style="@style/comm_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/mLlTop"
+        android:layout_marginBottom="@dimen/design_margin_top"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_marginRight="@dimen/design_margin"
+        android:layout_marginTop="@dimen/design_margin_h"
+        android:layout_toRightOf="@id/mIvImg"
+        android:singleLine="false"
+        android:text="就开始掉粉了教师节快乐就是离开房间数量的房间里是大家发了多少就付了定金付了多少就翻脸的街坊邻居对"
+        android:textColor="@color/comm_text_color_black_s"
+        android:textSize="@dimen/comm_text_size_s" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_one_half"
+        android:layout_below="@id/mTvContent"
+        android:layout_marginTop="@dimen/design_margin_s"
+        android:background="@color/line_bg" />
+</RelativeLayout>

@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_invite">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.hn.library.view.FrescoImageView xmlns:fresco="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/mIvBanner"
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            android:scaleType="centerCrop"
+            android:visibility="gone"
+            fresco:actualImageScaleType="centerCrop"
+            fresco:actualImageUri="@drawable/default_banner"
+            fresco:failureImage="@drawable/default_banner"
+            fresco:failureImageScaleType="centerCrop"
+            fresco:placeholderImageScaleType="centerCrop"
+            fresco:progressBarImage="@drawable/default_banner"
+            fresco:roundAsCircle="false" />
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="80dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/mLlCoin"
+                android:layout_width="146dp"
+                android:layout_height="@dimen/dp_90"
+                android:background="@drawable/shap_gray_raudio_4_white"
+                android:gravity="center_vertical"
+                android:orientation="vertical"
+
+                android:paddingLeft="@dimen/dp_10">
+
+                <TextView
+                    android:id="@+id/mTvCoinName"
+                    style="@style/comm_text"
+                    android:drawableLeft="@drawable/reward"
+                    android:drawablePadding="@dimen/design_margin_h"
+                    android:text="已获奖励(银币)"
+                    android:textColor="@color/comm_text_color_black_s" />
+
+                <TextView
+                    android:id="@+id/mTvCion"
+                    style="@style/comm_text"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="@dimen/design_margin"
+                    android:drawableRight="@mipmap/more_list"
+                    android:paddingRight="@dimen/dp_10"
+                    android:textColor="@color/comm_text_color_red_s"
+                    android:textSize="@dimen/comm_title_text_size" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/mLlPeople"
+                android:layout_width="146dp"
+                android:layout_height="@dimen/dp_90"
+                android:layout_marginLeft="@dimen/dp_28"
+                android:background="@drawable/shap_gray_raudio_4_white"
+                android:gravity="center_vertical"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/dp_10">
+
+                <TextView
+                    style="@style/comm_text"
+                    android:drawableLeft="@drawable/invite_friends"
+                    android:drawablePadding="@dimen/design_margin_h"
+                    android:text="已邀好友(人)"
+                    android:textColor="@color/comm_text_color_black_s" />
+
+                <TextView
+                    android:id="@+id/mTvPeople"
+                    style="@style/comm_text"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="@dimen/design_margin"
+                    android:drawableRight="@mipmap/more_list"
+                    android:paddingRight="@dimen/dp_10"
+                    android:textColor="@color/comm_text_color_red_s"
+                    android:textSize="@dimen/comm_title_text_size" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/design_margin"
+            android:layout_marginTop="26dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/comm_text"
+                android:text="@string/your_invite_code"
+                android:textColor="@color/white"
+                android:textSize="@dimen/comm_text_size_h" />
+
+            <TextView
+                android:id="@+id/mTvCode"
+                style="@style/comm_text"
+                android:layout_marginLeft="8dp"
+                android:background="@drawable/shap_radius_invite_bg"
+                android:padding="4dp"
+                android:text="s45454546"
+                android:textColor="#999"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/mTvCopy"
+                style="@style/comm_text"
+                android:layout_width="@dimen/dp_56"
+                android:layout_height="@dimen/dp_28"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:background="@drawable/shap_radius_invite"
+                android:gravity="center"
+                android:text="@string/copy"
+                android:textColor="@color/white" />
+        </LinearLayout>
+
+
+        <ImageView
+            android:src="@drawable/icon_invite_tag"
+            android:layout_width="150dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_height="90dp" />
+
+
+        <TextView
+            android:id="@+id/mTvHint"
+            style="@style/comm_text"
+            android:layout_marginLeft="@dimen/design_margin"
+            android:layout_marginTop="@dimen/design_margin"
+            android:lineSpacingExtra="2dp"
+            android:singleLine="false"
+            android:text="每个用户都有自己的邀请码，只要您邀请的用户注册时输入您的邀请码，对方充值时，您将获得一定的分成奖励"
+            android:textColor="@color/white" />
+
+
+        <TextView
+            android:id="@+id/mTvInvite"
+            android:layout_width="200dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="@dimen/dp_60"
+            android:layout_marginTop="@dimen/dp_60"
+            android:background="@drawable/shap_radius_invite_btn"
+            android:gravity="center"
+            android:text="立即邀请"
+            android:textColor="@color/white"
+            android:textSize="24sp" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dp_24"
+            android:layout_marginTop="@dimen/dp_40"
+            android:scaleType="center"
+            android:src="@drawable/invite_friends_notice"
+            android:visibility="gone" />
+    </LinearLayout>
+</ScrollView>

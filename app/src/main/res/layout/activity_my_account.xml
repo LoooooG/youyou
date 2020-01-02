@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/windows_bg"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/mRlTop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/black">
+
+        <android.support.v7.widget.Toolbar xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            app:contentInsetLeft="0dp"
+            app:contentInsetStart="0dp">
+
+            <android.support.v7.widget.AppCompatImageButton
+                android:id="@+id/mIvBack"
+                style="@style/Widget.AppCompat.Toolbar.Button.Navigation"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="?attr/ic_toolbar_back2" />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/toolbar_title"
+                style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:text="@string/my_account"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/toolbar_subtitle"
+                style="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="right"
+                android:layout_marginRight="12dp"
+                android:background="?attr/actionBarItemBackground"
+                android:singleLine="true"
+                android:text="@string/sub_title"
+                android:textColor="?attr/text_color_666"
+                android:visibility="gone" />
+
+        </android.support.v7.widget.Toolbar>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="175dp"
+        android:padding="@dimen/design_margin"
+        android:layout_marginBottom="@dimen/dp_10"
+        android:background="@color/white">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@drawable/bg_zh_cz">
+
+            <TextView
+                android:id="@+id/mTvBalance"
+                style="@style/comm_text"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="@dimen/dp_30"
+                android:layout_marginLeft="@dimen/design_margin"
+                android:ellipsize="end"
+                android:maxWidth="160dp"
+                android:text="@string/balance"
+                android:textColor="@color/white"
+                android:textSize="@dimen/dp_15" />
+
+            <TextView
+                android:id="@+id/mTvToRecharge"
+                style="@style/comm_text"
+                android:layout_width="70dp"
+                android:layout_height="36dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/design_margin"
+                android:layout_below="@id/mTvBalance"
+                android:layout_marginTop="@dimen/design_margin_h"
+                android:background="@drawable/shap_radius_max_yellow_str_black"
+                android:gravity="center"
+                android:text="@string/recharge"
+                android:textSize="@dimen/comm_text_size_s"
+                android:textColor="@color/main_color"/>
+
+
+            <TextView
+                android:id="@+id/mTvCion"
+                style="@style/comm_text"
+                android:layout_width="match_parent"
+                android:layout_below="@id/mTvBalance"
+                android:layout_marginTop="@dimen/dp_15"
+                android:layout_marginLeft="@dimen/design_margin"
+                android:ellipsize="end"
+                android:text="74545"
+                android:textColor="@color/white"
+                android:textSize="45sp"
+                android:textStyle="bold" />
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+    <TextView
+        android:id="@+id/mTvEarnings"
+        style="@style/comm_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/design_margin_top"
+        android:background="@color/white"
+        android:drawableLeft="@drawable/income_details"
+        android:drawablePadding="@dimen/dp_10"
+        android:drawableRight="@mipmap/more_list"
+        android:paddingBottom="@dimen/design_margin_ss"
+        android:paddingLeft="@dimen/design_margin"
+        android:paddingRight="@dimen/design_margin"
+        android:paddingTop="@dimen/design_margin_ss"
+        android:text="@string/earning_details"
+        android:textColor="?attr/text_color_333"
+        android:textSize="@dimen/comm_text_size_h" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginLeft="@dimen/design_margin"
+        android:background="@color/line" />
+
+    <TextView
+        android:id="@+id/mTvExpense"
+        style="@style/comm_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:background="@color/white"
+        android:drawableLeft="@drawable/records_of_consumption"
+        android:drawablePadding="@dimen/dp_10"
+        android:drawableRight="@mipmap/more_list"
+        android:paddingBottom="@dimen/design_margin_ss"
+        android:paddingLeft="@dimen/design_margin"
+        android:paddingRight="@dimen/design_margin"
+        android:paddingTop="@dimen/design_margin_ss"
+        android:text="@string/expense_record"
+        android:textColor="?attr/text_color_333"
+        android:textSize="@dimen/comm_text_size_h" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginLeft="@dimen/design_margin"
+        android:background="@color/line" />
+
+    <TextView
+        android:id="@+id/mTvRecharge"
+        style="@style/comm_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:drawableLeft="@drawable/recharge_record"
+        android:drawablePadding="@dimen/dp_10"
+        android:drawableRight="@mipmap/more_list"
+        android:paddingBottom="@dimen/design_margin_ss"
+        android:paddingLeft="@dimen/design_margin"
+        android:paddingRight="@dimen/design_margin"
+        android:paddingTop="@dimen/design_margin_ss"
+        android:text="@string/recharge_record"
+        android:textColor="?attr/text_color_333"
+        android:textSize="@dimen/comm_text_size_h" />
+
+    <View
+
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginLeft="@dimen/design_margin"
+        android:background="@color/line" />
+
+    <TextView
+        android:id="@+id/mTvWithdraw"
+        style="@style/comm_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:drawableLeft="@drawable/withdrawal_record"
+        android:drawablePadding="@dimen/dp_10"
+        android:drawableRight="@mipmap/more_list"
+        android:paddingBottom="@dimen/design_margin_ss"
+        android:paddingLeft="@dimen/design_margin"
+        android:paddingRight="@dimen/design_margin"
+        android:paddingTop="@dimen/design_margin_ss"
+        android:text="@string/withdraw_record"
+        android:textColor="?attr/text_color_333"
+        android:textSize="@dimen/comm_text_size_h" />
+
+    <View
+
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginLeft="@dimen/design_margin"
+        android:background="@color/line" />
+
+    <TextView
+        android:id="@+id/mTvBouns"
+        style="@style/comm_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:drawableLeft="@drawable/icon_yqyhjl"
+        android:drawablePadding="@dimen/dp_10"
+        android:drawableRight="@mipmap/more_list"
+        android:paddingBottom="@dimen/design_margin_ss"
+        android:paddingLeft="@dimen/design_margin"
+        android:paddingRight="@dimen/design_margin"
+        android:paddingTop="@dimen/design_margin_ss"
+        android:text="邀请用户收益记录"
+        android:textColor="?attr/text_color_333"
+        android:textSize="@dimen/comm_text_size_h"
+        android:visibility="gone"/>
+</LinearLayout>

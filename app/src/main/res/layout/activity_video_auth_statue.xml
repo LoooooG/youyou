@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.hn.library.loadstate.HnLoadingLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/loading"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    app:isFirstVisible="true">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?attr/colorPrimary"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/mIvStatue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="centerCrop"
+                android:visibility="visible"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/under_review"/>
+            <ImageView
+                android:id="@+id/mIvBack"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:scaleType="center"
+                android:visibility="visible"
+                android:src="@drawable/ic_back_white"
+                android:layout_marginLeft="@dimen/design_margin"
+
+                />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/mTvState"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/def_height"
+            android:gravity="center"
+            android:text="提交成功，等待管理员审核"
+            android:textColor="@color/comm_text_color_black"
+            android:textSize="@dimen/comm_text_size_h" />
+
+        <TextView
+            android:id="@+id/mTvDetail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/design_margin"
+            android:gravity="center"
+            android:text="你们约聊封面视频正在审核中请耐心等待...."
+            android:textColor="@color/comm_text_color_black_s"
+            android:textSize="@dimen/comm_text_size" />
+
+        <TextView
+            android:id="@+id/mTvSumbit"
+            android:layout_width="140dp"
+            android:layout_height="@dimen/dp_39"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="@dimen/dp_40"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:layout_marginTop="@dimen/dp_56"
+            android:background="@drawable/shap_radius_max_yellow"
+            android:gravity="center"
+            android:visibility="gone"
+            android:text="重新提交"
+            android:textColor="@color/comm_text_color_black" />
+
+
+    </LinearLayout>
+</com.hn.library.loadstate.HnLoadingLayout>

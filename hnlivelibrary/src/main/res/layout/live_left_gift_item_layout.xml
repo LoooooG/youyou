@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="10dp">
+
+    <RelativeLayout
+        android:id="@+id/gift_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:alpha="40"
+        android:layout_marginTop="@dimen/design_margin_h"
+
+        android:paddingRight="10dp">
+
+        <com.hn.library.view.FrescoImageView
+            android:id="@+id/headIv"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="2dp"
+            android:visibility="gone"
+            app:actualImageScaleType="centerCrop"
+            app:placeholderImage="@drawable/default_live_head"
+            app:placeholderImageScaleType="centerCrop"
+            app:roundAsCircle="true" />
+
+        <LinearLayout
+            android:id="@+id/infoLl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:background="@drawable/rounded_bg"
+            android:paddingLeft="@dimen/design_margin"
+            android:layout_toRightOf="@+id/headIv"
+            android:paddingRight="@dimen/def_height"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/nickNameTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLength="10"
+                android:singleLine="true"
+                android:text="nickName"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+
+
+            <TextView
+                android:id="@+id/infoTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="@dimen/design_margin_h"
+                android:text="送了一个+U鹿"
+                android:textColor="@color/comm_text_color_main"
+                android:textSize="10sp" />
+        </LinearLayout>
+
+        <com.hn.library.view.FrescoImageView
+            android:id="@+id/giftIv"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:visibility="invisible"
+            app:actualImageScaleType="centerCrop"
+            app:placeholderImage="@drawable/gift_loading"
+            app:placeholderImageScaleType="centerCrop"
+            app:roundAsCircle="true"
+            android:layout_marginLeft="-40dp"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/infoLl" />
+
+    </RelativeLayout>
+
+    <com.hotniao.livelibrary.widget.gift.MagicTextView
+        android:id="@+id/numberTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="8dp"
+        android:layout_toRightOf="@+id/gift_container"
+        android:textColor="@color/comm_text_color_main"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        app:foreground="@color/comm_text_color_main"
+        app:innerShadowColor="@color/comm_text_color_main"
+        app:innerShadowDy="2"
+        android:text="sss"
+        app:innerShadowRadius="1"
+        app:strokeColor1="#ec9216"
+        app:strokeJoinStyle1="miter"
+        app:strokeWidth1="1" />
+
+</RelativeLayout>

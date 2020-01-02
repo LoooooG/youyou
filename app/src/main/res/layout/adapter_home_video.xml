@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mRlClick"
+    android:layout_width="match_parent"
+    android:layout_height="300dp"
+    android:background="@drawable/shape_white_radius_4">
+
+    <com.hn.library.view.FrescoImageView
+        android:id="@+id/mIvLogo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:actualImageScaleType="centerCrop"
+        app:actualImageUri="@drawable/default_video"
+        app:failureImage="@drawable/default_video"
+        app:failureImageScaleType="centerCrop"
+        app:placeholderImage="@drawable/default_video"
+        app:placeholderImageScaleType="centerCrop"
+        app:roundAsCircle="false"
+        app:roundBottomLeft="true"
+        app:roundBottomRight="true"
+        app:roundTopLeft="true"
+        app:roundTopRight="true"
+        app:roundedCornerRadius="6dp" />
+
+    <TextView
+        android:layout_marginTop="14px"
+        android:layout_marginRight="14px"
+        android:id="@+id/mTvType"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dp_22"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/shape_black"
+        android:gravity="center"
+        android:minWidth="@dimen/def_height"
+        android:singleLine="true"
+        android:text=""
+        android:textColor="@color/comm_text_color_white"
+        android:textSize="@dimen/comm_text_size_sh"
+        android:visibility="gone"/>
+
+    <LinearLayout
+        android:id="@+id/mLLBottom"
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:layout_alignParentBottom="true"
+        android:gravity="center_vertical"
+        android:background="@drawable/home_gradient">
+
+
+
+        <com.hn.library.view.FrescoImageView
+            android:id="@+id/iv_avatar"
+            android:layout_width="@dimen/dp_25"
+            android:layout_height="@dimen/dp_25"
+            android:layout_gravity="center_vertical"
+            app:actualImageScaleType="centerCrop"
+            app:placeholderImage="@drawable/default_live_head"
+            app:placeholderImageScaleType="centerCrop"
+            app:roundAsCircle="true"
+            android:layout_marginLeft="8dp"
+            android:layout_centerVertical="true"/>
+
+        <TextView
+            android:id="@+id/mTvName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:shadowColor="#40000000"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="2"
+            android:singleLine="true"
+            android:textColor="@color/comm_text_color_white"
+            android:textSize="@dimen/comm_text_size_s"
+            android:layout_toRightOf="@id/iv_avatar"
+            android:layout_centerVertical="true"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <ImageView
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:src="@drawable/icon_like"/>
+            <TextView
+                android:id="@+id/mLikeNum"
+                style="@style/comm_text"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_3"
+                android:layout_marginRight="@dimen/dp_10"
+                android:textColor="@color/white"
+                android:text="0"
+                android:textSize="@dimen/comm_text_size_s" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <array name="home_title">
+        <item>热门</item>
+        <item>最新</item>
+    </array>
+
+    <array name="search_title">
+        <item>直播</item>
+        <item>主播</item>
+    </array>
+
+    <array name="mine_title">
+        <item>资料</item>
+    </array>
+
+    <array name="mine_anchor_title">
+        <item>直播</item>
+        <item>资料</item>
+    </array>
+
+    <array name="rank_title">
+        <item>日榜</item>
+        <item>总榜</item>
+    </array>
+
+
+    <array name="anchor_lucky_title">
+        <item>群红包</item>
+    </array>
+
+    <array name="audience_lucky_title">
+        <item>送主播</item>
+        <item>群红包</item>
+    </array>
+
+
+
+    <array name="contribution_title">
+        <item>贡献日榜</item>
+        <item>贡献总榜</item>
+        <item>分享榜</item>
+        <item>时长榜</item>
+    </array>
+
+</resources>

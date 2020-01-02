@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    android:orientation="vertical">
+
+    <com.tencent.rtmp.ui.TXCloudVideoView
+        android:id="@+id/mVideoView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <com.hn.library.view.FrescoImageView xmlns:fresco="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/mIvImg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        fresco:actualImageScaleType="centerCrop"
+        fresco:actualImageUri="@drawable/default_live"
+        fresco:failureImage="@drawable/default_live"
+        fresco:failureImageScaleType="centerCrop"
+        fresco:placeholderImageScaleType="centerCrop"
+        fresco:progressBarImage="@drawable/default_live"
+        android:visibility="visible"
+        fresco:roundAsCircle="false"/>
+
+    <RelativeLayout
+        android:id="@+id/rl_play"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/dp_10">
+        <ImageView
+            android:id="@+id/mIvPlay"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="@dimen/design_margin"
+            android:background="@mipmap/playback_stop_nor"
+            android:onClick="onClick" />
+        <ImageView
+            android:id="@+id/iv_share"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginRight="@dimen/design_margin"
+            android:background="@drawable/icon_playback_share"
+            android:layout_alignParentRight="true"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_seek_bar"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginBottom="@dimen/dp_10"
+        android:layout_above="@id/rl_play"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_start_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="00:00"
+            android:textColor="@color/white"
+            android:textSize="@dimen/comm_text_size_s"
+            android:background="@drawable/shape_playback_time" />
+
+        <SeekBar
+            android:id="@+id/mSeekbar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_10"
+            android:layout_weight="1"
+            android:max="110"
+            android:maxHeight="2.0dip"
+            android:minHeight="1.0dip"
+            android:progress="0"
+            android:progressDrawable="@drawable/progress_play"
+            android:thumb="@drawable/play_seekbar_icon" />
+        <TextView
+            android:id="@+id/tv_end_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="00:00"
+            android:textColor="@color/white"
+            android:textSize="@dimen/comm_text_size_s"
+            android:background="@drawable/shape_playback_time"
+            android:layout_marginRight="10dp"/>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/design_margin">
+
+        <com.hn.library.view.FrescoImageView xmlns:fresco="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/mIvHead"
+            android:layout_width="@dimen/dp_60"
+            android:layout_height="@dimen/dp_60"
+            android:scaleType="centerCrop"
+            fresco:actualImageScaleType="centerCrop"
+            fresco:actualImageUri="@drawable/default_live_head"
+            fresco:failureImage="@drawable/default_live_head"
+            fresco:failureImageScaleType="centerCrop"
+            fresco:placeholderImageScaleType="centerCrop"
+            fresco:progressBarImage="@drawable/default_live_head"
+            fresco:roundAsCircle="true" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_toRightOf="@id/mIvHead">
+
+
+            <TextView
+                android:id="@+id/mTvName"
+                style="@style/comm_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxWidth="150dp"
+                android:textColor="@color/comm_text_color_white"
+                android:textSize="@dimen/comm_text_size_h" />
+
+            <TextView
+                style="@style/comm_text"
+                android:layout_width="@dimen/dp_60"
+                android:layout_height="@dimen/dp_24"
+                android:layout_toRightOf="@id/mTvName"
+                android:background="@drawable/shap_radius_max_yellow"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:id="@+id/mTvFouse"
+                android:maxWidth="150dp"
+                android:layout_marginLeft="@dimen/design_margin_s"
+                android:text="@string/add_fouces_chat"
+                android:textColor="@color/white"
+                android:textSize="@dimen/comm_text_size" />
+
+            <TextView
+                android:id="@+id/mTvId"
+                style="@style/comm_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/mTvName"
+                android:layout_marginTop="@dimen/dp_10"
+                android:ellipsize="end"
+                android:maxWidth="150dp"
+                android:text="ID："
+                android:textColor="@color/comm_text_color_white"
+                android:textSize="@dimen/comm_text_size" />
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/mIvClose"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_margin="@dimen/dp_10"
+            android:padding="@dimen/design_margin_h"
+            android:src="@drawable/shengqguangb" />
+
+    </RelativeLayout>
+    
+    <TextView
+        android:id="@+id/tv_notice"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="公告："
+        android:textColor="@color/white"
+        android:layout_above="@id/ll_seek_bar"
+        android:padding="15dp"/>
+    
+</RelativeLayout>

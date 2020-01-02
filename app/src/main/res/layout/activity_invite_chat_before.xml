@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    android:orientation="vertical">
+
+
+
+
+    <!--<com.hotniao.live.widget.SwipeMenuLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+        <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:background="?attr/item_bg_color"-->
+        <!--android:id="@+id/mSwiILay"-->
+        <!--app:iosList="false">-->
+
+    <com.tencent.rtmp.ui.TXCloudVideoView
+        android:id="@+id/mVideoView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </com.tencent.rtmp.ui.TXCloudVideoView>
+    <!--</com.hotniao.live.widget.SwipeMenuLayout>-->
+
+    <com.hn.library.view.FrescoImageView xmlns:fresco="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/mIvImg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        fresco:actualImageScaleType="centerCrop"
+        fresco:actualImageUri="@drawable/ic_fast_chat_bg"
+        fresco:failureImage="@drawable/ic_fast_chat_bg"
+        fresco:failureImageScaleType="centerCrop"
+        fresco:placeholderImageScaleType="centerCrop"
+        fresco:progressBarImage="@drawable/ic_fast_chat_bg"
+        fresco:roundAsCircle="false" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/shap_gradient_black" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/design_margin">
+
+        <com.hn.library.view.FrescoImageView xmlns:fresco="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/mIvHead"
+            android:layout_width="@dimen/dp_60"
+            android:layout_height="@dimen/dp_60"
+            android:scaleType="centerCrop"
+            fresco:actualImageScaleType="centerCrop"
+            fresco:actualImageUri="@drawable/default_live_head"
+            fresco:failureImage="@drawable/default_live_head"
+            fresco:failureImageScaleType="centerCrop"
+            fresco:placeholderImageScaleType="centerCrop"
+            fresco:progressBarImage="@drawable/default_live_head"
+            fresco:roundAsCircle="true" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_toRightOf="@id/mIvHead">
+
+
+            <TextView
+                android:id="@+id/mTvName"
+                style="@style/comm_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxWidth="150dp"
+                android:textColor="@color/comm_text_color_white"
+                android:textSize="@dimen/comm_text_size_h" />
+
+            <TextView
+                style="@style/comm_text"
+                android:layout_width="@dimen/dp_60"
+                android:layout_height="@dimen/dp_24"
+                android:layout_toRightOf="@id/mTvName"
+                android:background="@drawable/shap_radius_max_yellow"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:id="@+id/mTvFouse"
+                android:maxWidth="150dp"
+                android:layout_marginLeft="@dimen/design_margin_s"
+                android:text="@string/add_fouces_chat"
+                android:textColor="@color/white"
+                android:textSize="@dimen/comm_text_size" />
+
+            <TextView
+                android:id="@+id/mTvId"
+                style="@style/comm_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/mTvName"
+                android:layout_marginTop="@dimen/dp_10"
+                android:ellipsize="end"
+                android:maxWidth="150dp"
+                android:text="ID："
+                android:textColor="@color/comm_text_color_white"
+                android:textSize="@dimen/comm_text_size" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/mIvClose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_margin="@dimen/dp_10"
+        android:padding="@dimen/design_margin_h"
+        android:src="@drawable/shengqguangb" />
+
+    <ImageView
+        android:id="@+id/mIvPlay"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_centerInParent="true"
+        android:src="@drawable/bofang"
+        android:visibility="gone" />
+
+
+    <!--<LinearLayout-->
+        <!--android:id="@+id/mLlInvite"-->
+        <!--android:layout_width="200dp"-->
+        <!--android:layout_height="@dimen/dp_48"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:layout_marginBottom="@dimen/dp_30"-->
+        <!--android:background="@drawable/shap_radius_max_yellow"-->
+        <!--android:gravity="center"-->
+        <!--android:orientation="vertical">-->
+
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="@string/invite_fast_chat"-->
+            <!--android:textColor="@color/white"-->
+            <!--android:textSize="@dimen/comm_text_size" />-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/mTvMoney"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginTop="@dimen/design_margin_top"-->
+            <!--android:textColor="@color/white"-->
+            <!--android:textSize="@dimen/comm_text_size_sh" />-->
+    <!--</LinearLayout>-->
+
+    <RelativeLayout
+        android:id="@+id/mRlBottom"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_76"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/dp_56"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/mTvPrivateMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/dp_30"
+            android:drawableTop="@drawable/sixing"
+            android:drawablePadding="@dimen/design_margin_h"
+            android:gravity="center"
+            android:text="@string/chat_message"
+            android:textColor="@color/comm_text_color_black_s" />
+
+        <TextView
+            android:id="@+id/mTvDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:drawableTop="@drawable/xiangqing"
+            android:drawablePadding="@dimen/design_margin_h"
+            android:gravity="center"
+            android:paddingLeft="@dimen/design_margin_h"
+            android:paddingRight="@dimen/design_margin_h"
+            android:text="@string/xiangqing"
+            android:textColor="@color/comm_text_color_black_s" />
+
+        <TextView
+            android:id="@+id/mTvChatVideo"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/dp_30"
+            android:drawableTop="@drawable/yuta"
+            android:drawablePadding="@dimen/design_margin_h"
+            android:gravity="center"
+            android:text="@string/video_with_her"
+            android:textColor="@color/comm_text_color_black_s" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/mTvStar"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dp_30"
+        android:layout_above="@id/mRlBottom"
+        android:layout_marginBottom="@dimen/dp_24"
+        android:minWidth="@dimen/def_height"
+        android:layout_marginLeft="@dimen/design_margin"
+        android:background="@drawable/shap_radius_max_black_s_t"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/design_margin"
+        android:paddingRight="@dimen/design_margin"
+        android:textColor="@color/white"
+        android:textSize="@dimen/comm_text_size" />
+
+    <TextView
+        android:id="@+id/mTvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/mTvStar"
+        android:layout_marginBottom="@dimen/dp_20"
+        android:layout_marginLeft="@dimen/design_margin"
+        android:gravity="center_vertical"
+        android:textColor="@color/white"
+        android:textSize="@dimen/comm_text_size_h" />
+</RelativeLayout>

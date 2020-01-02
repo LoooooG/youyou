@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/item_bg_color"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/item_bg_color"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/design_margin"
+        android:paddingLeft="@dimen/design_margin"
+        android:paddingRight="@dimen/design_margin"
+        android:paddingTop="@dimen/design_margin">
+
+        <com.hn.library.view.FrescoImageView xmlns:fresco="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/mIvImg"
+            android:layout_width="@dimen/dp_60"
+            android:layout_height="@dimen/dp_60"
+            android:scaleType="centerCrop"
+            fresco:actualImageScaleType="centerCrop"
+            fresco:actualImageUri="@drawable/default_live_head"
+            fresco:failureImage="@drawable/default_live_head"
+            fresco:failureImageScaleType="centerCrop"
+            fresco:placeholderImageScaleType="centerCrop"
+            fresco:progressBarImage="@drawable/default_live_head"
+            fresco:roundAsCircle="true" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/mTvName"
+                style="@style/comm_text"
+                android:text="" />
+
+
+            <com.reslibrarytwo.HnSkinTextView
+                android:id="@+id/mTvLv"
+                android:layout_width="@dimen/design_margin_lv_w"
+                android:layout_height="@dimen/design_margin_lv_h"
+                android:layout_below="@id/mTvName"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/design_margin_top"
+                android:background="@drawable/tv_level_shape_1"
+                android:drawableLeft="@drawable/stars"
+                android:gravity="center"
+                android:paddingLeft="2dp"
+                android:singleLine="true"
+                android:text="0"
+                android:textColor="@color/comm_text_color_white"
+                android:textSize="@dimen/comm_text_size_sh" />
+
+            <ImageView
+                android:id="@+id/iv_sex"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/mTvName"
+                android:layout_marginLeft="@dimen/design_margin_h"
+                android:layout_marginTop="@dimen/design_margin_top"
+                android:layout_toRightOf="@id/mTvLv"
+                android:background="@mipmap/man" />
+
+            <TextView
+                android:id="@+id/mTvSign"
+                style="@style/comm_text"
+                android:layout_below="@id/mTvLv"
+                android:layout_marginTop="@dimen/design_margin_top"
+                android:text=""
+                android:textColor="@color/comm_text_color_black_s"
+                android:textSize="@dimen/comm_text_size_s" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="60dp"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/mTvStatue"
+                style="@style/comm_text"
+                android:layout_alignParentRight="true"
+                android:text="@string/chat_only_one"
+                android:textColor="@color/comm_text_color_black_s" />
+
+            <TextView
+                android:id="@+id/mTvInvite"
+                style="@style/comm_text"
+                android:layout_width="@dimen/dp_60"
+                android:layout_height="@dimen/dp_22"
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/shape_violet_bg_violet_stroke_recentage"
+                android:gravity="center"
+                android:text="@string/invite"
+                android:textColor="@color/comm_text_color_main" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="?attr/pageBg_color" />
+</LinearLayout>

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mRl"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#333333"
+    android:orientation="vertical">
+
+    <com.hotniao.livelibrary.widget.KeyboardLayout
+        android:id="@+id/mVideoParent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:id="@+id/video_view_0"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.tencent.rtmp.ui.TXCloudVideoView
+                android:id="@+id/rtmproom_video_0"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/mIvFuzzy"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_fast_chat_bg"
+                android:visibility="gone" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/video_view_1"
+            android:layout_width="90dp"
+            android:layout_height="160dp">
+
+            <com.tencent.rtmp.ui.TXCloudVideoView
+                android:id="@+id/rtmproom_video_1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/ic_fast_chat_bg"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/mTvFuzzyMine"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_fast_chat_bg"
+                android:visibility="gone" />
+        </FrameLayout>
+
+        <com.hn.library.view.FrescoImageView xmlns:fresco="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/mIvBg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/ic_fast_chat_bg"
+            android:scaleType="centerCrop"
+            android:visibility="gone"
+            fresco:actualImageScaleType="centerCrop"
+            fresco:failureImageScaleType="centerCrop"
+            fresco:placeholderImageScaleType="centerCrop"
+            fresco:roundAsCircle="false" />
+
+        <ImageView
+            android:id="@+id/mIvButify"
+            android:layout_width="@dimen/dp_44"
+            android:layout_height="@dimen/dp_44"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/design_margin"
+            android:src="@drawable/meiyan" />
+
+    </com.hotniao.livelibrary.widget.KeyboardLayout>
+
+    <LinearLayout
+        android:id="@+id/mLlLoad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+
+        <com.hotniao.livelibrary.widget.HnLoadingAnimView
+            android:id="@+id/mLoadAnim"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        </com.hotniao.livelibrary.widget.HnLoadingAnimView>
+
+        <TextView
+            android:id="@+id/mTvLoad"
+            style="@style/comm_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="@dimen/comm_text_size" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/mFrameInfo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></FrameLayout>
+</RelativeLayout>

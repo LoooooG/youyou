@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/pageBg_color">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_56"
+        android:gravity="center_vertical"
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="?attr/item_bg_color">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?attr/item_bg_color"
+            android:paddingLeft="@dimen/design_margin"
+            android:paddingRight="@dimen/design_margin"
+            android:text="@string/please_input_charge_money"
+            style="@style/comm_text"
+            android:textColor="@color/comm_text_color_black" />
+        <EditText
+            android:id="@+id/mEtMoney"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?attr/item_bg_color"
+            android:inputType="number"
+            android:gravity="right|center_vertical"
+            android:paddingBottom="@dimen/design_margin_s"
+            android:paddingTop="@dimen/design_margin_s"
+            android:drawablePadding="@dimen/design_margin_s"
+            android:textColor="@color/comm_text_color_black"
+            android:textSize="14sp" />
+        <TextView
+            android:id="@+id/mTvCoinName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?attr/item_bg_color"
+            android:paddingLeft="@dimen/dp_10"
+            android:paddingRight="@dimen/design_margin"
+            android:text="@string/charge_name"
+            android:textColor="@color/comm_text_color_black_s" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <!--直播显示fragment-->
+    <FrameLayout
+        android:id="@+id/live_framel"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <!--直播间聊天信息-->
+    <FrameLayout
+        android:id="@+id/info_frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </FrameLayout>
+
+</FrameLayout>

@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="156dp"
+    android:background="?attr/item_bg_color"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/mRlClick"
+        android:layout_width="match_parent"
+        android:layout_height="124dp"
+        android:layout_centerVertical="true"
+        android:paddingLeft="@dimen/dp_10"
+        android:paddingRight="@dimen/dp_10">
+
+        <RelativeLayout
+            android:id="@+id/mRlLeft"
+            android:layout_width="124dp"
+            android:layout_height="124dp">
+
+            <com.hn.library.view.FrescoImageView xmlns:fresco="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/mIvImg"
+                android:layout_width="124dp"
+                android:layout_height="124dp"
+                android:scaleType="centerCrop"
+                fresco:actualImageScaleType="centerCrop"
+                fresco:actualImageUri="@drawable/host_related_loading"
+                fresco:failureImage="@drawable/host_related_loading"
+                fresco:failureImageScaleType="centerCrop"
+                fresco:placeholderImageScaleType="centerCrop"
+                fresco:progressBarImage="@drawable/host_related_loading"
+                fresco:roundAsCircle="false"
+                fresco:roundedCornerRadius="6dp" />
+
+            <TextView
+                android:id="@+id/mTvType"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dp_22"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="@dimen/design_margin"
+                android:background="@drawable/item_type_bg"
+                android:gravity="center"
+                android:minWidth="@dimen/def_height"
+                android:paddingLeft="@dimen/design_margin_h"
+                android:paddingRight="@dimen/design_margin_h"
+                android:singleLine="true"
+                android:text="@string/donot_pay_coin"
+                android:textColor="@color/comm_text_color_white"
+                android:textSize="@dimen/comm_text_size_s" />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_toRightOf="@id/mRlLeft">
+
+            <TextView
+                android:id="@+id/mTvTitle"
+                style="@style/comm_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:singleLine="false"
+                android:textColor="?attr/text_color_333" />
+
+            <TextView
+                android:id="@+id/mTvCate"
+                style="@style/comm_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/mTvTitle"
+                android:layout_marginTop="@dimen/design_margin_h"
+                android:text="sjdhksjadsdh"
+                android:textColor="@color/comm_text_color_black_s" />
+
+            <TextView
+                android:id="@+id/mTvTime"
+                style="@style/comm_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/mTvTitle"
+                android:layout_marginLeft="@dimen/design_margin"
+                android:layout_marginTop="@dimen/design_margin_h"
+                android:layout_toRightOf="@id/mTvCate"
+                android:text="sjdhksjadsdhsjk"
+                android:textColor="@color/comm_text_color_black_s" />
+
+            <TextView
+                android:id="@+id/mTvLong"
+                style="@style/comm_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/mTvCate"
+                android:layout_marginTop="@dimen/design_margin_s"
+
+                android:text="sjdhksjadsdhsjk"
+                android:textColor="@color/comm_text_color_black_s" />
+
+            <TextView
+                android:id="@+id/mTvCommNum"
+                style="@style/comm_text"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dp_28"
+                android:layout_below="@id/mTvLong"
+                android:layout_marginTop="@dimen/dp_10"
+                android:drawableLeft="@drawable/yonghusix"
+                android:drawablePadding="@dimen/design_margin_top"
+                android:gravity="center_vertical"
+                android:textColor="@color/comm_text_color_black_s" />
+
+            <TextView
+                android:id="@+id/mTvZanNum"
+                style="@style/comm_text"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dp_28"
+                android:layout_below="@id/mTvLong"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/dp_10"
+                android:drawableLeft="@drawable/yonghuguanhu"
+                android:drawablePadding="@dimen/design_margin_top"
+                android:gravity="center_vertical"
+                android:textColor="@color/comm_text_color_black_s" />
+
+            <ImageView
+                android:id="@+id/mIvMore"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dp_28"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/mTvLong"
+                android:layout_marginRight="@dimen/design_margin"
+                android:layout_marginTop="@dimen/dp_10"
+                android:padding="@dimen/design_margin_h"
+                android:src="@drawable/gengd" />
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_1"
+        android:layout_alignParentBottom="true"
+        android:background="@color/line_bg" />
+</RelativeLayout>

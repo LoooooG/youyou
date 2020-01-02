@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/pageBg_color"
+    android:orientation="vertical">
+
+    <com.bigkoo.convenientbanner.ConvenientBanner xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/mBanner"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/com_banner_hight"
+        android:background="@drawable/default_banner"
+        android:visibility="visible"
+        app:canLoop="true" />
+
+
+    <View
+        android:id="@+id/space_view"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/mRecyclerRecom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginBottom="@dimen/design_margin_h"
+        android:paddingBottom="@dimen/design_margin_h"
+        android:paddingLeft="@dimen/design_margin"
+        android:paddingRight="@dimen/design_margin"
+        android:background="?attr/item_bg_color"
+        android:visibility="gone"/>
+
+   
+
+    <RelativeLayout
+        android:id="@+id/mRlEmpty"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="80dp"
+            android:drawablePadding="15dp"
+            android:drawableTop="@drawable/home_live"
+            android:gravity="center_horizontal"
+            android:text="@string/now_no_data"
+            android:textColor="@color/color_999999" />
+
+
+    </RelativeLayout>
+
+</LinearLayout>

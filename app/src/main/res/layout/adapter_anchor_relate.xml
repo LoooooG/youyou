@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mLlClick"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/item_bg_color"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/mTvTime"
+        style="@style/comm_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dp_10"
+        android:layout_marginLeft="@dimen/design_margin"
+        android:layout_marginRight="@dimen/design_margin"
+        android:layout_marginTop="@dimen/dp_10"
+        android:textColor="?attr/text_color_333"
+        tools:text="ssssss" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="76dp"
+        android:layout_marginLeft="@dimen/design_margin"
+        android:layout_marginRight="@dimen/design_margin"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="134dp"
+            android:layout_height="match_parent">
+
+            <com.hn.library.view.FrescoImageView xmlns:fresco="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/mIvImg"
+                android:layout_width="134dp"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                fresco:actualImageScaleType="centerCrop"
+                fresco:actualImageUri="@drawable/host_related_loading"
+                fresco:failureImage="@drawable/host_related_loading"
+                fresco:failureImageScaleType="centerCrop"
+                fresco:placeholderImageScaleType="centerCrop"
+                fresco:progressBarImage="@drawable/host_related_loading"
+                fresco:roundAsCircle="false" />
+
+            <TextView
+                style="@style/comm_text"
+                android:layout_width="@dimen/dp_36"
+                android:layout_height="@dimen/dp_18"
+                android:layout_margin="@dimen/design_margin_top"
+                android:background="@drawable/shap_radius_max_bg_gray"
+                android:gravity="center"
+                android:text="@string/play_back"
+                android:textColor="@color/white"
+                android:textSize="@dimen/comm_text_size_sh" />
+
+            <TextView
+                android:id="@+id/mTvLong"
+                style="@style/comm_text"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_margin="@dimen/design_margin_h"
+                android:textColor="@color/white"
+                android:textSize="@dimen/comm_text_size_sh"
+                tools:text="aaaaa" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/dp_10">
+
+            <TextView
+                android:id="@+id/mTvTitle"
+                style="@style/comm_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:singleLine="false"
+                android:text="auhsdklsadhsaidsaijdlkaajsdjdjsjdjsdjskdjskjdskjdjjskdjskdjskdjksdjskdjskjjdjsdjddj"
+                android:textColor="?attr/text_color_333" />
+
+            <TextView
+                android:id="@+id/mTvType"
+                style="@style/comm_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/mTvTitle"
+                android:layout_marginTop="@dimen/design_margin"
+                android:singleLine="false"
+                android:text="sadkhsajkds"
+                android:textColor="@color/comm_text_color_main"
+                android:textSize="@dimen/comm_text_size_s" />
+
+            <TextView
+                android:id="@+id/mTvNum"
+                style="@style/comm_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/mTvTitle"
+                android:layout_marginLeft="@dimen/design_margin"
+                android:layout_marginTop="@dimen/design_margin"
+                android:layout_toRightOf="@id/mTvType"
+                android:singleLine="false"
+                android:text="sadkhsajkds"
+                android:textColor="@color/comm_text_color_black_s"
+                android:textSize="@dimen/comm_text_size_s" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="?attr/pageBg_color" />
+
+</LinearLayout>

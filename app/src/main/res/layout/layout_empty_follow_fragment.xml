@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/live_frame"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <com.reslibrarytwo.HnSkinTextView
+            android:id="@+id/mTvEmpty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawablePadding="@dimen/dp_10"
+            android:drawableTop="@drawable/home_live"
+            android:gravity="center_horizontal"
+            android:text="@string/near_no_live"
+            android:textColor="?attr/text_color_333"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tv_go_hot"
+            android:layout_width="128dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="@dimen/design_margin_s"
+            android:background="@drawable/shap_radius_max_yellow"
+            android:gravity="center"
+            android:text="@string/str_go_hot"
+            android:textColor="@color/comm_text_color_black"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+</RelativeLayout>

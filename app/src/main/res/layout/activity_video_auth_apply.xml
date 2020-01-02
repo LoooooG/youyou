@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_live"
+    android:orientation="vertical"
+    android:id="@+id/rl_background">
+
+
+    <LinearLayout
+        android:id="@+id/ll_cert_status"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+    <ImageView
+        android:id="@+id/iv_state"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:scaleType="centerCrop"
+        android:src="@drawable/under_review"
+        android:visibility="visible" />
+    <TextView
+        android:id="@+id/mTvState"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/def_height"
+        android:gravity="center"
+        android:textColor="?attr/text_color_333"
+        android:textSize="@dimen/comm_text_size_h" />
+
+    <TextView
+        android:id="@+id/tv_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/design_margin"
+        android:gravity="center"
+        android:textColor="@color/color_999999"
+        android:textSize="@dimen/comm_text_size" />
+
+    <TextView
+        android:id="@+id/tv_reauth"
+        android:layout_width="140dp"
+        android:layout_height="@dimen/dp_39"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="@dimen/dp_40"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginTop="@dimen/dp_56"
+        android:background="@drawable/shap_radius_max_yellow"
+        android:gravity="center"
+        android:text="@string/auth_imm"
+        android:textColor="@color/white" />
+    </LinearLayout>
+    <ImageView
+        android:id="@+id/mIvBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/design_margin"
+        android:src="@drawable/fabufanhui" />
+
+    <TextView
+        android:id="@+id/mTvTitle"
+        style="@style/comm_text"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/def_height"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:text="约聊封面视频"
+        android:textColor="@color/comm_text_color_white"
+        android:textSize="@dimen/comm_title_text_size" />
+    <LinearLayout
+        android:id="@+id/mLLAdd"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="150dp"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/mIvAdd"
+            android:layout_width="300dp"
+            android:layout_height="180dp"
+            android:layout_gravity="center"
+            android:background="@drawable/ic_video_apply_bg"
+            android:scaleType="center"
+            android:src="@drawable/ic_video_apply_add" />
+
+        <TextView
+            style="@style/comm_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/dp_24"
+            android:gravity="center"
+            android:singleLine="false"
+            android:text="点击可上传你的约聊封面视频，\n认证审核通过后即可开启1对1聊天服务"
+            android:textColor="@color/comm_text_color_white" />
+
+        <TextView
+            android:id="@+id/mTvSumbit"
+            style="@style/comm_text"
+            android:layout_width="260dp"
+            android:layout_height="@dimen/dp_40"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/dp_76"
+            android:background="@drawable/shap_radius_max_yellow"
+            android:gravity="center"
+            android:text="@string/commit" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/mLLPro"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="150dp"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <com.hotniao.live.widget.squprogress.SquareProgressBar
+            android:id="@+id/mSqPro"
+            android:layout_width="300dp"
+            android:layout_height="180dp"
+            android:layout_gravity="center_horizontal"
+            android:visibility="visible">
+
+        </com.hotniao.live.widget.squprogress.SquareProgressBar>
+
+        <LinearLayout
+            android:id="@+id/mLlPublishing"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/mTvProgress"
+                    style="@style/comm_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/dp_24"
+                    android:text="0"
+                    android:textColor="@color/comm_text_color_white"
+                    android:textSize="20sp" />
+
+                <TextView
+                    style="@style/comm_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@id/mTvProgress"
+                    android:layout_marginLeft="@dimen/design_margin_h"
+                    android:layout_marginTop="@dimen/design_margin"
+                    android:layout_toRightOf="@id/mTvProgress"
+                    android:text="%"
+                    android:textColor="@color/comm_text_color_white"
+                    android:textSize="@dimen/comm_text_size" />
+            </RelativeLayout>
+
+            <TextView
+                style="@style/comm_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="@dimen/design_margin_h"
+                android:layout_marginTop="@dimen/design_margin"
+                android:text="正在上传你的作品，请勿退出~"
+                android:textColor="@color/comm_text_color_white"
+                android:textSize="@dimen/comm_text_size" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/mLlPublished"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/design_margin"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/mTvStatue"
+                style="@style/comm_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="@dimen/design_margin_h"
+                android:text="你的约聊认证已通过！"
+                android:textColor="@color/comm_text_color_white"
+                android:textSize="@dimen/comm_text_size_sub_title" />
+
+            <TextView
+                android:id="@+id/mTvDetail"
+                style="@style/comm_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="@dimen/design_margin_h"
+                android:layout_marginTop="@dimen/design_margin_s"
+                android:text="你可以修改约聊认证，重新提交审核"
+                android:textColor="@color/comm_text_color_white"
+                android:textSize="@dimen/comm_text_size" />
+
+            <TextView
+                android:id="@+id/mTvEdit"
+                style="@style/comm_text"
+                android:layout_width="260dp"
+                android:layout_height="@dimen/dp_40"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/def_height"
+                android:background="@drawable/shap_radius_max_yellow"
+                android:gravity="center"
+                android:text="修改约聊封面" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

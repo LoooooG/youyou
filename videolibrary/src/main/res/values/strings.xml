@@ -1,0 +1,17 @@
+<resources>
+
+    <string name="video_edit">编辑视频</string>
+    <string name="video_edit_segment">请拖拽两侧滑块选择剪裁区域</string>
+    <string name="video_repeate_segment">设置重复的片段</string>
+    <string name="video_reverse">开启视频倒放</string>
+
+    <string name="video_editer_set_speed">设置慢速片段</string>
+    <string name="btn_cancel">取消</string>
+    <string name="btn_save">保存</string>
+    <string name="need_to_record_at_least_seconds_to_save_video">最少需要录制%1$s秒才能保存视频</string>
+    <string name="all_video_file">所有视频</string>
+    <string name="sure">确定</string>
+    <string name="next_fun">下一步</string>
+    <string name="blus_me_other_dont_looked_you">模糊自己\n打开后对方将看不到你</string>
+    <string name="input_look_pay_money">请输入观看费用</string>
+</resources>

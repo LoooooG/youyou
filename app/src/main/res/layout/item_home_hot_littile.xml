@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.hotniao.livelibrary.widget.SquareLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.hn.library.view.FrescoImageView
+            android:id="@+id/fiv_live_logo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:actualImageScaleType="centerCrop"
+            app:failureImageScaleType="centerCrop"
+            app:placeholderImage="@drawable/default_nearby"
+            app:placeholderImageScaleType="centerCrop"
+            app:roundAsCircle="false"
+            app:roundedCornerRadius="6dp" />
+
+
+        <TextView
+            android:id="@+id/mTvType"
+            android:layout_width="@dimen/dp_48"
+            android:layout_height="@dimen/dp_22"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/item_type_bg"
+            android:gravity="center"
+            android:text="有空"
+            android:textColor="@color/comm_text_color_white"
+            android:textSize="@dimen/comm_text_size_s" />
+
+        <LinearLayout
+            android:id="@+id/mLLBottom"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/home_gradient"
+            android:gravity="bottom">
+
+            <com.reslibrarytwo.HnSkinTextView
+                android:id="@+id/mTvLv"
+                android:layout_width="@dimen/design_margin_lv_w"
+                android:layout_height="@dimen/design_margin_lv_h_s"
+                android:layout_gravity="bottom"
+                android:layout_marginLeft="@dimen/design_margin_h"
+                android:background="@drawable/tv_level_shape_1"
+                android:drawableLeft="@drawable/stars"
+                android:gravity="center"
+                android:paddingLeft="4dp"
+                android:singleLine="true"
+                android:textColor="@color/comm_text_color_white"
+                android:textSize="@dimen/comm_text_size_sh"
+                tools:text="0" />
+
+            <TextView
+                android:id="@+id/tv_live_title"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="@dimen/dp_10"
+                android:layout_marginLeft="@dimen/design_margin_h"
+                android:layout_weight="1"
+                android:gravity="bottom"
+                android:shadowColor="#40000000"
+                android:shadowDx="1"
+                android:shadowDy="1"
+                android:shadowRadius="2"
+                android:singleLine="true"
+                android:textColor="@color/white"
+                android:textSize="@dimen/comm_text_size_s"
+                tools:text="门票付费" />
+
+            <TextView
+                android:id="@+id/mTvNum"
+                style="@style/comm_text"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="@dimen/dp_10"
+                android:layout_marginLeft="@dimen/design_margin"
+                android:layout_marginRight="@dimen/design_margin_h"
+                android:gravity="bottom"
+                android:textColor="@color/white"
+                android:textSize="@dimen/comm_text_size_s" />
+        </LinearLayout>
+
+
+    </com.hotniao.livelibrary.widget.SquareLayout>
+
+
+</RelativeLayout>

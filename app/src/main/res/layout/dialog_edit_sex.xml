@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/pageBg_color"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_male"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:background="?attr/item_bg_color"
+        android:gravity="center"
+        android:text="@string/male"
+        android:textColor="?attr/text_color_333"
+        android:textSize="15sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp" />
+
+    <TextView
+        android:id="@+id/tv_female"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:background="?attr/item_bg_color"
+        android:gravity="center"
+        android:text="@string/woman"
+        android:textColor="?attr/text_color_333"
+        android:textSize="15sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp" />
+
+    <TextView
+        android:id="@+id/tv_sec"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:background="?attr/item_bg_color"
+        android:gravity="center"
+        android:text="@string/edit_secrecy"
+        android:textColor="?attr/text_color_333"
+        android:textSize="15sp"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tv_cancel"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_marginTop="10dp"
+        android:background="?attr/item_bg_color"
+        android:gravity="center"
+        android:text="@string/cancel"
+        android:textColor="?attr/text_color_333"
+        android:textSize="15sp" />
+
+</LinearLayout>

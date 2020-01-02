@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        style="@style/comm_text"
+        android:id="@+id/mTvOneself"
+        android:layout_width="match_parent"
+        android:background="?attr/item_bg_color"
+        android:text="@string/oneself"
+        android:gravity="center"
+        android:layout_height="@dimen/dp_48" />
+    <View
+        android:layout_width="match_parent"
+        android:background="@color/line"
+        android:layout_height="@dimen/dp_one_half"/>
+    <TextView
+        style="@style/comm_text"
+        android:id="@+id/mTvSpinsterhood"
+        android:layout_width="match_parent"
+        android:background="?attr/item_bg_color"
+        android:text="@string/spinsterhood"
+        android:gravity="center"
+        android:layout_height="@dimen/dp_48" />
+    <View
+        android:layout_width="match_parent"
+        android:background="@color/line"
+        android:layout_height="@dimen/dp_one_half"/>
+    <TextView
+        style="@style/comm_text"
+        android:id="@+id/mTvMarried"
+        android:layout_width="match_parent"
+        android:background="?attr/item_bg_color"
+        android:text="@string/married"
+        android:gravity="center"
+        android:layout_height="@dimen/dp_48" />
+    <View
+        android:layout_width="match_parent"
+        android:background="@color/line"
+        android:layout_height="@dimen/dp_one_half"/>
+    <TextView
+        style="@style/comm_text"
+        android:id="@+id/mTvPrivary"
+        android:layout_width="match_parent"
+        android:background="?attr/item_bg_color"
+        android:text="@string/privary"
+        android:gravity="center"
+        android:layout_height="@dimen/dp_48" />
+
+</LinearLayout>

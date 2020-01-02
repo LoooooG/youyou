@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="68dp"
+    android:layout_marginTop="@dimen/dp_20"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <com.hn.library.view.FrescoImageView xmlns:fresco="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/mIvImg"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:scaleType="centerCrop"
+        fresco:actualImageScaleType="centerCrop"
+        fresco:actualImageUri="@drawable/gift_loading"
+        fresco:failureImage="@drawable/gift_loading"
+        fresco:failureImageScaleType="centerCrop"
+        fresco:placeholderImageScaleType="centerCrop"
+        fresco:progressBarImage="@drawable/gift_loading"
+        fresco:roundAsCircle="false"
+        fresco:roundedCornerRadius="4dp" />
+
+    <TextView
+        android:id="@+id/mTvName"
+        style="@style/comm_text"
+        android:layout_height="20dp"
+        android:layout_marginTop="@dimen/design_margin_h"
+        android:text="aaaa"
+        android:gravity="center"
+        android:textColor="?attr/text_color_333" />
+</LinearLayout>

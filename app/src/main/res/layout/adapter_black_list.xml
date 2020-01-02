@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="52dp"
+    android:orientation="vertical"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="51dp"
+        >
+    <com.hn.library.view.FrescoImageView
+        android:id="@+id/iv_avatar"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/design_margin"
+        app:actualImageScaleType="centerCrop"
+        app:placeholderImage="@drawable/default_live_head"
+        app:placeholderImageScaleType="centerCrop"
+        app:roundAsCircle="true" />
+
+    <TextView
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        android:id="@+id/tv_nickname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_toRightOf="@id/iv_avatar" />
+
+    <com.reslibrarytwo.HnSkinTextView
+        android:layout_centerVertical="true"
+        android:id="@+id/tv_level"
+        android:layout_width="@dimen/design_margin_lv_w"
+        android:layout_height="@dimen/design_margin_lv_h"
+        android:layout_gravity="center"
+        android:layout_marginLeft="5dp"
+        android:layout_toRightOf="@id/tv_nickname"
+        android:background="@drawable/tv_level_shape_1"
+        android:drawableLeft="@drawable/stars"
+        android:gravity="center"
+        android:paddingLeft="3dp"
+        android:singleLine="true"
+
+        android:textColor="@color/comm_text_color_white"
+        android:textSize="@dimen/comm_text_size_sh"
+        tools:text="0" />
+
+    <TextView
+        android:layout_marginRight="@dimen/design_margin"
+        android:layout_centerVertical="true"
+        android:id="@+id/tv_black_list"
+        android:layout_width="80dp"
+        android:layout_height="27dp"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/shape_violet_bg_violet_stroke_recentage"
+        android:gravity="center"
+        android:text="移除黑名单"
+        android:textColor="#8d2cd5"
+        />
+    </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#dad5d5"/>
+</LinearLayout>

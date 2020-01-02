@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center"
+          android:background="?attr/shap_white_radius_4"
+          android:paddingBottom="10dp"
+          android:paddingLeft="30dp"
+          android:paddingRight="30dp"
+          android:paddingTop="10dp"
+          android:text="@string/live_reconnect_wait"
+          android:textColor="@color/black"/>

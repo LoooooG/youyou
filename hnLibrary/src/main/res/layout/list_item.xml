@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_lv_item_tag"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:background="#e6e6e6"
+        android:gravity="center_vertical"
+        android:paddingLeft="10dip"
+        android:text="Z"
+        android:visibility="visible" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/iv_lv_item_head"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:src="@null" />
+
+        <TextView
+            android:id="@+id/tv_lv_item_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dip"
+            android:layout_toRightOf="@id/iv_lv_item_head"
+            android:text="许佳慧" />
+    </RelativeLayout>
+
+</LinearLayout>

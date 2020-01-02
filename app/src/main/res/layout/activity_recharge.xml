@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.hn.library.loadstate.HnLoadingLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/mHnLoadingLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    app:isFirstVisible="true">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/mTvId"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_40"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/design_margin"
+                android:text="@string/recharge_id"
+                android:textColor="@color/color_999999"
+                android:textSize="@dimen/comm_text_size" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/def_height"
+                android:background="?attr/item_bg_color"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/design_margin"
+                android:paddingRight="@dimen/design_margin">
+
+                <TextView
+                    android:id="@+id/mTvName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:singleLine="true"
+                    android:textColor="?attr/text_color_333"
+                    android:textSize="@dimen/comm_text_size_h" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:text="@string/account_money"
+                    android:textColor="@color/comm_text_color_black_s"
+                    android:textSize="@dimen/comm_text_size_h" />
+
+                <TextView
+                    android:id="@+id/tv_moeny"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textColor="@color/comm_text_color_main"
+                    android:textSize="@dimen/comm_text_size_h" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_40"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/design_margin"
+                android:text="@string/recharge_combo"
+                android:textColor="@color/color_999999"
+                android:textSize="@dimen/comm_text_size" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/mRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?attr/item_bg_color"
+                android:paddingLeft="@dimen/design_margin" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="@dimen/dp_20"
+                android:layout_marginTop="@dimen/dp_104"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/log_read"
+                    android:textColor="@color/color_999999"
+                    android:textSize="@dimen/sp_12" />
+
+                <TextView
+                    android:id="@+id/tv_agreement"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_5"
+                    android:text="@string/recharge_pro"
+                    android:textColor="@color/comm_text_color_main"
+                    android:textSize="@dimen/sp_12" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</com.hn.library.loadstate.HnLoadingLayout>

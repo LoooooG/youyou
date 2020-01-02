@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/mLlClick"
+    android:orientation="vertical">
+
+    <com.hotniao.livelibrary.widget.SquareLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <com.hn.library.view.FrescoImageView
+            android:id="@+id/mIvImag"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:actualImageScaleType="centerCrop"
+            app:failureImageScaleType="centerCrop"
+            app:placeholderImageScaleType="centerCrop"
+            app:roundedCornerRadius="5dp"
+            app:actualImageUri="@drawable/default_live"
+            app:failureImage="@drawable/default_live"/>
+
+        <TextView
+            android:id="@+id/mTvType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/icon_free"
+            android:gravity="center"
+            android:textColor="@color/comm_text_color_white"
+            android:textSize="@dimen/comm_text_size_sh"
+            android:layout_alignParentRight="true"
+            android:paddingLeft="3dp"
+            android:paddingRight="3dp"/>
+
+
+        <LinearLayout
+            android:id="@+id/mLLBottom"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/home_gradient"
+            android:paddingLeft="@dimen/dp_15"
+            android:paddingRight="@dimen/dp_15"
+            android:paddingBottom="10dp"
+            android:gravity="bottom">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:id="@+id/ll_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentBottom="true"
+                    android:gravity="center">
+                    <ImageView
+                        android:layout_width="12dp"
+                        android:layout_height="12dp"
+                        android:src="@drawable/icon_person_num"/>
+                    <TextView
+                        android:id="@+id/tv_num"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:layout_marginLeft="5dp"
+                        android:text="0"
+                        android:textColor="@color/comm_text_color_white"
+                        android:textSize="@dimen/comm_text_size_sh" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/mTvName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toLeftOf="@id/ll_count"
+                    android:shadowColor="#40000000"
+                    android:singleLine="true"
+                    android:textColor="@color/comm_text_color_white"
+                    android:textSize="@dimen/comm_text_size"
+                    tools:text="门票付费"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginRight="15dp"/>
+
+                <TextView
+                    android:id="@+id/tv_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxWidth="100dp"
+                    android:shadowColor="#40000000"
+                    android:singleLine="true"
+                    android:textColor="@color/comm_text_color_white"
+                    android:textSize="@dimen/comm_text_size"
+                    tools:text="2019"
+                    android:layout_above="@id/mTvName"
+                    android:layout_marginBottom="5dp"/>
+            </RelativeLayout>
+
+
+
+        </LinearLayout>
+
+
+    </com.hotniao.livelibrary.widget.SquareLayout>
+
+</LinearLayout>

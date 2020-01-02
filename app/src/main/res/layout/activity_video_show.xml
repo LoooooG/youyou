@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <com.hn.library.refresh.PtrClassicFrameLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/mRefresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:ptr_mode="refresh">
+
+        <com.hotniao.live.widget.scollorlayout.ScrollableLayout
+            android:id="@+id/scrollable_layout"
+            android:layout_width="match_parent"
+
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <include
+                android:id="@+id/mViewHead"
+                layout="@layout/head_video_show_layout" />
+
+
+            <com.hn.library.tab.SlidingTabLayout xmlns:tl="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/mTab"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_44"
+                android:background="@color/white"
+                tl:tl_divider_color="#1Affffff"
+                tl:tl_divider_padding="12dp"
+                tl:tl_indicator_color="@color/main_color"
+                tl:tl_indicator_height="2dp"
+                tl:tl_indicator_width_equal_title="true"
+                tl:tl_tab_space_equal="true"
+                tl:tl_textSelectColor="@color/main_color"
+                tl:tl_textUnselectColor="@color/comm_text_color_black_s"
+                tl:tl_textsize="16sp"
+                tl:tl_untextsize="14sp"
+                tl:tl_textBold="BOTH"
+                tl:tl_underline_color="#1Affffff"
+                tl:tl_textDrawableRightSet="false"
+                tl:tl_underline_height="1dp" />
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/view_pager"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </com.hotniao.live.widget.scollorlayout.ScrollableLayout>
+
+    </com.hn.library.refresh.PtrClassicFrameLayout>
+</LinearLayout>

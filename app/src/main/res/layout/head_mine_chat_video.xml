@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/pageBg_color"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/mRlStatue"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_48"
+        android:background="?attr/item_bg_color">
+
+        <TextView
+            style="@style/comm_text"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_48"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="@dimen/dp_10"
+            android:background="?attr/item_bg_color"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/design_margin"
+            android:paddingRight="@dimen/design_margin"
+            android:text="约聊封面视频认证"
+            android:textColor="?attr/text_color_333" />
+
+        <TextView
+            android:id="@+id/mTvStatue"
+            style="@style/comm_text"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_48"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="@dimen/dp_10"
+            android:background="?attr/item_bg_color"
+            android:drawablePadding="@dimen/design_margin"
+            android:drawableRight="@mipmap/more_list"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/design_margin"
+            android:paddingRight="@dimen/design_margin"
+            android:text="@string/no_apply"
+            android:textColor="@color/comm_text_color_black_s" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/mTvOpen"
+        style="@style/comm_text"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_48"
+        android:layout_marginTop="@dimen/dp_1"
+        android:background="?attr/item_bg_color"
+        android:drawablePadding="@dimen/design_margin"
+        android:drawableRight="@drawable/select_remind_live"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/design_margin"
+        android:paddingRight="@dimen/design_margin"
+        android:text="@string/open_fast_chat"
+        android:textColor="?attr/text_color_333" />
+
+
+    <RelativeLayout
+        android:id="@+id/mRlType"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_48"
+        android:visibility="visible"
+        android:layout_marginTop="@dimen/dp_1"
+        android:background="?attr/item_bg_color">
+
+        <TextView
+            style="@style/comm_text"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_48"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="@dimen/dp_10"
+            android:background="?attr/item_bg_color"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/design_margin"
+            android:paddingRight="@dimen/design_margin"
+            android:text="约聊类型"
+            android:textColor="?attr/text_color_333" />
+
+        <TextView
+            android:id="@+id/mTvType"
+            style="@style/comm_text"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_48"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="@dimen/dp_10"
+            android:layout_marginLeft="100dp"
+            android:background="?attr/item_bg_color"
+            android:drawablePadding="@dimen/design_margin"
+            android:gravity="center_vertical|right"
+            android:paddingLeft="@dimen/design_margin"
+            android:paddingRight="@dimen/design_margin"
+            android:textColor="@color/comm_text_color_black_s" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/mRlMoney"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_48"
+        android:layout_marginBottom="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_1"
+        android:background="?attr/item_bg_color">
+
+        <TextView
+            style="@style/comm_text"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_48"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="@dimen/dp_10"
+            android:background="?attr/item_bg_color"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/design_margin"
+            android:paddingRight="@dimen/design_margin"
+            android:text="@string/fast_charge"
+            android:textColor="?attr/text_color_333" />
+
+        <TextView
+            android:id="@+id/mTvCharge"
+            style="@style/comm_text"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_48"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="@dimen/dp_10"
+            android:layout_marginLeft="100dp"
+            android:background="?attr/item_bg_color"
+            android:drawablePadding="@dimen/design_margin"
+            android:gravity="center_vertical|right"
+            android:paddingLeft="@dimen/design_margin"
+            android:paddingRight="@dimen/design_margin"
+            android:textColor="@color/comm_text_color_black_s" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/mRlEmpty"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="100dp"
+            android:drawablePadding="15dp"
+            android:drawableTop="@drawable/home_live"
+            android:gravity="center_horizontal"
+            android:text="@string/now_no_data"
+            android:textColor="@color/color_999999" />
+
+
+    </RelativeLayout>
+
+
+</LinearLayout>

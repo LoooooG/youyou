@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="65dp"
+    android:gravity="center_vertical"
+    android:paddingLeft="@dimen/design_margin">
+    <com.hn.library.view.FrescoImageView xmlns:fresco="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/fiv_header"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        fresco:actualImageScaleType="centerCrop"
+        fresco:placeholderImage="@drawable/default_live_head"
+        fresco:placeholderImageScaleType="centerCrop"
+        fresco:roundAsCircle="true" />
+    <TextView
+        android:id="@+id/tv_name"
+        style="@style/comm_text"
+        android:textColor="@color/comm_text_color_black"
+        android:layout_marginLeft="@dimen/dp_10"/>
+</LinearLayout>

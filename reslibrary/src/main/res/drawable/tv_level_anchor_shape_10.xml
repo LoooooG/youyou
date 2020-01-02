@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/live_ancher_level_10" />
+    <stroke
+        android:width="0.5dp"
+        android:color="@color/live_ancher_level_10" />
+    <corners android:radius="@dimen/design_margin_lv_radius" />
+
+</shape>

@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:ignore="ResourceName">
+    <RelativeLayout
+        android:id="@+id/mRlOnline"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:background="?attr/item_bg_color"
+        android:clipChildren="false">
+
+        <FrameLayout
+            android:id="@+id/fl_online"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/design_margin">
+
+            <com.hn.library.view.FrescoImageView
+                android:layout_width="@dimen/dp_44"
+                android:layout_height="@dimen/dp_44"
+                fresco:actualImageScaleType="centerCrop"
+                fresco:placeholderImage="@drawable/icon_zxyh"
+                fresco:placeholderImageScaleType="centerCrop"
+                fresco:roundAsCircle="true" />
+
+            <com.hn.library.utils.HnBadgeView
+                android:id="@+id/mTvOnlineNew"
+                android:layout_width="8dp"
+                android:layout_height="8dp"
+                android:layout_gravity="right"
+                android:background="@drawable/live_unread_bg"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="8sp"
+                android:visibility="gone" />
+
+        </FrameLayout>
+
+        <TextView
+            style="@style/comm_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_toRightOf="@id/fl_online"
+            android:text="在线用户" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="@dimen/design_margin"
+            android:drawableRight="@mipmap/more_list"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="@dimen/dp_10"
+            android:gravity="right"
+            android:textColor="@color/comm_text_color_black_s"
+            android:textSize="12sp" />
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_one_half"
+        android:background="@color/line" />
+    <RelativeLayout
+        android:id="@+id/rl_system_msg_bg"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:background="?attr/item_bg_color"
+        android:clipChildren="false">
+
+        <FrameLayout
+            android:id="@+id/fl_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/design_margin">
+
+            <com.hn.library.view.FrescoImageView
+                android:id="@+id/iv_header"
+                android:layout_width="@dimen/dp_44"
+                android:layout_height="@dimen/dp_44"
+                fresco:actualImageScaleType="centerCrop"
+                fresco:placeholderImage="@drawable/logo"
+                fresco:placeholderImageScaleType="centerCrop"
+                fresco:roundAsCircle="true" />
+
+            <com.hn.library.utils.HnBadgeView
+                android:id="@+id/tv_new_msg"
+                android:layout_width="8dp"
+                android:layout_height="8dp"
+                android:layout_gravity="right"
+                android:background="@drawable/live_unread_bg"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="8sp"
+                android:visibility="gone" />
+
+        </FrameLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/fl_header"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/tv_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:text="系统消息"
+                    android:textColor="?attr/text_color_333"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="@dimen/dp_28"
+                    android:layout_height="@dimen/design_margin_ss"
+                    android:layout_marginLeft="@dimen/design_margin_top"
+                    android:background="@drawable/shap_radius_2_main"
+                    android:gravity="center"
+                    android:text="官方"
+                    android:textColor="@color/comm_text_color_white"
+                    android:textSize="@dimen/comm_text_size_sh" />
+
+
+                <TextView
+                    android:id="@+id/tv_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="@dimen/design_margin"
+                    android:gravity="right"
+                    android:textColor="@color/comm_text_color_black_s"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/design_margin"
+                android:layout_marginTop="@dimen/design_margin_h"
+                android:ellipsize="end"
+                android:maxWidth="240dp"
+                android:singleLine="true"
+                android:textColor="?attr/text_color_666"
+                android:textSize="14sp" />
+
+
+        </LinearLayout>
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_one_half"
+        android:background="@color/line" />
+
+    <RelativeLayout
+        android:id="@+id/mRlVideo"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:background="?attr/item_bg_color"
+        android:clipChildren="false">
+
+        <FrameLayout
+            android:id="@+id/fl_video"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/design_margin">
+
+            <com.hn.library.view.FrescoImageView
+                android:layout_width="@dimen/dp_44"
+                android:layout_height="@dimen/dp_44"
+                fresco:actualImageScaleType="centerCrop"
+                fresco:placeholderImage="@drawable/icon_spx_new"
+                fresco:placeholderImageScaleType="centerCrop"
+                fresco:roundAsCircle="true" />
+
+            <com.hn.library.utils.HnBadgeView
+                android:id="@+id/mTvVideoNew"
+                android:layout_width="8dp"
+                android:layout_height="8dp"
+                android:layout_gravity="right"
+                android:background="@drawable/live_unread_bg"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="8sp"
+                android:visibility="gone"
+
+                />
+        </FrameLayout>
+
+        <TextView
+            style="@style/comm_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_toRightOf="@id/fl_video"
+            android:text="视频秀消息" />
+
+        <TextView
+            android:id="@+id/mTvVideoTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="@dimen/design_margin"
+            android:layout_marginTop="@dimen/dp_10"
+            android:gravity="right"
+            android:textColor="@color/comm_text_color_black_s"
+            android:textSize="12sp" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_one_half"
+        android:background="@color/line" />
+</LinearLayout>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingBottom="5dp"
+    android:paddingTop="5dp">
+
+    <TextView
+        android:id="@+id/user_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dp_20"
+        android:gravity="center"
+        android:textColor="@color/comm_text_color_black_s"
+        android:textSize="@dimen/comm_text_size_s"
+        android:visibility="visible" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/user_time"
+        android:layout_marginTop="15dp">
+
+        <com.hn.library.view.FrescoImageView
+            android:id="@+id/user_header"
+            android:layout_width="@dimen/dp_44"
+            android:layout_height="@dimen/dp_44"
+            android:layout_marginLeft="@dimen/design_margin"
+            android:layout_marginRight="10dp"
+            fresco:actualImageScaleType="centerCrop"
+            fresco:placeholderImage="@drawable/logo"
+            fresco:placeholderImageScaleType="centerCrop"
+            fresco:roundAsCircle="true" />
+
+        <!--privatechat_other_shape"-->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/user_header"
+            android:layout_marginRight="@dimen/design_margin"
+            android:layout_toRightOf="@id/user_header"
+            android:background="@drawable/msg_whiteness"
+            android:orientation="vertical"
+            android:padding="@dimen/dp_20">
+
+            <TextView
+                android:id="@+id/user_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_5"
+                android:text="梦想还是要有的，啦啦啦啦啦阿拉啦啦啦"
+                android:textColor="?attr/text_color_333"
+                android:textSize="@dimen/comm_text_size_h" />
+
+            <TextView
+                android:id="@+id/tv_des"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/dp_24"
+                android:text="点击查看"
+                android:textColor="?attr/text_color_333"
+                android:textSize="@dimen/comm_text_size_h"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

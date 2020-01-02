@@ -1,0 +1,188 @@
+<resources>
+
+    <style name="BaseTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <!-- 自定义的AlertDialog主题 -->
+        <item name="alertDialogTheme">@style/AlertDialogCustom</item>
+    </style>
+
+
+
+    <!-- 自定义AlertDialog显示风格 -->
+    <style name="AlertDialogCustom" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <!--Dialog Background Color-->
+        <item name="android:colorBackground">?attr/pageBg_color</item>
+        <!--The TextView color in the dialog -->
+        <item name="android:textColorPrimary">?attr/text_color_333</item>
+        <!-- NeutralButtonStyle -->
+        <item name="buttonBarNeutralButtonStyle">@style/buttonBarNeutral</item>
+        <!-- NegativeButtonStyle -->
+        <item name="buttonBarNegativeButtonStyle">@style/buttonBarNegative</item>
+        <!-- PositiveButtonStyle -->
+        <item name="buttonBarPositiveButtonStyle">@style/buttonBarPositive</item>
+
+    </style>
+
+    <style name="buttonBarPositive"  parent="@style/Widget.AppCompat.Button.ButtonBar.AlertDialog">
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+    <style name="buttonBarNegative"  parent="@style/Widget.AppCompat.Button.ButtonBar.AlertDialog">
+        <item name="android:textColor">@color/color_999999</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+    <style name="buttonBarNeutral"  parent="@style/Widget.AppCompat.Button.ButtonBar.AlertDialog">
+        <item name="android:textColor">@color/color_999999</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="DialogAlert" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <!-- Customize your theme here. -->
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <!-- 背景透明 -->
+        <!--  <item name="android:windowBackground">@android:color/transparent</item>-->
+        <item name="android:windowContentOverlay">@null</item>
+        <!-- 浮于Activity之上 -->
+        <item name="android:windowIsFloating">true</item>
+        <!-- 边框 -->
+        <item name="android:windowFrame">@null</item>
+        <!-- Dialog以外的区域模糊效果 -->
+        <item name="android:backgroundDimEnabled">true</item>
+        <!-- 无标题 -->
+        <item name="android:windowNoTitle">true</item>
+        <!-- 半透明 -->
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
+    <!--对话框样式-->
+    <style name="PXDialog" parent="Theme.AppCompat.Light.Dialog">
+        <!-- 背景颜色-->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!-- 无边框 -->
+        <item name="android:windowFrame">@null</item>
+        <!-- 没有标题 -->
+        <item name="android:windowNoTitle">true</item>
+        <!-- 背景是否半透明 -->
+        <item name="android:windowIsTranslucent">true</item>
+        <!-- 浮于Activity之上 -->
+        <item name="android:windowIsFloating">true</item>
+    </style>
+
+    <style name="dialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item><!--边框-->
+        <item name="android:windowIsFloating">true</item><!--是否浮现在activity之上-->
+        <item name="android:windowIsTranslucent">false</item><!--半透明-->
+        <item name="android:windowNoTitle">true</item><!--无标题-->
+        <item name="android:windowBackground">@color/alp_black_ss</item><!--背景透明-->
+        <item name="android:backgroundDimEnabled">false</item><!--模糊-->
+        <!-- Dialog进入及退出动画 -->
+        <item name="android:windowAnimationStyle">@style/AnimBottom</item>
+    </style>
+
+
+    <style name="topDialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item><!--边框-->
+        <item name="android:windowIsFloating">true</item><!--是否浮现在activity之上-->
+        <item name="android:windowIsTranslucent">false</item><!--半透明-->
+        <item name="android:windowNoTitle">true</item><!--无标题-->
+        <!-- Dialog进入及退出动画 -->
+        <!--<item name="android:windowAnimationStyle">@style/AnimTop</item>-->
+        <item name="android:backgroundDimEnabled">false</item><!--模糊-->
+        <!-- 背景颜色-->
+        <item name="android:windowBackground">@color/alp_black_ss</item>
+    </style>
+    <!--对话框样式-->
+    <style name="PXDialog2" parent="Theme.AppCompat.Light.Dialog">
+        <!-- 背景颜色-->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!-- 无边框 -->
+        <item name="android:windowFrame">@null</item>
+        <!-- 没有标题 -->
+        <item name="android:windowNoTitle">true</item>
+        <!-- 背景是否半透明 -->
+        <item name="android:windowIsTranslucent">false</item>
+        <!-- 浮于Activity之上 -->
+        <item name="android:windowIsFloating">true</item>
+    </style>
+
+    <!--进度对话框样式-->
+    <style name="loading" parent="Theme.AppCompat.Light.Dialog">
+        <!-- 背景颜色透明-->
+        <item name="android:windowBackground">@color/translucent_background</item>
+        <!-- 背景是否半透明 -->
+        <item name="android:windowIsTranslucent">true</item>
+        <!--背景模糊-->
+        <item name="android:backgroundDimEnabled">true</item>
+
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:backgroundDimAmount">0.1</item>
+
+    </style>
+
+    <style name="BottomDialog" parent="BaseTheme">
+
+        <!-- 背景透明 -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <!-- 浮于Activity之上 -->
+        <item name="android:windowIsFloating">true</item>
+        <!-- 边框 -->
+        <item name="android:windowFrame">@null</item>
+        <!-- Dialog以外的区域模糊效果 -->
+        <item name="android:backgroundDimEnabled">true</item>
+        <!-- 无标题 -->
+        <item name="android:windowNoTitle">true</item>
+        <!-- 半透明 -->
+        <item name="android:windowIsTranslucent">true</item>
+        <!-- Dialog进入及退出动画 -->
+        <item name="android:windowAnimationStyle">@style/AnimBottom</item>
+    </style>
+
+    <style name="AnimBottom" parent="@android:style/Animation">
+        <item name="android:windowEnterAnimation">@anim/bottom_in</item>
+        <item name="android:windowExitAnimation">@anim/bottom_out</item>
+    </style>
+    <style name="AnimTop" parent="@android:style/Animation">
+        <item name="android:windowEnterAnimation">@anim/slide_in_top</item>
+        <item name="android:windowExitAnimation">@anim/slide_out_top</item>
+    </style>
+
+    <!--线，可共用-->
+    <style name="home_line">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0.5dip</item>
+        <item name="android:background">?attr/pageBg_color</item>
+    </style>
+
+    <!--警告提示框样式-->
+    <style name="PXAlert" parent="PXDialog">
+        <!-- 背景颜色透明-->
+        <item name="android:windowBackground">@color/translucent_background</item>
+        <!-- 背景是否半透明 -->
+        <item name="android:windowIsTranslucent">false</item>
+        -->
+    </style>
+
+    <style name="Theme.UMDefault" parent="android:style/Theme.NoTitleBar"/>
+
+    <style name="comm_text">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textSize">@dimen/comm_text_size</item>
+        <item name="android:textColor">@color/comm_text_color_black</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="Panel">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">#fffefefe</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+</resources>

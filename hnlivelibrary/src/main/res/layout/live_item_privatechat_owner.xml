@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingBottom="5dp"
+    android:paddingTop="5dp">
+
+
+    <TextView
+        android:id="@+id/owner_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/design_margin"
+        android:gravity="center"
+        android:text="2016.9.6"
+        android:textColor="@color/comm_text_color_black_s"
+        android:textSize="@dimen/comm_text_size_s"
+        android:visibility="visible" />
+
+    <RelativeLayout
+        android:id="@+id/content_con"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/owner_time"
+        android:layout_marginTop="@dimen/design_margin">
+
+        <com.hn.library.view.FrescoImageView
+            android:id="@+id/owner_header"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            fresco:actualImageScaleType="centerCrop"
+            fresco:placeholderImage="@drawable/default_live_head"
+            fresco:placeholderImageScaleType="centerCrop"
+            fresco:roundAsCircle="true" />
+
+        <TextView
+            android:id="@+id/owner_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="50dp"
+            android:layout_toLeftOf="@id/owner_header"
+            android:background="@drawable/msg_yellow"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/design_margin"
+            android:paddingRight="@dimen/design_margin"
+            android:paddingTop="@dimen/dp_10"
+            android:paddingBottom="@dimen/dp_10"
+            android:textSize="@dimen/comm_text_size_h"
+            android:text="梦想还是要有的，大撒旦撒大撒旦撒旦撒旦撒旦撒旦是"
+            android:textColor="@color/comm_text_color_black" />
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

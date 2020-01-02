@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:layout_marginTop="0.8dp"
+    android:background="?attr/item_bg_color"
+    android:orientation="horizontal"
+    android:paddingLeft="@dimen/design_margin"
+    android:paddingRight="@dimen/design_margin">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:orientation="vertical"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true">
+
+        <TextView
+            android:id="@+id/tv_name"
+            style="@style/comm_text"
+            android:text="今天"
+            android:textColor="?attr/text_color_333" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_type"
+        style="@style/comm_text"
+        android:layout_width="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:gravity="center"
+        android:textColor="?attr/text_color_333"
+        android:textSize="@dimen/comm_text_size_h"
+        android:layout_centerInParent="true"/>
+
+    <TextView
+        android:id="@+id/tv_price"
+        style="@style/comm_text"
+        android:layout_width="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:gravity="center"
+        android:singleLine="false"
+        android:text="今天"
+        android:textColor="?attr/text_color_333"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"/>
+</RelativeLayout>

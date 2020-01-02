@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/mLLGiftBg"
+              android:layout_width="84dp"
+              android:layout_height="88dp"
+              android:layout_margin="@dimen/design_margin_top"
+              android:padding="2dp">
+
+    <!--头像-->
+
+    <com.hn.library.view.FrescoImageView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/mIvGift"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="@dimen/design_margin_top"
+        android:layout_marginRight="8dp"
+        android:layout_centerHorizontal="true"
+        app:actualImageScaleType="centerCrop"
+        app:actualImageUri="@drawable/gift_loading"
+        android:scaleType="centerCrop"
+        app:failureImage="@drawable/gift_loading"
+        app:failureImageScaleType="centerCrop"
+        app:progressBarImage="@drawable/gift_loading"
+        app:roundAsCircle="false"/>
+    <ImageView
+        android:id="@+id/mIvSelect"
+        android:layout_alignParentRight="true"
+        android:layout_width="wrap_content"
+        android:layout_marginRight="@dimen/design_margin_top"
+        android:layout_marginTop="@dimen/design_margin_top"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        android:src="@drawable/gift_select"/>
+
+    <TextView
+        android:id="@+id/mTvGiftName"
+        style="@style/comm_text"
+        android:layout_marginTop="2dp"
+        android:layout_below="@id/mIvGift"
+        android:layout_centerHorizontal="true"
+        android:textSize="@dimen/comm_text_size_s"
+        android:textColor="@color/comm_text_color_main"/>
+
+    <TextView
+        android:id="@+id/mTvGiftCoin"
+        style="@style/comm_text"
+        android:layout_marginTop="1dp"
+        android:layout_below="@id/mTvGiftName"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/comm_text_color_black_s"
+        android:textSize="@dimen/comm_text_size_sh"/>
+
+</RelativeLayout>

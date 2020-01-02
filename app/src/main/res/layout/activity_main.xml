@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <FrameLayout
+        android:id="@+id/content_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginBottom="48dp"/>
+    <LinearLayout
+        android:id="@+id/main_bar"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/white"
+        android:clipChildren="false"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true">
+
+        <com.hn.library.view.ImageTextButton
+            android:id="@+id/ib_chat"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            app:iDivider="1.5dp"
+            app:iconId="?attr/ic_tab_chat"
+            app:iconSize="25dp"
+            app:text="@string/main_square"
+            app:textColor="@color/black_tran" />
+        <com.hn.library.view.ImageTextButton
+            android:id="@+id/ib_home"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:iDivider="1.5dp"
+            app:iconId="@drawable/main_video_selected"
+            app:iconSize="25dp"
+            app:text="@string/main_video"
+            app:textColor="@color/black_tran" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginTop="-10dp" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <com.hn.library.view.ImageTextButton
+                android:id="@+id/ib_msg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:iDivider="1.5dp"
+                app:iconId="?attr/ic_tab_msg"
+                app:iconSize="25dp"
+                app:text="@string/main_msg"
+                app:textColor="@color/black_tran" />
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:drawableTop="@drawable/msg_selected"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textSize="8sp"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/mTvNewMsg"
+                    android:layout_width="@dimen/design_margin_s"
+                    android:layout_height="@dimen/design_margin_s"
+                    android:layout_gravity="right"
+                    android:background="@drawable/live_unread_bg"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textSize="8sp"
+                    android:visibility="visible" />
+            </FrameLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <com.hn.library.view.ImageTextButton
+                android:id="@+id/ib_mine"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                app:iDivider="1.5dp"
+                app:iconId="?attr/ic_tab_msg"
+                app:iconSize="25dp"
+                app:text="@string/main_mine"
+                app:textColor="@color/black_tran" />
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:drawableTop="@drawable/my_notselected"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textSize="8sp"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/mTvSign"
+                    android:layout_width="@dimen/design_margin_s"
+                    android:layout_height="@dimen/design_margin_s"
+                    android:layout_gravity="right"
+                    android:background="@drawable/live_unread_bg"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textSize="8sp"
+                    android:visibility="visible" />
+            </FrameLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+
+    <View
+        android:visibility="gone"
+        android:id="@+id/view"
+        style="@style/home_line"
+        android:layout_above="@id/main_bar" />
+
+
+
+    <!--悬浮按钮-->
+    <LinearLayout
+        android:id="@+id/mLlVideo"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:gravity="center_horizontal|bottom"
+        android:layout_marginBottom="3dp">
+        <ImageView
+            android:id="@+id/mIvVideo"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="?attr/ic_tab_live" />
+        <TextView
+            android:id="@+id/tv_live"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10sp"
+            android:text="@string/main_live"
+            android:textColor="@color/comm_text_color_black"
+            android:layout_marginTop="3dp"/>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

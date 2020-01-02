@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:orientation="horizontal"
+                android:paddingTop="7dp">
+
+    <RelativeLayout android:id="@+id/rl_msg_info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="visible">
+
+        <RelativeLayout
+            android:id="@+id/rl_level"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_level"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="5dp"
+                android:background="@drawable/tv_level_shape_1"
+                android:drawableLeft="@drawable/star"
+                android:drawablePadding="2dp"
+                android:paddingBottom="2dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingTop="2dp"
+                android:text="16"
+                android:textColor="@color/white"
+                android:textSize="10sp"/>
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/userNick"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/rl_level"
+            android:maxLength="11"
+            android:shadowColor="@color/live_colcor_66000000"
+            android:shadowDx="1"
+            android:shadowDy="0"
+            android:singleLine="true"
+            android:text="王二狗："
+            android:textColor="@color/white"
+            android:textSize="14sp"/>
+
+        <TextView android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_centerVertical="true"
+                  android:layout_toRightOf="@+id/userNick"
+                  android:shadowColor="@color/live_colcor_66000000"
+                  android:shadowDx="1"
+                  android:shadowDy="0"
+                  android:text="@string/live_send_lucky"
+                  android:textColor="@color/live_color_ff5d52"
+                  android:textSize="14sp"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout android:id="@+id/luckymoney"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rl_msg_info"
+                    android:layout_marginTop="7dp"
+                    android:background="@mipmap/icon_hongbao">
+
+        <TextView android:id="@+id/tv_nick"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="6dp"
+                  android:ellipsize="end"
+                  android:maxLength="11"
+                  android:maxWidth="140dp"
+                  android:paddingLeft="40dp"
+                  android:singleLine="true"
+                  android:text="蓝色大海的传说爱是考虑到静安寺"
+                  android:textColor="@color/white"
+                  android:textSize="13sp"/>
+
+        <TextView android:id="@+id/tv_thanks"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_below="@+id/tv_nick"
+                  android:layout_marginTop="2dp"
+                  android:ellipsize="end"
+                  android:maxWidth="150dp"
+                  android:paddingLeft="40dp"
+                  android:singleLine="true"
+                  android:text="@string/live_hongbao_con"
+                  android:textColor="@color/live_color_fdd2af"
+                  android:textSize="10sp"/>
+
+        <TextView android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_below="@+id/tv_thanks"
+                  android:layout_marginTop="4dp"
+                  android:paddingLeft="5dp"
+                  android:text="@string/live_anchor_redbag"
+                  android:textColor="@color/comm_text_color_black_s"
+                  android:textSize="10sp"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

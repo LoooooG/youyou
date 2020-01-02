@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mRlInput"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#00ffffff"
+    android:visibility="visible"
+    tools:ignore="ResourceName">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/mLLInput"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+
+            android:background="@color/white"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp">
+
+            <ToggleButton
+                android:id="@+id/mTbtn"
+                android:layout_width="60dp"
+                android:layout_height="32dp"
+                android:background="@drawable/selector_butn_toggle"
+                android:checked="false"
+                android:text=""
+                android:textOff=""
+                android:textOn="" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="35dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="7dp"
+                android:layout_weight="1"
+                android:background="@drawable/live_room_input_shape"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/mEtComm"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:hint="@string/live_input_chat_content"
+                    android:imeOptions="actionSend"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:singleLine="true"
+                    android:textColorHint="@color/comm_text_color_black_s"
+                    android:textSize="15sp" />
+
+                <ImageView
+                    android:id="@+id/iv_emoji"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:paddingLeft="5dp"
+                    android:src="@mipmap/smile" />
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/mTvSend"
+                android:layout_width="@dimen/dp_56"
+                android:layout_height="@dimen/dp_30"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/design_margin_h"
+                android:background="@drawable/select_main_gray_bg_max"
+                android:gravity="center"
+                android:text="@string/live_send"
+                android:textSize="14sp"
+                android:visibility="visible" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/mllEjom"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@color/white"
+            android:visibility="gone">
+
+            <fragment
+                android:name="com.hotniao.livelibrary.ui.fragment.HnEmojiFragment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

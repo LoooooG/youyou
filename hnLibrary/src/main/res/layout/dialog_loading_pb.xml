@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/hn_loading_dialog_bg"
+    android:paddingLeft="12dp"
+    android:paddingRight="12dp"
+    android:paddingTop="8dp"
+    android:paddingBottom="8dp"
+    >
+
+    <ProgressBar
+        android:id="@+id/loadingPb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:indeterminate="true"
+        style="@style/Widget.AppCompat.ProgressBar"
+        android:indeterminateDrawable="@drawable/loading"
+        android:indeterminateDuration="1000"
+        android:indeterminateOnly="true"
+        />
+        <TextView
+            android:id="@+id/tv_load_msg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="加载中..."
+            android:textColor="@color/white"
+            android:layout_toRightOf="@id/loadingPb"
+            android:layout_marginLeft="8dp"
+            android:singleLine="true"
+            />
+</RelativeLayout>

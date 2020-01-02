@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:orientation="horizontal"
+                android:paddingTop="5dp">
+
+    <TextView
+        android:id="@+id/userMsg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="3dp"
+        android:gravity="left"
+        android:shadowColor="@color/live_colcor_66000000"
+        android:shadowDx="1"
+        android:shadowDy="0"
+        android:text="老师你讲的真好老师你讲的真好老师你讲的真好老师你讲的真好老师你讲的真好sdfsdfsdf"
+        android:textColor="@color/white"
+        android:textSize="@dimen/comm_text_size_h"/>
+
+
+</RelativeLayout>

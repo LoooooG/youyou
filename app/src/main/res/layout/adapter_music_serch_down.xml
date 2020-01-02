@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.hotniao.live.widget.SwipeMenuLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/item_bg_color"
+    android:id="@+id/mSwiMLay"
+    app:iosList="false">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="72.5dp"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/mLlContent"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_72"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+
+            >
+
+            <RelativeLayout
+                android:id="@+id/mRlLeft"
+                android:layout_width="@dimen/dp_60"
+                android:layout_height="@dimen/def_height"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/design_margin">
+
+                <com.hn.library.view.FrescoImageView xmlns:fresco="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/mIvImg"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    fresco:actualImageScaleType="centerCrop"
+                    fresco:actualImageUri="@drawable/host_related_loading"
+                    fresco:failureImage="@drawable/host_related_loading"
+                    fresco:failureImageScaleType="centerCrop"
+                    fresco:placeholderImageScaleType="centerCrop"
+                    fresco:progressBarImage="@drawable/host_related_loading"
+                    fresco:roundAsCircle="false"
+                    fresco:roundedCornerRadius="6dp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/susuo_bofang" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_marginRight="@dimen/design_margin"
+                android:layout_toRightOf="@id/mRlLeft">
+
+                <TextView
+                    android:id="@+id/mTvSing"
+                    style="@style/comm_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/comm_text_color_black"
+                    android:textSize="@dimen/comm_text_size" />
+
+                <TextView
+                    android:id="@+id/mTvSinger"
+                    style="@style/comm_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/mTvSing"
+                    android:layout_marginTop="@dimen/design_margin_h"
+                    android:textColor="@color/comm_text_color_black_hs"
+                    android:textSize="@dimen/comm_text_size_s" />
+
+                <TextView
+                    android:id="@+id/mTvTime"
+                    style="@style/comm_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/mTvSing"
+                    android:layout_marginLeft="@dimen/dp_24"
+                    android:layout_marginTop="@dimen/design_margin_h"
+                    android:layout_toRightOf="@id/mTvSinger"
+                    android:text="几乎都是"
+                    android:textColor="@color/comm_text_color_black_hs"
+                    android:textSize="@dimen/comm_text_size_s" />
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/line" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="@dimen/dp_48"
+        android:layout_height="@dimen/dp_72">
+
+        <TextView
+            android:id="@+id/mTvUse"
+            android:layout_width="@dimen/dp_48"
+            android:layout_height="match_parent"
+            android:background="@color/comm_bg_main"
+            android:clickable="true"
+            android:gravity="center"
+            android:text="使用"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/mTvProgress"
+            android:layout_width="@dimen/dp_48"
+            android:layout_height="match_parent"
+            android:background="@color/comm_bg_main"
+            android:clickable="true"
+            android:gravity="center"
+            android:text="下载"
+            android:textColor="@android:color/white"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+
+</com.hotniao.live.widget.SwipeMenuLayout>

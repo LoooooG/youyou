@@ -1,0 +1,20 @@
+<resources>
+    <!--<string name="app_name">Project</string>-->
+    <string name="password">0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</string>
+    <string name="title_pick_date">选择日期</string>
+    <string name="date_picker_year">年</string>
+    <string name="date_picker_month">月</string>
+    <string name="date_picker_day">日</string>
+    <string name="main_title">主标题</string>
+    <string name="sub_title">子标题</string>
+    <string name="i_konw">我知道了</string>
+
+    <string name="letter_yesterday">昨天&#160;</string>
+    <string name="letter_lingc">凌晨&#160;</string>
+    <string name="letter_am">上午&#160;</string>
+    <string name="letter_pm">下午&#160;</string>
+    <string name="letter_eve">晚上&#160;</string>
+    <string name="ten_thousand">万</string>
+    <string name="hint">提示</string>
+
+</resources>

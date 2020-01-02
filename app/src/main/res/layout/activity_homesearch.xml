@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:orientation="vertical"
+    >
+
+    <!--顶部-->
+    <RelativeLayout
+        android:id="@+id/rl_ti"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/def_height"
+        android:background="?attr/item_bg_color"
+        android:layout_marginBottom="0.5dp"
+        >
+
+        <FrameLayout
+            android:id="@+id/fl_search"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            >
+
+            <TextView
+                android:id="@+id/search_tv_cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:paddingLeft="@dimen/dp_10"
+                android:paddingRight="@dimen/design_margin"
+                android:text="@string/cancel"
+                android:textColor="?attr/text_color_333"
+                android:textSize="@dimen/comm_text_size"/>
+
+            <TextView
+                android:id="@+id/search_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:paddingLeft="10dp"
+                android:paddingRight="@dimen/design_margin"
+                android:text="@string/search_title"
+                android:textColor="?attr/text_color_333"
+                android:textSize="@dimen/comm_text_size"
+                android:visibility="gone"
+                />
+        </FrameLayout>
+
+
+        <com.hn.library.view.HnEditText
+            android:id="@+id/search_et"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/design_margin"
+            android:layout_toLeftOf="@id/fl_search"
+            android:background="@drawable/et_cursor_white_bg_shape"
+            android:drawableLeft="@mipmap/icon_search_grey"
+            android:drawablePadding="10dp"
+            android:hint="@string/search_hint"
+            android:paddingBottom="6dp"
+            android:imeOptions="actionSearch"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="6dp"
+            android:singleLine="true"
+            android:textColor="?attr/text_color_333"
+            android:textColorHint="@color/color_999999"
+            android:textSize="@dimen/comm_text_size"/>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_delete_history"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_44"
+        android:layout_below="@id/rl_ti"
+        android:paddingLeft="@dimen/design_margin"
+        android:gravity="center_vertical"
+        android:paddingRight="@dimen/design_margin_h"
+        android:visibility="visible"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/search_history"
+            android:gravity="center"
+
+            android:textColor="@color/color_999999"
+            android:textSize="@dimen/comm_text_size_h"
+            />
+
+        <TextView
+            android:id="@+id/tv_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:paddingLeft="@dimen/dp_10"
+            android:paddingRight="@dimen/dp_10"
+            android:drawableLeft="@drawable/search_deleting"
+            />
+    </RelativeLayout>
+
+    <com.hn.library.refresh.PtrClassicFrameLayout
+        android:id="@+id/ptr_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/rl_delete_history"
+        app:ptr_mode="loadMore">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_search"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+           />
+
+    </com.hn.library.refresh.PtrClassicFrameLayout>
+
+
+</RelativeLayout>

@@ -1,0 +1,109 @@
+apply plugin: 'com.android.application'
+def config = rootProject.ext
+android {
+    signingConfigs {
+        signconfig {
+            keyAlias 'youyou'
+            keyPassword '123456'
+            storeFile file('youyou.jks')
+            storePassword '123456'
+        }
+    }
+
+    compileSdkVersion config.compileSdkVersion
+    defaultConfig {
+        applicationId config.applicationId
+        minSdkVersion config.minSdkVersion
+
+        targetSdkVersion config.targetSdkVersion
+        versionCode config.versionCode
+        versionName config.versionName
+        multiDexEnabled true
+        vectorDrawables.useSupportLibrary = true
+
+        ndk {
+            abiFilters "armeabi-v7a"
+        }
+
+        //Arouter 路由框架配置，用于在module之内、或不同module之间进行跳转
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [moduleName: project.getName()]
+            }
+        }
+        manifestPlaceholders = [
+                JPUSH_PKGNAME: config.applicationId,
+                JPUSH_APPKEY : "285352f5fa34e74051f04c36", //JPush上注册的包名对应的appkey. <my>
+                JPUSH_CHANNEL: "developer-default", //暂时填写默认值即可.
+        ]
+    }
+    buildTypes {
+        release {
+            buildConfigField "boolean", "LOG_DEBUG", "false"
+            resValue "string", "app_name", config.appName
+            minifyEnabled false
+            crunchPngs false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.signconfig
+
+        }
+        debug {
+            buildConfigField "boolean", "LOG_DEBUG", "true"
+            resValue "string", "app_name", config.appName
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.signconfig
+        }
+    }
+    android.applicationVariants.all { variant ->
+        variant.outputs.all {
+            outputFileName = "${config.appName}_${variant.buildType.name}_V${variant.versionName}.apk"
+        }
+    }
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+    }
+    dexOptions {
+        jumboMode true
+        javaMaxHeapSize "4g"
+    }
+    android {
+        sourceSets {
+            main {
+                jniLibs.srcDirs = ['libs']
+            }
+        }
+    }
+//    aaptOptions.cruncherEnabled = false
+//    aaptOptions.useNewCruncher = false
+    //分模块时调用，指定在debug和release版本下加载的不同资源
+//    sourceSets {
+//        main {
+//            if (isBuildModule.toBoolean()) {
+//                java.srcDirs += "src/main/debug/java/";
+//            } else {
+//                java.srcDirs += "src/main/release/java/";
+//            }
+//        }
+//    }
+    buildToolsVersion '28.0.3'
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    //路由框架 用于在module之内、或不同module之间进行跳转    若只有一个模块可以不采用此种方式
+    implementation config.arouter
+    annotationProcessor config.areoutetCompile
+    annotationProcessor rootProject.ext.butterknifeCompiler
+    implementation 'com.bigkoo:convenientbanner:2.0.5'
+    //    implementation project(':hnlivelibrary')
+    implementation project(':videolibrary')
+}

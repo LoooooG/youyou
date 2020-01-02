@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_marginLeft="@dimen/dp_20"
+    android:layout_marginRight="@dimen/dp_20"
+    android:background="?attr/shap_white_radius_4"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:gravity="center_vertical"
+            android:paddingTop="20dp"
+            android:layout_marginLeft="@dimen/design_margin"
+            android:text="@string/live_hint"
+            android:textStyle="bold"
+            android:textColor="?attr/text_color_333"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/px_dialog_hint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:padding="@dimen/design_margin"
+            android:text="@string/live_user_account_forbidden"
+            android:textColor="@color/comm_text_color_black_s"
+
+            android:textSize="15sp" />
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_below="@id/px_dialog_title"
+            android:background="?attr/pageBg_color" />
+
+        <RelativeLayout
+            android:id="@+id/dialog_btn_container"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_below="@id/divider">
+
+
+            <TextView
+                android:id="@+id/px_dialog_ok"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_weight="1"
+
+                android:gravity="center"
+                android:text="@string/live_i_knoe"
+                android:textColor="@color/comm_text_color_main"
+                android:textSize="16sp"
+                android:visibility="visible" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <attr name="indexBarTextSize" format="dimension" />
+
+    <declare-styleable name="IndexBar">
+        <attr name="indexBarTextSize" />
+        <attr name="indexBarPressBackground" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="SwipeMenuLayoutList">
+        <attr name="swipeEnableList" format="boolean"/>
+        <attr name="iosList" format="boolean"/>
+        <attr name="leftSwipeList" format="boolean"/>
+    </declare-styleable>
+
+    <declare-styleable name="ScrollableLayout">
+        <attr name="scrollable_maxScroll"          format="dimension" />
+        <attr name="scrollable_scrollerFlywheel"   format="boolean" />
+    </declare-styleable>
+</resources>

@@ -1,0 +1,593 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.hotniao.live">
+
+    <!-- Required -->
+    <permission
+        android:name="com.hotniao.live.muliao.permission.JPUSH_MESSAGE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="com.hotniao.live.muliao.permission.JPUSH_MESSAGE" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
+    <!--
+        <com.hn.library.view.FrescoImageView xmlns:fresco="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/mIvImg"
+        android:layout_width="134dp"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        fresco:actualImageScaleType="centerCrop"
+        fresco:actualImageUri="@drawable/host_related_loading"
+        fresco:failureImage="@drawable/host_related_loading"
+        fresco:failureImageScaleType="centerCrop"
+        fresco:placeholderImageScaleType="centerCrop"
+        fresco:progressBarImage="@drawable/host_related_loading"
+        fresco:roundAsCircle="false"
+          fresco:roundedCornerRadius="6dp"/>
+    -->
+
+
+    <!--
+   MD5: 3B:1F:6E:50:4F:0F:0D:88:EB:5C:22:EE:55:AB:45:CE
+         SHA1: B4:5C:19:7E:69:24:BC:48:6B:8C:B2:35:94:15:7B:70:96:43:9F:C6
+         SHA256: CD:FF:70:AC:A4:0B:05:FF:B5:36:CB:6A:5E:8F:4F:CE:03:38:72:FB:A7:BC:7A:D3:D4:F1:B3:53:98:9B:48:4A
+    -->
+
+    <application
+        android:name=".HnApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/logo"
+        android:label="@string/app_name"
+        android:persistent="true"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <!-- 全面屏适配 -->
+        <meta-data
+            android:name="android.max_aspect"
+            android:value="2.1" />
+
+        <!-- 高德地图设置key my -->
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="a47f0c793cfa43b744806fea6ab4c7b4" />
+        <!-- 定位需要的服务 -->
+        <service android:name="com.amap.api.location.APSService" />
+        <!-- 启动页面 -->
+        <activity
+            android:name=".activity.HnSplashActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="ybbapp" />
+            </intent-filter>
+        </activity>
+
+        <!-- 引导界面 -->
+        <activity
+            android:name=".activity.HnGuideActivity"
+            android:screenOrientation="portrait" />
+        <!-- 兑换套餐 -->
+        <activity
+            android:name=".activity.HnMyExchangeActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <!--观看直播回放付费页面-->
+        <activity
+            android:name=".activity.HnPlayBackPayActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <!--发布回放-->
+        <activity
+            android:name=".activity.HnReleasePlayBackActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <!-- 兑换记录 -->
+        <activity
+            android:name=".activity.HnExchangeDetailActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+
+        <!-- 我邀请的人 -->
+        <activity
+            android:name=".activity.HnMyInviteUserActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <!--领取现金-->
+        <activity
+            android:name=".activity.HnGetMoneyActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+
+        <!-- 微信 -->
+        <activity
+            android:name=".muliao.wxapi.WXEntryActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <!-- 微博 -->
+        <activity
+            android:name=".share.WBShareActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="com.sina.weibo.sdk.action.ACTION_SDK_REQ_ACTIVITY" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <!-- 首页 -->
+        <activity
+            android:name=".HnMainActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|stateAlwaysHidden" />
+
+        <!-- 分享赚钱 -->
+        <activity
+            android:name=".activity.HnShareGetMoneyActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+
+        <!-- 视频封面详情 -->
+        <activity
+            android:name=".activity.HnInviteChatPreviewActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+
+        <!-- 登录界面 -->
+        <activity
+            android:name=".activity.HnLoginActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- 登录界面 -->
+        <activity
+            android:name=".activity.HnAnchorFunctionActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- 忘记密码 -->
+        <activity
+            android:name=".activity.HnForgetPasswordActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+
+        <!-- 设置 -->
+        <activity
+            android:name=".activity.HnSettingActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+
+        <!-- 开播提醒 -->
+        <activity
+            android:name=".activity.HnLiveNoticeActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <!-- 在线列表 -->
+        <activity
+            android:name=".activity.HnOnlineListAct"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+
+        <!-- 实名认证状态界面 -->
+        <activity
+            android:name=".activity.HnAuthStateActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+
+        <!-- 修改密码 -->
+        <activity
+            android:name=".activity.HnChangePwdActivity"
+            android:screenOrientation="portrait" />
+
+        <!-- 编辑个人资料 -->
+        <activity
+            android:name=".activity.HnEditInfoActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+
+        <!-- 充值 -->
+        <activity
+            android:name=".activity.HnMyRechargeActivity"
+            android:screenOrientation="portrait" />
+
+        <!-- 邀请用户收益记录 -->
+        <activity
+            android:name=".activity.BounsAct"
+            android:screenOrientation="portrait" />
+
+        <!-- 实名认证界面 -->
+        <activity
+            android:name=".activity.HnAuthenticationActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+
+        <!-- 开始直播前界面 -->
+        <activity
+            android:name=".activity.HnBeforeLiveSettingActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+
+        <!-- 主播直播间 -->
+        <activity
+            android:name="com.hotniao.livelibrary.ui.anchor.activity.HnAnchorActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustNothing" />
+
+        <!-- 用户直播间 -->
+        <activity
+            android:name="com.hotniao.livelibrary.ui.audience.activity.HnAudienceActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustNothing" />
+
+        <!-- 主播结束直播界面 -->
+        <activity
+            android:name=".activity.HnAnchorStopLiveActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+
+        <!-- 主播结束用户端直播界面 -->
+        <activity
+            android:name=".activity.HnAudiStopLiveActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+
+        <!-- 我的粉丝 -->
+        <activity
+            android:name=".activity.HnMyFansActivity"
+            android:screenOrientation="portrait" />
+        <!-- 我的关注 -->
+        <activity
+            android:name=".activity.HnMyFollowActivity"
+            android:screenOrientation="portrait" />
+        <!-- 关于我们 -->
+        <activity
+            android:name=".activity.HnAboutActivity"
+            android:screenOrientation="portrait" />
+        <!-- 反馈 -->
+        <activity
+            android:name=".activity.HnFeedBackActivity"
+            android:screenOrientation="portrait" />
+
+        <!-- 私信界面 -->
+        <activity
+            android:name=".activity.HnPrivateChatActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+
+        <!-- 我的账单 -->
+        <activity
+            android:name=".activity.account.HnUserBillEarningActivity"
+            android:screenOrientation="portrait" />
+
+        <!-- 系统消息界面 -->
+        <activity
+            android:name=".activity.HnSystemMessageActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+
+        <!-- 首页搜索 -->
+        <activity
+            android:name=".activity.HnHomeSearchActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+
+        <!-- 微信回调界面 -->
+        <activity
+            android:name=".muliao.wxapi.WXPayEntryActivity"
+            android:exported="true"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <!-- 主页搜索界面 -->
+        <activity
+            android:name=".activity.HnSearchUserOrLiveActivity"
+            android:screenOrientation="portrait" />
+        <!-- 平台排行榜 -->
+        <activity
+            android:name=".activity.HnPlatformListActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <!-- 主播相关（回放） -->
+
+        <activity
+            android:name=".activity.HnAnchorRelatedActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <!-- 注册 -->
+        <activity
+            android:name=".activity.HnRegistActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <!-- 选择开播类型 -->
+        <activity
+            android:name=".activity.HnChooseLiveTypeActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.HnChatTypeAct"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <!-- 第一次绑定手机 -->
+        <activity
+            android:name=".activity.bindPhone.HnFirstBindPhoneActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <!-- 更换绑定手机 -->
+        <activity
+            android:name=".activity.bindPhone.HnHaveBindPhoneActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <!-- 绑定手机获取验证码 -->
+        <activity
+            android:name=".activity.bindPhone.HnVerifyPhoneActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <!-- 更换绑定手机号 -->
+        <activity
+            android:name=".activity.bindPhone.HnChangeBindPhoneActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <!-- 我的消息 -->
+        <activity
+            android:name=".activity.HnMyMessageActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <!-- 我的会员 -->
+        <activity
+            android:name=".activity.HnMyVipMemberActivity"
+            android:screenOrientation="portrait" />
+        <!-- 我的账户 -->
+        <activity
+            android:name=".activity.account.HnMyAccountActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <!-- 充值记录和 提现记录 -->
+        <activity
+            android:name=".activity.account.HnUserBillRechargeAndWithdrawActivity"
+            android:screenOrientation="portrait" />
+        <!-- 我的收益 -->
+        <activity
+            android:name=".activity.account.HnUserBillExpenseActivity"
+            android:screenOrientation="portrait" />
+        <!-- 我的邀请 -->
+        <activity
+            android:name=".activity.HnInviteFriendActivity"
+            android:screenOrientation="portrait" />
+        <!-- 填写提现信息 -->
+        <activity
+            android:name=".activity.withdraw.HnWithDrawWriteActivity"
+            android:screenOrientation="portrait" />
+        <!-- 提现获取验证码 -->
+        <activity
+            android:name=".activity.withdraw.HnWithDrawVerificationActivity"
+            android:screenOrientation="portrait" />
+        <!-- 体现详情 -->
+        <activity
+            android:name=".activity.withdraw.HnWithDrawDetailActivity"
+            android:screenOrientation="portrait" />
+        <!-- 粉丝贡献榜 -->
+        <activity
+            android:name=".activity.HnFansContributeListActivity"
+            android:screenOrientation="portrait" />
+        <!-- 邀请的人 -->
+        <activity
+            android:name=".activity.HnMyInvitePeopleActivity"
+            android:screenOrientation="portrait" />
+        <!-- H5 -->
+        <activity
+            android:name=".activity.HnWebActivity"
+            android:screenOrientation="portrait" />
+        <!-- 我的管理员 -->
+        <activity
+            android:name=".activity.HnMyAdminActivity"
+            android:screenOrientation="portrait" />
+        <!-- 搜索管理员 -->
+        <activity
+            android:name=".activity.HnSearchAdminActivity"
+            android:screenOrientation="portrait" />
+        <!-- 回放Video -->
+        <activity
+            android:name=".activity.HnPlayBackVideoActivity"
+            android:screenOrientation="portrait" />
+        <!-- 修改昵称   个性签名 -->
+        <activity
+            android:name=".activity.HnEditNickInfoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.HnChooseVideoTypeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.HnVideoPublishBeforeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.HnVideoPublishActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.HnMusicLoclActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.HnMusicSearchActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.HnMyPhotoAlbumActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.HnVideoMessageActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.HnUserHomeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.HnUserClosedRankActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.HnUserHomeGiftActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.HnVideoDetailActivity"
+            android:configChanges="orientation|screenSize|keyboard|keyboardHidden|navigation"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustNothing" />
+        <activity
+            android:name=".activity.HnInviteChatBeforeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.HnChatVideoDetailAcrivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.HnSetFastChatChargeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.HnPhotoPagerActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.HnUserPhotoAlbumActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.HnNearActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.HnVideoShowActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.HnVideoAuthApplyActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.HnVideoAuthStatueActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.HnBlackListActivity"
+            android:screenOrientation="portrait" />
+
+        <!-- 极光 可配置android:process参数将PushService放在其他进程中 -->
+        <!-- since 1.8.0 option 可选项。用于同一设备中不同应用的JPush服务相互拉起的功能。 -->
+        <!-- 若不启用该功能可删除该组件，将不拉起其他应用也不能被其他应用拉起 -->
+
+
+        <!-- Required SDK核心功能 -->
+        <service
+            android:name="cn.jpush.android.service.PushService"
+            android:exported="false"
+            android:process=":mult">
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.REGISTER" />
+                <action android:name="cn.jpush.android.intent.REPORT" />
+                <action android:name="cn.jpush.android.intent.PushService" />
+                <action android:name="cn.jpush.android.intent.PUSH_TIME" />
+            </intent-filter>
+        </service>
+
+        <activity
+            android:name="cn.jpush.android.ui.PushActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:exported="false"
+            android:theme="@android:style/Theme.NoTitleBar">
+            <intent-filter>
+                <action android:name="cn.jpush.android.ui.PushActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="com.hotniao.live.muliao" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="cn.jpush.android.ui.PopWinActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:exported="false"
+            android:theme="@android:style/Theme.NoTitleBar">
+            <intent-filter>
+                <action android:name="cn.jpush.android.ui.PushActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="com.hotniao.live.muliao" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name="cn.jpush.android.service.DaemonService"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.DaemonService" />
+
+                <category android:name="com.hotniao.live.muliao" />
+            </intent-filter>
+        </service>
+
+        <provider
+            android:name="cn.jpush.android.service.DataProvider"
+            android:authorities="com.hotniao.live.muliao.DataProvider"
+            android:exported="true" />
+        <!-- Required SDK核心功能 -->
+        <receiver
+            android:name="cn.jpush.android.service.PushReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter android:priority="1000">
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED_PROXY" /> <!-- Required  显示通知栏 -->
+                <category android:name="com.hotniao.live.muliao" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.USER_PRESENT" />
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+            <!-- Optional -->
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED" />
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+
+                <data android:scheme="package" />
+            </intent-filter>
+        </receiver>
+
+        <!-- Required SDK核心功能 -->
+        <receiver
+            android:name="cn.jpush.android.service.AlarmReceiver"
+            android:exported="false" />
+
+        <!-- User defined.  For test only  用户自定义的广播接收器 -->
+        <receiver
+            android:name=".receiver.JPReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.REGISTRATION" /> <!-- Required  用户注册SDK的intent -->
+                <action android:name="cn.jpush.android.intent.MESSAGE_RECEIVED" /> <!-- Required  用户接收SDK消息的intent -->
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED" /> <!-- Required  用户接收SDK通知栏信息的intent -->
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_OPENED" /> <!-- Required  用户打开自定义通知栏的intent -->
+                <action android:name="cn.jpush.android.intent.CONNECTION" /> <!-- 接收网络变化 连接/断开 since 1.6.3 -->
+                <category android:name="com.hotniao.live.muliao" />
+            </intent-filter>
+        </receiver>
+
+        <!-- Required  . Enable it you can get statistics data with channel -->
+        <meta-data
+            android:name="JPUSH_CHANNEL"
+            android:value="developer-default" />
+        <meta-data
+            android:name="JPUSH_APPKEY"
+            android:value="285352f5fa34e74051f04c36" /> <!-- </>值来自开发者平台取得的AppKey -->
+        <activity android:name=".activity.HnGeneralizeActivity"></activity>
+    </application>
+
+</manifest>

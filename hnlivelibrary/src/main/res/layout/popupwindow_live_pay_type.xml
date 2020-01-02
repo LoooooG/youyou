@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="120dp"
+    android:layout_height="107dp"
+    android:background="@drawable/payment_method"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/mTvFree"
+        style="@style/comm_text"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/def_height"
+        android:layout_marginTop="7dp"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/design_margin"
+        android:text="@string/need_no_charge"
+        android:textColor="@drawable/select_main_black_s_color" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#1af5f5f5" />
+
+    <TextView
+        android:id="@+id/mTvPay"
+        style="@style/comm_text"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/def_height"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/design_margin"
+        android:text="@string/need_charge"
+        android:textColor="@drawable/select_main_black_s_color" />
+</LinearLayout>

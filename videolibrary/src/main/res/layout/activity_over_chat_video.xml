@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.hn.library.view.FrescoImageView xmlns:fresco="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/mIvImg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/ic_fast_chat_bg"
+        android:scaleType="centerCrop"
+        fresco:actualImageScaleType="centerCrop"
+        fresco:failureImageScaleType="centerCrop"
+        fresco:placeholderImageScaleType="centerCrop"
+        fresco:roundAsCircle="false" />
+
+    <ImageView
+        android:id="@+id/mIvClose"
+        android:layout_width="@dimen/dp_24"
+        android:layout_height="@dimen/dp_24"
+        android:layout_alignParentRight="true"
+        android:layout_margin="@dimen/design_margin"
+        android:src="@drawable/shengqguangb" />
+
+    <TextView
+        android:id="@+id/mTvTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="150dp"
+        android:text="通话已结束"
+        android:textColor="@color/comm_text_color_white"
+        android:textSize="28sp" />
+
+    <LinearLayout
+        android:id="@+id/mLlCenter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/mTvTop"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dp_24"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="通话时长"
+            android:textColor="@color/comm_text_color_white"
+            android:textSize="@dimen/comm_text_size" />
+
+        <TextView
+            android:id="@+id/mTvLong"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textColor="@color/comm_text_color_white"
+            android:textSize="@dimen/comm_text_size" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/mLLCoin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/mLlCenter"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dp_90"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/mTvType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="收益："
+            android:textColor="@color/comm_text_color_white"
+            android:textSize="@dimen/comm_text_size" />
+
+        <TextView
+            android:id="@+id/mTvDot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textColor="#eb8c05"
+            android:textSize="@dimen/comm_text_size_sub_title" />
+
+        <TextView
+            android:id="@+id/mTvDotName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="@color/comm_text_color_white"
+            android:textSize="@dimen/comm_text_size" />
+    </LinearLayout>
+
+</RelativeLayout>

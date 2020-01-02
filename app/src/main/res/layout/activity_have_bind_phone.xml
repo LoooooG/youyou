@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/dp_92"
+        android:src="@drawable/phone" />
+
+    <TextView
+        style="@style/comm_text"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/dp_20"
+        android:text="@string/hava_bind_phone"
+        android:textColor="@color/comm_text_color_black_s" />
+
+    <TextView
+
+        android:id="@+id/mTvPhone"
+        style="@style/comm_text"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/design_margin"
+        android:textColor="?attr/text_color_666"
+        android:textStyle="bold"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/mTvChange"
+        android:layout_width="140dp"
+        android:layout_height="@dimen/dp_39"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="@dimen/dp_50"
+        android:layout_marginRight="@dimen/dp_50"
+        android:layout_marginTop="@dimen/dp_70"
+        android:background="@drawable/shap_radius_max_yellow"
+        android:gravity="center"
+        android:text="@string/change_phone"
+        android:textColor="@color/comm_text_color_black" />
+</LinearLayout>

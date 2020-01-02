@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/ll_total_earnings"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_48"
+        android:background="?attr/item_bg_color"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/comm_text"
+            android:layout_height="@dimen/dp_48"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/design_margin"
+            android:gravity="center_vertical"
+            android:text="@string/totle_earning"
+            android:textColor="?attr/text_color_333"
+            android:textSize="@dimen/comm_text_size_h" />
+
+        <TextView
+            android:id="@+id/mTvTotal"
+            style="@style/comm_text"
+            android:layout_height="@dimen/dp_48"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1.4"
+            android:gravity="center_vertical"
+            android:textColor="?attr/text_color_333"
+            android:textSize="@dimen/comm_text_size_h"
+            android:textStyle="bold" />
+
+        <com.reslibrarytwo.HnSkinTextView
+            android:id="@+id/mTvType"
+            style="@style/comm_text"
+            android:layout_height="@dimen/dp_48"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="@dimen/design_margin"
+            android:layout_weight="1"
+            android:drawablePadding="@dimen/design_margin_h"
+            android:drawableRight="@drawable/account_lower"
+            android:gravity="center_vertical|right"
+            android:text="@string/earning_day"
+            android:textColor="?attr/text_color_333" />
+    </LinearLayout>
+
+    <View android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_10"
+        android:background="#F0F0F0"/>
+
+    <RelativeLayout
+        android:id="@+id/rl_reward_header"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="?attr/item_bg_color"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/design_margin"
+        android:paddingRight="@dimen/design_margin"
+        android:visibility="gone">
+
+        <TextView
+            style="@style/comm_text"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:text="邀请用户昵称"
+            android:textSize="@dimen/comm_text_size_h"
+            android:textColor="?attr/text_color_333" />
+
+
+        <TextView
+            style="@style/comm_text"
+            android:layout_width="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            android:textColor="?attr/text_color_333"
+            android:textSize="@dimen/comm_text_size_h"
+            android:text="奖励类型"/>
+
+        <TextView
+            style="@style/comm_text"
+            android:layout_width="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            android:singleLine="false"
+            android:text="奖励（元）"
+            android:textSize="@dimen/comm_text_size_h"
+            android:textColor="?attr/text_color_333" />
+    </RelativeLayout>
+
+
+    <TextView
+        android:id="@+id/mTvEmpty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="@dimen/def_height"
+        android:drawablePadding="15dp"
+        android:drawableTop="@drawable/empty_com"
+        android:gravity="center_horizontal"
+        android:text="@string/home_no_earning_data"
+        android:textColor="@color/color_999999"
+        android:visibility="visible" />
+
+</LinearLayout>

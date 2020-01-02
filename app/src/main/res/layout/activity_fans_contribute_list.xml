@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/item_bg_color"
+    android:orientation="vertical">
+
+    <RadioGroup
+        android:id="@+id/mRg"
+        android:layout_width="230dp"
+        android:layout_height="@dimen/dp_28"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/design_margin"
+        android:background="@drawable/shap_radius_max_bg"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/mRbDay"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/selector_check_yellow_transparency"
+            android:button="@null"
+            android:checked="true"
+            android:gravity="center"
+            android:text="日榜"
+            android:textColor="@drawable/selector_check_color_black_s" />
+
+        <RadioButton
+            android:id="@+id/mRbWeek"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/selector_check_yellow_transparency"
+            android:button="@null"
+            android:gravity="center"
+            android:text="周榜"
+            android:textColor="@drawable/selector_check_color_black_s" />
+
+        <RadioButton
+            android:id="@+id/mRbTotal"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/selector_check_yellow_transparency"
+            android:button="@null"
+            android:gravity="center"
+            android:text="总榜"
+            android:textColor="@drawable/selector_check_color_black_s" />
+    </RadioGroup>
+
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/mVp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/design_margin"></android.support.v4.view.ViewPager>
+
+</LinearLayout>
