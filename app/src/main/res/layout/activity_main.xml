@@ -21,17 +21,6 @@
         android:layout_alignParentBottom="true">
 
         <com.hn.library.view.ImageTextButton
-            android:id="@+id/ib_chat"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"
-            app:iDivider="1.5dp"
-            app:iconId="?attr/ic_tab_chat"
-            app:iconSize="25dp"
-            app:text="@string/main_square"
-            app:textColor="@color/black_tran" />
-        <com.hn.library.view.ImageTextButton
             android:id="@+id/ib_home"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -41,6 +30,31 @@
             app:iconSize="25dp"
             app:text="@string/main_video"
             app:textColor="@color/black_tran" />
+
+        <com.hn.library.view.ImageTextButton
+            android:id="@+id/ib_chat"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            app:iDivider="1.5dp"
+            app:iconId="?attr/ic_tab_chat"
+            app:iconSize="25dp"
+            app:text="@string/main_square"
+            app:textColor="@color/black_tran"
+            android:visibility="gone"/>
+
+        <com.hn.library.view.ImageTextButton
+            android:id="@+id/ib_sign"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            app:iDivider="1.5dp"
+            app:iconId="?attr/ic_tab_chat"
+            app:iconSize="25dp"
+            app:text="@string/main_sign"
+            app:textColor="@color/black_tran"/>
 
         <Space
             android:layout_width="match_parent"
@@ -156,7 +170,8 @@
         android:layout_alignParentBottom="true"
         android:layout_centerInParent="true"
         android:gravity="center_horizontal|bottom"
-        android:layout_marginBottom="3dp">
+        android:layout_marginBottom="3dp"
+        android:visibility="gone">
         <ImageView
             android:id="@+id/mIvVideo"
             android:layout_width="50dp"
@@ -168,6 +183,32 @@
             android:layout_height="wrap_content"
             android:textSize="10sp"
             android:text="@string/main_live"
+            android:textColor="@color/comm_text_color_black"
+            android:layout_marginTop="3dp"/>
+
+    </LinearLayout>
+
+    <!--悬浮按钮-->
+    <LinearLayout
+        android:id="@+id/mLlShare"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:gravity="center_horizontal|bottom"
+        android:layout_marginBottom="3dp">
+        <ImageView
+            android:id="@+id/mIvShare"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="?attr/ic_tab_live" />
+        <TextView
+            android:id="@+id/tv_share"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10sp"
+            android:text="@string/main_share"
             android:textColor="@color/comm_text_color_black"
             android:layout_marginTop="3dp"/>
 

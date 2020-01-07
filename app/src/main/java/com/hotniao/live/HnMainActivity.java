@@ -46,6 +46,7 @@ import com.hotniao.live.fragment.HnHomeChildFragment;
 import com.hotniao.live.fragment.HnHomeLiveFragment;
 import com.hotniao.live.fragment.HnMineFragment;
 import com.hotniao.live.fragment.HnMsgFragment;
+import com.hotniao.live.fragment.HnShareGetMoneyFragment;
 import com.hotniao.live.fragment.WaitingDevFragment;
 import com.hotniao.live.model.HnSignStateModel;
 import com.hotniao.live.utils.HnAppConfigUtil;
@@ -93,13 +94,13 @@ public class HnMainActivity extends BaseActivity implements BaseRequestStateList
 
     public static HnLocationEntity mLocEntity;
     @BindView(R.id.ib_home)
-    ImageTextButton mIbHome;
+    ImageTextButton mIbHome; // 小视频
     @BindView(R.id.ib_msg)
-    ImageTextButton mIbMsg;
+    ImageTextButton mIbMsg; // 消息
     @BindView(R.id.ib_chat)
-    ImageTextButton mIbChat;
+    ImageTextButton mIbChat; // 首页
     @BindView(R.id.ib_mine)
-    ImageTextButton mIbMine;
+    ImageTextButton mIbMine; // 我的
     @BindView(R.id.main_bar)
     LinearLayout mMainBar;
     @BindView(R.id.content_layout)
@@ -109,18 +110,25 @@ public class HnMainActivity extends BaseActivity implements BaseRequestStateList
     @BindView(R.id.mTvNewMsg)
     TextView mTvNewMsg;
     @BindView(R.id.mIvVideo)
-    ImageView mIvVideo;
+    ImageView mIvVideo; // 丝友直播ICON
     @BindView(R.id.tv_live)
-    TextView tvLive;
+    TextView tvLive; // 丝友直播Label
     @BindView(R.id.mLlVideo)
-    LinearLayout mLlVideo;
+    LinearLayout mLlVideo; // 丝友直播
+    @BindView(R.id.mIvShare)
+    ImageView mIvShare; // 分享赚钱ICON
+    @BindView(R.id.tv_share)
+    TextView tvShare; // 分享赚钱Label
+    @BindView(R.id.mLlShare)
+    LinearLayout mLlShare; // 分享赚钱
     //底部标签切换fragment
     private WaitingDevFragment waitingDevFragment;
-    private HnHomeChildFragment mHomeFragment;
-    private HnMsgFragment mMsgFragment;
-    private HnMineFragment mMineFragment;
-    private HnHomeLiveFragment mLiveFragment;
-    private HnHomeChatGropFragment mChatFragment;
+    private HnHomeChildFragment mHomeFragment; // 小视频
+    private HnMsgFragment mMsgFragment; // 消息
+    private HnMineFragment mMineFragment; // 我的
+    private HnHomeLiveFragment mLiveFragment; // 丝友直播
+    private HnHomeChatGropFragment mChatFragment; // 首页
+    private HnShareGetMoneyFragment mShareFragment; // 分享赚钱
     private Disposable heartBeatObserver;
     private FragmentManager fragmentManager;
     private FragmentTransaction fragmentTransaction;
@@ -192,7 +200,7 @@ public class HnMainActivity extends BaseActivity implements BaseRequestStateList
     @Override
     public void getInitData() {
         fragmentManager = getSupportFragmentManager();
-        mIbChat.performClick();
+        mIbHome.performClick();
     }
 
     @Override
@@ -273,13 +281,20 @@ public class HnMainActivity extends BaseActivity implements BaseRequestStateList
     }
 
 
-    @OnClick({R.id.mLlVideo, R.id.ib_home, R.id.ib_msg, R.id.ib_chat, R.id.ib_mine})
+    @OnClick({R.id.mLlShare, R.id.mLlVideo, R.id.ib_home, R.id.ib_msg, R.id.ib_chat, R.id.ib_mine})
     public void onClick(View view) {
         fragmentTransaction = fragmentManager.beginTransaction();
+        ScaleAnimation videoAni;
         switch (view.getId()) {
-            case R.id.mLlVideo:
+            case R.id.mLlShare: // 分享赚钱
                 hideFragments(fragmentTransaction);
-                ScaleAnimation videoAni = (ScaleAnimation) AnimationUtils.loadAnimation(this, R.anim.bottom_icon);
+                videoAni = (ScaleAnimation) AnimationUtils.loadAnimation(this, R.anim.bottom_icon);
+                clickTabShareLayout();
+                mIvShare.startAnimation(videoAni);
+                break;
+            case R.id.mLlVideo: // 丝友直播
+                hideFragments(fragmentTransaction);
+                videoAni = (ScaleAnimation) AnimationUtils.loadAnimation(this, R.anim.bottom_icon);
                 clickTabLiveLayout();
                 mIvVideo.startAnimation(videoAni);
                 break;
@@ -379,6 +394,9 @@ public class HnMainActivity extends BaseActivity implements BaseRequestStateList
         if (mLiveFragment != null) {
             transaction.hide(mLiveFragment);
         }
+        if (mShareFragment != null) {
+            transaction.hide(mShareFragment);
+        }
         if (mChatFragment != null) {
             transaction.hide(mChatFragment);
         }
@@ -453,6 +471,25 @@ public class HnMainActivity extends BaseActivity implements BaseRequestStateList
     }
 
     /**
+     * 进入分享赚钱fragment
+     */
+    private void clickTabShareLayout() {
+
+        if (mShareFragment == null) {
+            // mShareFragment，则创建一个并添加到界面上
+            mShareFragment = new HnShareGetMoneyFragment();
+            fragmentTransaction.add(R.id.content_layout, mShareFragment);
+        } else {
+            // mShareFragment不为空，则直接将它显示出来
+            fragmentTransaction.show(mShareFragment);
+        }
+        if(!mShareFragment.isVisible()){
+            EventBus.getDefault().post(new EventBusBean(0,HnConstants.EventBus.RefreshLiveList,null));
+        }
+        updateMenu(null);
+    }
+
+    /**
      * 进入私信fragment
      */
     private void clickTabMsgLayout() {
@@ -488,9 +525,11 @@ public class HnMainActivity extends BaseActivity implements BaseRequestStateList
     public void updateMenu(ImageTextButton button) {
 
         if(button == null){
-            tvLive.setTextColor(getResources().getColor(R.color.main_color));
+//            tvLive.setTextColor(getResources().getColor(R.color.main_color));
+            tvShare.setTextColor(getResources().getColor(R.color.main_color));
         }else{
-            tvLive.setTextColor(getResources().getColor(R.color.comm_text_color_black));
+//            tvLive.setTextColor(getResources().getColor(R.color.comm_text_color_black));
+            tvShare.setTextColor(getResources().getColor(R.color.comm_text_color_black));
         }
 
         if (mIbHome != null && button != mIbHome) {
@@ -764,5 +803,11 @@ public class HnMainActivity extends BaseActivity implements BaseRequestStateList
         }
     }
 
-
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (mShareFragment != null) {
+            mShareFragment.onActivityResult(requestCode, resultCode, data);
+        }
+    }
 }

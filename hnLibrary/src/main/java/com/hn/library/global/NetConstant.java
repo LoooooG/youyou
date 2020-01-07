@@ -50,12 +50,12 @@ public class NetConstant {
      */
 
     //接口服务器
-//    public final static String BASE_SERVER = "http://api.haision-industry.com";
-    public final static String BASE_SERVER = "http://2534y9g406.qicp.vip";
+    public final static String BASE_SERVER = "http://api.haision-industry.com";
+//    public final static String BASE_SERVER = "http://2534y9g406.qicp.vip";
     public final static String SERVER = BASE_SERVER + "/v1";
     //文件服务器
-//    public final static String BASE_FILE_SERVER = "http://static.haision-industry.com";
-    public final static String BASE_FILE_SERVER = "http://temmmm.imwork.net";
+    public final static String BASE_FILE_SERVER = "http://static.haision-industry.com";
+//    public final static String BASE_FILE_SERVER = "http://temmmm.imwork.net";
     public final static String FILE_SERVER = BASE_FILE_SERVER + "/upload/";//文件服务器
     public final static String FILE_UPLOAD_API = BASE_FILE_SERVER + "/upload_img.php";// 上传接口
     public final static String FILE_UPLOAD_API_TEN = BASE_FILE_SERVER + "/qcloud.php";// 腾讯上传接口签名获取

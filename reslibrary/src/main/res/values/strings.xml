@@ -4,9 +4,11 @@
 
 
     <string name="main_msg">消息</string>
+    <string name="main_sign">签到</string>
     <string name="main_near">附近</string>
     <string name="main_mine">我的</string>
     <string name="main_live">丝友直播</string>
+    <string name="main_share">分享赚钱</string>
     <string name="main_chat">约聊</string>
     <string name="main_video">小视频</string>
 
