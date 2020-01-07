@@ -1,6 +1,6 @@
 # Add project specific ProGuard rules here.
-# By guide_bg, the flags in this file are appended to flags specified
-# in D:\tools\androidSDK\AndroidSDK/tools/proguard/proguard-android.txt
+# By default, the flags in this file are appended to flags specified
+# in /Users/lujun/Library/Android/sdk/tools/proguard/proguard-android.txt
 # You can edit the include path and order by changing the proguardFiles
 # directive in build.gradle.
 #
@@ -10,8 +10,12 @@
 # Add any project specific keep options here:
 
 # If your project uses WebView with JS, uncomment the following
-# and specify the fully qualified class table_name to the JavaScript interface
+# and specify the fully qualified class name to the JavaScript interface
 # class:
 #-keepclassmembers class fqcn.of.javascript.interface.for.webview {
 #   public *;
 #}
+
+-keep class com.pili.pldroid.player.** { *; }
+-keep class com.qiniu.qplayer.mediaEngine.MediaPlayer{*;}
+

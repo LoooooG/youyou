@@ -11,6 +11,9 @@
     <string name="main_share">分享赚钱</string>
     <string name="main_chat">约聊</string>
     <string name="main_video">小视频</string>
+    <string name="main_discover">发现</string>
+    <string name="main_activity">活动</string>
+    <string name="main_upload">上传</string>
 
     <string name="main_near_chat">附近约聊</string>
     <string name="anchor_platfrom_list">主播榜</string>

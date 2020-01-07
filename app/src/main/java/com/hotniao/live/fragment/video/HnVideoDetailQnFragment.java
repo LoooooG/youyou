@@ -44,6 +44,8 @@ import com.hotniao.livelibrary.model.event.HnFollowEvent;
 import com.hotniao.livelibrary.model.event.HnLiveEvent;
 import com.pili.pldroid.player.AVOptions;
 import com.pili.pldroid.player.PLMediaPlayer;
+import com.pili.pldroid.player.PLOnErrorListener;
+import com.pili.pldroid.player.PLOnInfoListener;
 import com.pili.pldroid.player.widget.PLVideoTextureView;
 import com.pili.pldroid.player.widget.PLVideoView;
 import com.reslibrarytwo.HnSkinTextView;
@@ -209,30 +211,31 @@ public class HnVideoDetailQnFragment extends HnViewPagerBaseFragment implements 
 
     }
 
-    private PLMediaPlayer.OnInfoListener mOnInfoListener = new PLMediaPlayer.OnInfoListener() {
+    private PLOnInfoListener mOnInfoListener = new PLOnInfoListener() {
         @Override
-        public boolean onInfo(PLMediaPlayer plMediaPlayer, int what, int extra) {
+        public void onInfo(int what, int extra) {
             switch (what) {
-                case PLMediaPlayer.MEDIA_INFO_VIDEO_RENDERING_START:
+                case PLOnInfoListener.MEDIA_INFO_VIDEO_RENDERING_START:
                     statusChange(STATUS_PLAYING);
-                    if ((3 * plMediaPlayer.getVideoWidth()) > (2 * plMediaPlayer.getVideoHeight())) {
-                        if (mVideoView != null && PLVideoView.ASPECT_RATIO_FIT_PARENT != mVideoView.getDisplayAspectRatio())
-                            mVideoView.setDisplayAspectRatio(PLVideoView.ASPECT_RATIO_FIT_PARENT);
-                    } else {
-                        if (mVideoView != null && PLVideoView.ASPECT_RATIO_PAVED_PARENT != mVideoView.getDisplayAspectRatio())
-                            mVideoView.setDisplayAspectRatio(PLVideoView.ASPECT_RATIO_PAVED_PARENT);
-                    }
+                    if (mVideoView != null && PLVideoView.ASPECT_RATIO_FIT_PARENT != mVideoView.getDisplayAspectRatio())
+                        mVideoView.setDisplayAspectRatio(PLVideoView.ASPECT_RATIO_FIT_PARENT);
+//                    if ((3 * plMediaPlayer.getVideoWidth()) > (2 * plMediaPlayer.getVideoHeight())) {
+//                        if (mVideoView != null && PLVideoView.ASPECT_RATIO_FIT_PARENT != mVideoView.getDisplayAspectRatio())
+//                            mVideoView.setDisplayAspectRatio(PLVideoView.ASPECT_RATIO_FIT_PARENT);
+//                    } else {
+//                        if (mVideoView != null && PLVideoView.ASPECT_RATIO_PAVED_PARENT != mVideoView.getDisplayAspectRatio())
+//                            mVideoView.setDisplayAspectRatio(PLVideoView.ASPECT_RATIO_PAVED_PARENT);
+//                    }
                     break;
             }
-            return false;
         }
     };
 
-    private PLMediaPlayer.OnErrorListener mOnErrorListener = new PLMediaPlayer.OnErrorListener() {
+    private PLOnErrorListener mOnErrorListener = new PLOnErrorListener() {
         @Override
-        public boolean onError(PLMediaPlayer plMediaPlayer, int errorCode) {
+        public boolean onError(int errorCode) {
             switch (errorCode) {
-                case PLMediaPlayer.ERROR_CODE_IO_ERROR:
+                case PLOnErrorListener.ERROR_CODE_IO_ERROR:
                     break;
                 default:
                     break;

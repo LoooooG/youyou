@@ -21,17 +21,6 @@
         android:layout_alignParentBottom="true">
 
         <com.hn.library.view.ImageTextButton
-            android:id="@+id/ib_home"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            app:iDivider="1.5dp"
-            app:iconId="@drawable/main_video_selected"
-            app:iconSize="25dp"
-            app:text="@string/main_video"
-            app:textColor="@color/black_tran" />
-
-        <com.hn.library.view.ImageTextButton
             android:id="@+id/ib_chat"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -41,20 +30,18 @@
             app:iconId="?attr/ic_tab_chat"
             app:iconSize="25dp"
             app:text="@string/main_square"
-            app:textColor="@color/black_tran"
-            android:visibility="gone"/>
+            app:textColor="@color/black_tran"/>
 
         <com.hn.library.view.ImageTextButton
-            android:id="@+id/ib_sign"
+            android:id="@+id/ib_home"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:gravity="center"
             app:iDivider="1.5dp"
-            app:iconId="?attr/ic_tab_chat"
+            app:iconId="@drawable/main_video_selected"
             app:iconSize="25dp"
-            app:text="@string/main_sign"
-            app:textColor="@color/black_tran"/>
+            app:text="@string/main_discover"
+            app:textColor="@color/black_tran" />
 
         <Space
             android:layout_width="match_parent"
@@ -74,7 +61,7 @@
                 app:iDivider="1.5dp"
                 app:iconId="?attr/ic_tab_msg"
                 app:iconSize="25dp"
-                app:text="@string/main_msg"
+                app:text="@string/main_activity"
                 app:textColor="@color/black_tran" />
 
             <FrameLayout
@@ -208,7 +195,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="10sp"
-            android:text="@string/main_share"
+            android:text="@string/main_upload"
             android:textColor="@color/comm_text_color_black"
             android:layout_marginTop="3dp"/>
 

@@ -89,6 +89,11 @@ import io.reactivex.schedulers.Schedulers;
  * 修改备注：
  * Version:  1.0.0
  */
+/**
+ * author: LooooG
+ * Edited on: 2020/1/7 11:14
+ * description: 首页修改->小视频、签到、分享赚钱、消息、我的
+ */
 @Route(path = "/app/HnMainActivity")
 public class HnMainActivity extends BaseActivity implements BaseRequestStateListener {
 
@@ -200,7 +205,7 @@ public class HnMainActivity extends BaseActivity implements BaseRequestStateList
     @Override
     public void getInitData() {
         fragmentManager = getSupportFragmentManager();
-        mIbHome.performClick();
+        mIbChat.performClick();
     }
 
     @Override
@@ -783,6 +788,9 @@ public class HnMainActivity extends BaseActivity implements BaseRequestStateList
 
     private void setVersion(HnConfigModel.DBean mDBean, String response) {
         //保存全局配置信息
+        if (true) {
+            return;
+        }
         if (mDBean != null) {
             if (!TextUtils.isEmpty(response))
                 HnPrefUtils.setString(HnConstants.Setting.USER_CONFIG_MSG, response);
