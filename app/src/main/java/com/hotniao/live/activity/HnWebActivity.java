@@ -19,6 +19,7 @@ import android.widget.TextView;
 import com.hn.library.base.BaseActivity;
 import com.hn.library.global.NetConstant;
 import com.hn.library.loadstate.HnLoadingLayout;
+import com.hn.library.utils.HnLogUtils;
 import com.hn.library.utils.HnPrefUtils;
 import com.hotniao.live.R;
 import com.hotniao.live.widget.HnWebViewWithProgress;
@@ -114,8 +115,10 @@ public class HnWebActivity extends BaseActivity implements HnLoadingLayout.OnRel
 //        syncCookie();
         String token = HnPrefUtils.getString(NetConstant.User.TOKEN, "");
         if (About.equals(getIntent().getStringExtra("type"))) {
+            HnLogUtils.i("HnWebActivity", "加载Url:" + getIntent().getStringExtra("url") + "&&access_token=" + token);
             webView.loadUrl(getIntent().getStringExtra("url") + "&&access_token=" + token);
         } else {
+            HnLogUtils.i("HnWebActivity", "加载Url:" + getIntent().getStringExtra("url") + "?access_token=" + token);
             webView.loadUrl(getIntent().getStringExtra("url") + "?access_token=" + token);
         }
     }
@@ -175,6 +178,7 @@ public class HnWebActivity extends BaseActivity implements HnLoadingLayout.OnRel
 
     @Override
     public void onReload(View v) {
+        HnLogUtils.i("HnWebActivity", "加载Url:" + getIntent().getStringExtra("url"));
         webView.loadUrl(getIntent().getStringExtra("url"));
     }
 

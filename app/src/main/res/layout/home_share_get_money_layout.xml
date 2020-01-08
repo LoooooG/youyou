@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_home_share_get_money"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_tip"
+                style="@style/comm_text"
+                android:layout_marginLeft="@dimen/design_margin"
+                android:layout_marginTop="150dp"
+                android:drawableLeft="@drawable/icon_share_rule_title"
+                android:drawablePadding="5dp"
+                android:text="对方点击分享链接并首次下载注册成功即有奖励"
+                android:textColor="#FFFDE3" />
+
+            <RelativeLayout
+                android:id="@+id/rl_rule"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_tip"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="@dimen/dp_36"
+                android:layout_marginTop="@dimen/dp_18"
+                android:layout_marginRight="@dimen/dp_36"
+                android:background="@drawable/shape_bg_share_rule"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/dp_20"
+                android:paddingLeft="@dimen/dp_10"
+                android:paddingRight="@dimen/dp_10">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rv_rule"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scrollbars="none" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv_share"
+                style="@style/comm_text"
+                android:text="立即分享"
+                android:textColor="@color/comm_text_color_white"
+                android:background="@drawable/shape_share_rule_btn"
+                android:paddingLeft="58dp"
+                android:paddingRight="58dp"
+                android:paddingTop="@dimen/dp_10"
+                android:paddingBottom="@dimen/dp_14"
+                android:singleLine="false"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/rl_rule"
+                android:layout_marginTop="-14dp"/>
+            <TextView
+                android:id="@+id/tv_earning"
+                style="@style/comm_text"
+                android:text="进入我的推广主页（查看收益）"
+                android:textColor="@color/comm_text_color_white"
+                android:background="@drawable/shape_share_rule_btn"
+                android:paddingLeft="58dp"
+                android:paddingRight="58dp"
+                android:paddingTop="@dimen/dp_10"
+                android:paddingBottom="@dimen/dp_14"
+                android:singleLine="false"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/tv_share"
+                android:layout_marginTop="68dp"
+                android:layout_marginBottom="50dp"/>
+        </RelativeLayout>
+
+    </ScrollView>
+
+    <android.support.v7.widget.Toolbar xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center_vertical"
+        app:contentInsetLeft="0dp"
+        app:contentInsetStart="0dp"
+        android:visibility="gone">
+
+        <android.support.v7.widget.AppCompatImageButton
+            android:id="@+id/mIvBack"
+            style="@style/Widget.AppCompat.Toolbar.Button.Navigation"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_back_white" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/toolbar_title"
+            style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:text="分享赚钱"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+    </android.support.v7.widget.Toolbar>
+</RelativeLayout>

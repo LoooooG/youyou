@@ -22,7 +22,8 @@
                 android:layout_height="@dimen/dp_22"
                 android:src="@drawable/icon_shoot"
                 android:layout_marginLeft="10dp"
-                android:layout_centerVertical="true"/>
+                android:layout_centerVertical="true"
+                android:visibility="gone"/>
             <ImageView
                 android:id="@+id/iv_search"
                 android:layout_width="@dimen/dp_22"
@@ -38,7 +39,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                android:text="@string/small_video"
+                android:text="@string/discover"
                 android:textColor="@color/white"
                 android:textSize="@dimen/comm_title_text_size" />
 

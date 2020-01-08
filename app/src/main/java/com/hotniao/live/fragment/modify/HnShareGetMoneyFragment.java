@@ -1,10 +1,11 @@
-package com.hotniao.live.fragment;
+package com.hotniao.live.fragment.modify;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
@@ -16,6 +17,7 @@ import com.hn.library.base.baselist.CommRecyclerAdapter;
 import com.hn.library.utils.HnToastUtils;
 import com.hotniao.live.R;
 import com.hotniao.live.activity.HnGeneralizeActivity;
+import com.hotniao.live.base.BaseScollFragment;
 import com.hotniao.live.biz.share.HnShareBiz;
 import com.hotniao.live.dialog.HnShareDialog;
 import com.hotniao.live.model.HnShareRuleModel;
@@ -33,7 +35,7 @@ import butterknife.OnClick;
  * created on: 2020/1/6 22:31
  * description: 分享赚钱页面
  */
-public class HnShareGetMoneyFragment extends BaseFragment implements BaseRequestStateListener {
+public class HnShareGetMoneyFragment extends BaseScollFragment implements BaseRequestStateListener {
 
     @BindView(R.id.rv_rule)
     RecyclerView rvRule;
@@ -48,7 +50,7 @@ public class HnShareGetMoneyFragment extends BaseFragment implements BaseRequest
 
     @Override
     public int getContentViewId() {
-        return R.layout.share_get_money_layout;
+        return R.layout.home_share_get_money_layout;
     }
 
     @Override
@@ -149,5 +151,20 @@ public class HnShareGetMoneyFragment extends BaseFragment implements BaseRequest
         Intent itent = new Intent();
         itent.setClass(mActivity, pClass);
         startActivity(itent);
+    }
+
+    @Override
+    public void pullToRefresh() {
+
+    }
+
+    @Override
+    public void refreshComplete() {
+
+    }
+
+    @Override
+    public View getScrollableView() {
+        return null;
     }
 }

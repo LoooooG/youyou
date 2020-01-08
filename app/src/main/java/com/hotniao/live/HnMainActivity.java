@@ -46,8 +46,8 @@ import com.hotniao.live.fragment.HnHomeChildFragment;
 import com.hotniao.live.fragment.HnHomeLiveFragment;
 import com.hotniao.live.fragment.HnMineFragment;
 import com.hotniao.live.fragment.HnMsgFragment;
-import com.hotniao.live.fragment.HnShareGetMoneyFragment;
 import com.hotniao.live.fragment.WaitingDevFragment;
+import com.hotniao.live.fragment.modify.HnActivityGroupFragment;
 import com.hotniao.live.model.HnSignStateModel;
 import com.hotniao.live.utils.HnAppConfigUtil;
 import com.hotniao.livelibrary.biz.HnLocationBiz;
@@ -103,6 +103,8 @@ public class HnMainActivity extends BaseActivity implements BaseRequestStateList
     ImageTextButton mIbHome; // 小视频
     @BindView(R.id.ib_msg)
     ImageTextButton mIbMsg; // 消息
+    @BindView(R.id.ib_activity)
+    ImageTextButton mIbActivity; // 活动
     @BindView(R.id.ib_chat)
     ImageTextButton mIbChat; // 首页
     @BindView(R.id.ib_mine)
@@ -115,6 +117,8 @@ public class HnMainActivity extends BaseActivity implements BaseRequestStateList
     TextView mTvSign;
     @BindView(R.id.mTvNewMsg)
     TextView mTvNewMsg;
+    @BindView(R.id.mTvActivity)
+    TextView mTvActivity;
     @BindView(R.id.mIvVideo)
     ImageView mIvVideo; // 丝友直播ICON
     @BindView(R.id.tv_live)
@@ -131,6 +135,7 @@ public class HnMainActivity extends BaseActivity implements BaseRequestStateList
     private WaitingDevFragment waitingDevFragment;
     private HnHomeChildFragment mHomeFragment; // 小视频
     private HnMsgFragment mMsgFragment; // 消息
+    private HnActivityGroupFragment mActivityFragment; // 活动
     private HnMineFragment mMineFragment; // 我的
     private HnHomeLiveFragment mLiveFragment; // 丝友直播
     private HnHomeChatGropFragment mChatFragment; // 首页
@@ -286,10 +291,11 @@ public class HnMainActivity extends BaseActivity implements BaseRequestStateList
     }
 
 
-    @OnClick({R.id.mLlUpload, R.id.mLlVideo, R.id.ib_home, R.id.ib_msg, R.id.ib_chat, R.id.ib_mine})
+    @OnClick({R.id.mLlUpload, R.id.mLlVideo, R.id.ib_home, R.id.ib_msg, R.id.ib_activity, R.id.ib_chat, R.id.ib_mine})
     public void onClick(View view) {
         fragmentTransaction = fragmentManager.beginTransaction();
         ScaleAnimation videoAni;
+        ScaleAnimation followAni;
         switch (view.getId()) {
             case R.id.mLlUpload: // 上传视频
                 // hideFragments(fragmentTransaction);
@@ -311,10 +317,22 @@ public class HnMainActivity extends BaseActivity implements BaseRequestStateList
                 mIbHome.startAnimation(homeAni);
 
                 break;
+            case R.id.ib_activity: //活动
+                hideFragments(fragmentTransaction);
+                clickTabActivityLayout();
+                followAni = (ScaleAnimation) AnimationUtils.loadAnimation(this, R.anim.bottom_icon);
+                mIbActivity.startAnimation(followAni);
+
+                if (mHnMainBiz != null) {
+                    if (mTvActivity != null && mTvActivity.getVisibility() != View.GONE) {
+                        mHnMainBiz.getSignState("2");
+                    }
+                }
+                break;
             case R.id.ib_msg: //消息
                 hideFragments(fragmentTransaction);
                 clickTabFollowLayout();
-                ScaleAnimation followAni = (ScaleAnimation) AnimationUtils.loadAnimation(this, R.anim.bottom_icon);
+                followAni = (ScaleAnimation) AnimationUtils.loadAnimation(this, R.anim.bottom_icon);
                 mIbMsg.startAnimation(followAni);
 
                 if (mHnMainBiz != null) {
@@ -394,6 +412,10 @@ public class HnMainActivity extends BaseActivity implements BaseRequestStateList
 
         if (mMsgFragment != null) {
             transaction.hide(mMsgFragment);
+        }
+
+        if (mActivityFragment != null) {
+            transaction.hide(mActivityFragment);
         }
 
         if (mLiveFragment != null) {
@@ -491,6 +513,22 @@ public class HnMainActivity extends BaseActivity implements BaseRequestStateList
     }
 
     /**
+     * 进入活动fragment
+     */
+    private void clickTabActivityLayout() {
+
+        if (mActivityFragment == null) {
+            // mHomeFragment，则创建一个并添加到界面上
+            mActivityFragment = new HnActivityGroupFragment();
+            fragmentTransaction.add(R.id.content_layout, mActivityFragment);
+        } else {
+            // homeFrag不为空，则直接将它显示出来
+            fragmentTransaction.show(mActivityFragment);
+        }
+        updateMenu(mIbActivity);
+    }
+
+    /**
      * 进入我的fragment
      */
     private void clickTabMineLayout() {
@@ -520,6 +558,14 @@ public class HnMainActivity extends BaseActivity implements BaseRequestStateList
             mIbHome.changeState(mTabHomeNor, color_normal);
         } else {
             mIbHome.changeState(R.drawable.main_video_selected, color_clicked);
+        }
+
+        if (mIbActivity != null && button != mIbActivity) {
+            //normal
+            mIbActivity.changeState(mTabMsgNor, color_normal);
+
+        } else {
+            mIbActivity.changeState(R.drawable.msg_selected, color_clicked);
         }
 
         if (mIbMsg != null && button != mIbMsg) {
@@ -792,8 +838,8 @@ public class HnMainActivity extends BaseActivity implements BaseRequestStateList
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-//        if (mShareFragment != null) {
-//            mShareFragment.onActivityResult(requestCode, resultCode, data);
-//        }
+        if (mActivityFragment != null) {
+            mActivityFragment.onActivityResult(requestCode, resultCode, data);
+        }
     }
 }

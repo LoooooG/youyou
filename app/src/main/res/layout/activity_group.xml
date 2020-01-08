@@ -17,6 +17,7 @@
             android:background="@color/main_color_bg"
             android:gravity="center_vertical"
             android:layout_alignParentBottom="true">
+
             <ImageView
                 android:id="@+id/iv_shoot"
                 android:layout_width="@dimen/dp_22"
@@ -25,6 +26,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_centerVertical="true"
                 android:visibility="gone"/>
+
             <ImageView
                 android:id="@+id/iv_search"
                 android:layout_width="@dimen/dp_22"
@@ -33,7 +35,8 @@
                 android:layout_marginRight="8dp"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
-                android:padding="2dp"/>
+                android:padding="2dp"
+                android:visibility="gone"/>
 
             <com.hn.library.tab.SlidingTabLayout xmlns:tl="http://schemas.android.com/apk/res-auto"
                 android:id="@+id/mSlidTab"
@@ -97,6 +100,7 @@
                 android:layout_height="match_parent"
                 android:layout_below="@id/mViewHead" />
         </com.hotniao.live.widget.scollorlayout.ScrollableLayout>
+
     </com.hn.library.refresh.PtrClassicFrameLayout>
 
 </RelativeLayout>

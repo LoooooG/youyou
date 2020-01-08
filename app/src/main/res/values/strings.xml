@@ -492,6 +492,7 @@
     <string name="send_sms_success">发送短信成功，请注意接收~</string>
     <string name="please_input_search_content">请输入搜索内容</string>
     <string name="small_video">小视频</string>
+    <string name="discover">发现</string>
     <string name="meet_him_nearest">遇见身边最近的Ta~</string>
     <string name="online_chat_video_activity_friend">私密视频对聊 互动交友</string>
 
