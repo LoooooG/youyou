@@ -223,7 +223,7 @@ public class HnMineFunctionFragment extends BaseScollFragment {
         try {
             if ("Y".equals(mUserInfo.getUser_is_anchor())) {
                 tvAnchor.setText("主播相关");
-                llClose.setVisibility(View.VISIBLE);
+                llClose.setVisibility(View.GONE);
             } else {
                 tvAnchor.setText("申请主播");
                 llClose.setVisibility(View.GONE);

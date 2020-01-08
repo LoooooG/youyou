@@ -128,7 +128,7 @@ public class HnMineFragment extends BaseFragment implements BaseRequestStateList
     @BindView(R.id.shadow_view)
     View shadowView;
 
-    private static String[] mTitles = {HnUiUtils.getString(R.string.mine_my),HnUiUtils.getString(R.string.user_play_back), HnUiUtils.getString(R.string.video_show)};
+    private static String[] mTitles = {HnUiUtils.getString(R.string.mine_my), HnUiUtils.getString(R.string.video_show)};
     private List<BaseScollFragment> mFragments = new ArrayList<>();
 
 
@@ -468,11 +468,11 @@ public class HnMineFragment extends BaseFragment implements BaseRequestStateList
             mineFragment = HnMineFunctionFragment.getInstance();
         }
 
-        HnUserHomeBackFragment playBackListFragment
-                = (HnUserHomeBackFragment) manager.findFragmentByTag(HnUserHomeBackFragment.TAG);
-        if (playBackListFragment == null) {
-            playBackListFragment = HnUserHomeBackFragment.getInstance(HnApplication.getmUserBean().getUser_id());
-        }
+//        HnUserHomeBackFragment playBackListFragment
+//                = (HnUserHomeBackFragment) manager.findFragmentByTag(HnUserHomeBackFragment.TAG);
+//        if (playBackListFragment == null) {
+//            playBackListFragment = HnUserHomeBackFragment.getInstance(HnApplication.getmUserBean().getUser_id());
+//        }
 
         HnMineVideoFragment videoFragment
                 = (HnMineVideoFragment) manager.findFragmentByTag(HnMineVideoFragment.TAG);
@@ -486,7 +486,7 @@ public class HnMineFragment extends BaseFragment implements BaseRequestStateList
 //            chatFragment = HnMineChatVideoFragment.getInstance();
 //        }
 
-        Collections.addAll(list, mineFragment,playBackListFragment, videoFragment);
+        Collections.addAll(list, mineFragment, videoFragment);
 
         return list;
     }

@@ -177,7 +177,7 @@
 
     <!--悬浮按钮-->
     <LinearLayout
-        android:id="@+id/mLlShare"
+        android:id="@+id/mLlUpload"
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:orientation="vertical"
@@ -186,12 +186,12 @@
         android:gravity="center_horizontal|bottom"
         android:layout_marginBottom="3dp">
         <ImageView
-            android:id="@+id/mIvShare"
+            android:id="@+id/mIvUpload"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:src="?attr/ic_tab_live" />
         <TextView
-            android:id="@+id/tv_share"
+            android:id="@+id/tv_upload"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="10sp"
