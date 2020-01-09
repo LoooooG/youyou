@@ -213,17 +213,6 @@ public class HnIndexVideoGroupFragment extends BaseFragment implements ViewPager
         }
     }
 
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (mFragments != null && mFragments.size() > 0) {
-            for (int i = 0; i < mFragments.size(); i++) {
-                if (mFragments.get(i) instanceof HnShareGetMoneyFragment) {
-                    mFragments.get(i).onActivityResult(requestCode, resultCode, data);
-                }
-            }
-        }
-    }
-
     class PagerAdapter extends FragmentPagerAdapter {
 
         private List<BaseScollFragment> mFragments;

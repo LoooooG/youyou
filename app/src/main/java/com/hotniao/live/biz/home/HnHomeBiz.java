@@ -47,6 +47,7 @@ public class HnHomeBiz {
     public static final String Banner = "banner";
     public static final String HotLive = "hotlive";
     public static final String HotVideo = "hotvideo";
+    public static final String FirstVideo = "firstvideo";
     public static final String DeleteVideo = "DeleteVideo";
     public static final String Love = "love";
     public static final String ChatFast = "ChatFast";
@@ -396,11 +397,11 @@ public class HnHomeBiz {
             public void hnSuccess(String response) {
                 if (model.getC() == 0) {
                     if (listener != null) {
-                        listener.requestSuccess(HotVideo, response, model);
+                        listener.requestSuccess(FirstVideo, response, model);
                     }
                 } else {
                     if (listener != null) {
-                        listener.requestFail(HotVideo, model.getC(), model.getM());
+                        listener.requestFail(FirstVideo, model.getC(), model.getM());
                     }
                 }
             }
@@ -408,7 +409,7 @@ public class HnHomeBiz {
             @Override
             public void hnErr(int errCode, String msg) {
                 if (listener != null) {
-                    listener.requestFail(HotVideo, errCode, msg);
+                    listener.requestFail(FirstVideo, errCode, msg);
                 }
             }
         });

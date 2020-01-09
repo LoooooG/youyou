@@ -41,8 +41,9 @@ import butterknife.BindView;
  * created on: 2020/1/9 20:48
  * description: 首页视频页面
  */
+@SuppressLint("ValidFragment")
 public class HnIndexVideoFragment extends BaseScollFragment implements HnLoadingLayout.OnReloadListener, BaseRequestStateListener {
-    public static final String TAG = "HnHomeHotVideoFragment";
+    public static final String TAG = "HnIndexVideoFragment";
     @BindView(R.id.recyclerview)
     RecyclerView mRecyclerView;
     @BindView(R.id.ptr_refresh)
@@ -160,7 +161,7 @@ public class HnIndexVideoFragment extends BaseScollFragment implements HnLoading
     @Override
     public void requestSuccess(String type, String response, Object obj) {
         if (mActivity == null || mLoading == null) return;
-        if (HnHomeBiz.HotVideo.equals(type)) {
+        if (HnHomeBiz.FirstVideo.equals(type)) {
             HnVideoModel model = (HnVideoModel) obj;
             mActivity.setLoadViewState(HnLoadingLayout.Success, mLoading);
             mActivity.closeRefresh(mPtr);
@@ -178,7 +179,7 @@ public class HnIndexVideoFragment extends BaseScollFragment implements HnLoading
     @Override
     public void requestFail(String type, int code, String msg) {
         if (mLoading == null) return;
-        if (HnHomeBiz.HotVideo.equals(type)) {
+        if (HnHomeBiz.FirstVideo.equals(type)) {
             mActivity.closeRefresh(mPtr);
             refreshComplete();
             mActivity.setLoadViewState(HnLoadingLayout.Success, mLoading);
@@ -283,8 +284,8 @@ public class HnIndexVideoFragment extends BaseScollFragment implements HnLoading
      */
     @Override
     public void refreshComplete() {
-        if (this.getParentFragment() instanceof HnHomeChildFragment) {
-            ((HnHomeChildFragment) (this.getParentFragment())).refreshComplete();
+        if (this.getParentFragment() instanceof HnIndexVideoGroupFragment) {
+            ((HnIndexVideoGroupFragment) (this.getParentFragment())).refreshComplete();
         }
     }
 
