@@ -2,7 +2,6 @@ package com.hotniao.live.activity;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.content.res.Resources;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
@@ -26,7 +25,6 @@ import com.hotniao.live.model.HnVideoRoomSwitchModel;
 import com.hotniao.livelibrary.widget.viewpager.HnVerticalScrollViewPager;
 import com.umeng.socialize.UMShareAPI;
 
-import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -192,7 +190,7 @@ public class HnVideoDetailActivity extends BaseActivity {
                 mInit = true;
             }
 
-            mRoomFragment.swicthVideo(bean);
+            mRoomFragment.switchVideo(bean);
         }
         viewGroup.addView(mRoomContainer);
         this.mRoomUid = mCurrentItem;

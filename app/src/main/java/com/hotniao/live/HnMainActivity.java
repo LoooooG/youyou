@@ -48,6 +48,7 @@ import com.hotniao.live.fragment.HnMineFragment;
 import com.hotniao.live.fragment.HnMsgFragment;
 import com.hotniao.live.fragment.WaitingDevFragment;
 import com.hotniao.live.fragment.modify.HnActivityGroupFragment;
+import com.hotniao.live.fragment.modify.HnIndexVideoGroupFragment;
 import com.hotniao.live.model.HnSignStateModel;
 import com.hotniao.live.utils.HnAppConfigUtil;
 import com.hotniao.livelibrary.biz.HnLocationBiz;
@@ -139,6 +140,7 @@ public class HnMainActivity extends BaseActivity implements BaseRequestStateList
     private HnMineFragment mMineFragment; // 我的
     private HnHomeLiveFragment mLiveFragment; // 丝友直播
     private HnHomeChatGropFragment mChatFragment; // 首页
+    private HnIndexVideoGroupFragment mIndexFragment; // 首页
     private Disposable heartBeatObserver;
     private FragmentManager fragmentManager;
     private FragmentTransaction fragmentTransaction;
@@ -225,7 +227,7 @@ public class HnMainActivity extends BaseActivity implements BaseRequestStateList
                 @Override
                 public void run() {
                     if (isFinishing() || mHnMainBiz == null) return;
-                    if (mTvSign != null && mTvSign.getVisibility() != View.GONE) {
+                    if ((mTvSign != null && mTvSign.getVisibility() != View.GONE) || (mTvActivity != null && mTvActivity.getVisibility() != View.GONE)) {
                         mHnMainBiz.getSignState("1");
                     }
                 }
@@ -349,7 +351,8 @@ public class HnMainActivity extends BaseActivity implements BaseRequestStateList
 //                break;
             case R.id.ib_chat: //约聊 首页
                 hideFragments(fragmentTransaction);
-                clickTabMsgLayout();
+//                clickTabMsgLayout();
+                clickTabIndexLayout();
 
                 ScaleAnimation msgAni = (ScaleAnimation) AnimationUtils.loadAnimation(this, R.anim.bottom_icon);
                 mIbChat.startAnimation(msgAni);
@@ -426,6 +429,10 @@ public class HnMainActivity extends BaseActivity implements BaseRequestStateList
             transaction.hide(mChatFragment);
         }
 
+        if (mIndexFragment != null) {
+            transaction.hide(mIndexFragment);
+        }
+
         if (mMineFragment != null) {
             transaction.hide(mMineFragment);
         }
@@ -494,6 +501,22 @@ public class HnMainActivity extends BaseActivity implements BaseRequestStateList
             EventBus.getDefault().post(new EventBusBean(0,HnConstants.EventBus.RefreshLiveList,null));
         }
         updateMenu(null);
+    }
+
+    /**
+     * 进入私信fragment
+     */
+    private void clickTabIndexLayout() {
+
+        if (mIndexFragment == null) {
+            // mHomeFragment，则创建一个并添加到界面上
+            mIndexFragment = new HnIndexVideoGroupFragment();
+            fragmentTransaction.add(R.id.content_layout, mIndexFragment);
+        } else {
+            // homeFrag不为空，则直接将它显示出来
+            fragmentTransaction.show(mIndexFragment);
+        }
+        updateMenu(mIbChat);
     }
 
     /**
@@ -768,7 +791,6 @@ public class HnMainActivity extends BaseActivity implements BaseRequestStateList
                             mTvNewMsg.setVisibility(View.GONE);
                         }
                     }
-
                 }
             } else if (HnMainBiz.SignStatue.equalsIgnoreCase(type)) {//签名状态
                 HnSignStateModel model = (HnSignStateModel) obj;
@@ -777,10 +799,13 @@ public class HnMainActivity extends BaseActivity implements BaseRequestStateList
                     if ("Y".equals(bean.getIs_signin())) {
                         if ("1".equals(response)) mTvSign.setVisibility(View.INVISIBLE);
                         else mTvSign.setVisibility(View.GONE);
+                        if ("1".equals(response)) mTvActivity.setVisibility(View.INVISIBLE);
+                        else mTvActivity.setVisibility(View.GONE);
                         EventBus.getDefault().post(new HnSignEvent(true));
                     } else {
                         EventBus.getDefault().post(new HnSignEvent(false));
                         mTvSign.setVisibility(View.VISIBLE);
+                        mTvActivity.setVisibility(View.VISIBLE);
                         if (!isFirstSign) {
                             isFirstSign = true;
                             if (mPopWindow == null) {

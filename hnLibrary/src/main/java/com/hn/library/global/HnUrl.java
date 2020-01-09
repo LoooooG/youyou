@@ -440,6 +440,10 @@ public class HnUrl extends NetConstant {
      */
     public static final String LIVE_GET_HOME_HOT_LIVE = "/live/anchor/getHomeHotLive";
     /**
+     * 获取首页分类视频
+     */
+    public static final String VIDEO_APP_FIRST = "/video/app/first";
+    /**
      * 获取首页热门视频
      */
     public static final String VIDEO_APP_LIST = "/video/app/list";

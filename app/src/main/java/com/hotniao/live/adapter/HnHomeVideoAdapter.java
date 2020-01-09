@@ -12,6 +12,7 @@ import com.hn.library.global.HnUrl;
 import com.hn.library.http.HnHttpUtils;
 import com.hn.library.http.HnResponseHandler;
 import com.hn.library.utils.FrescoConfig;
+import com.hn.library.utils.HnLogUtils;
 import com.hn.library.utils.HnUtils;
 import com.hn.library.view.CommDialog;
 import com.hn.library.view.FrescoImageView;

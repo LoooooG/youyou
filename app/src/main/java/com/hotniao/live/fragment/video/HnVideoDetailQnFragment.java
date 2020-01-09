@@ -43,7 +43,6 @@ import com.hotniao.livelibrary.control.HnUserControl;
 import com.hotniao.livelibrary.model.event.HnFollowEvent;
 import com.hotniao.livelibrary.model.event.HnLiveEvent;
 import com.pili.pldroid.player.AVOptions;
-import com.pili.pldroid.player.PLMediaPlayer;
 import com.pili.pldroid.player.PLOnErrorListener;
 import com.pili.pldroid.player.PLOnInfoListener;
 import com.pili.pldroid.player.widget.PLVideoTextureView;
@@ -146,7 +145,7 @@ public class HnVideoDetailQnFragment extends HnViewPagerBaseFragment implements 
         mShareAPI = UMShareAPI.get(mActivity);
         mShareAction = new ShareAction(mActivity);
 
-        initPalyer();
+        initPlayer();
 
         mInputTextMsgDialog = new HnInputTextMsgDialog(mActivity, R.style.InputDialog);
         mInputTextMsgDialog.setmOnTextSendListener(new HnInputTextMsgDialog.OnTextSendListener() {
@@ -173,7 +172,7 @@ public class HnVideoDetailQnFragment extends HnViewPagerBaseFragment implements 
     /**
      * 初始化播放器
      */
-    private void initPalyer() {
+    private void initPlayer() {
         mActivity.getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         //设置显示模式
         mVideoView.setDisplayAspectRatio(PLVideoView.ASPECT_RATIO_FIT_PARENT);
@@ -269,8 +268,9 @@ public class HnVideoDetailQnFragment extends HnViewPagerBaseFragment implements 
             R.id.mTvFinish, R.id.mTvGoTo, R.id.mIvPlay, R.id.mViewClick})
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.mTvGoTo://付费观看按钮
-                if (mHnVideoBiz != null) mHnVideoBiz.getVideoUrl(mSwitchData.getId());
+            case R.id.mTvGoTo: // 去充值
+                // if (mHnVideoBiz != null) mHnVideoBiz.getVideoUrl(mSwitchData.getId());
+                openActivity(HnMyRechargeActivity.class);
                 break;
             case R.id.mTvFinish:
             case R.id.mIvBack:
@@ -286,7 +286,7 @@ public class HnVideoDetailQnFragment extends HnViewPagerBaseFragment implements 
                 break;
             case R.id.mTvFouse:
                 if (mDbean == null) return;
-                clickFouces();
+                clickFocus();
                 break;
             case R.id.mIvZan:
                 if (!mCanClick) return;
@@ -440,7 +440,7 @@ public class HnVideoDetailQnFragment extends HnViewPagerBaseFragment implements 
      *
      * @param bean
      */
-    public void swicthVideo(HnVideoRoomSwitchModel.DBean bean) {
+    public void switchVideo(HnVideoRoomSwitchModel.DBean bean) {
         HnHttpUtils.cancelRequest(HnUrl.VIDEO_APP_VIDEO_DETAIL + mVideoId);
         HnHttpUtils.cancelRequest(HnUrl.VIDEO_APP_VIDEO_URL + mVideoId);
         clearData();
@@ -478,7 +478,7 @@ public class HnVideoDetailQnFragment extends HnViewPagerBaseFragment implements 
     /**
      * 设置数据
      */
-    private void setMessgae() {
+    private void setMessage() {
         if (mDbean == null && mTvZan != null) return;
         mTvZan.setText(HnUtils.setNoPoint(mDbean.getLike_num()));
         mTvShare.setText(HnUtils.setNoPoint(mDbean.getShare_num()));
@@ -487,7 +487,7 @@ public class HnVideoDetailQnFragment extends HnViewPagerBaseFragment implements 
         mTvName.setText(mDbean.getUser_nickname());//缺少name
         mIvImg.setController(FrescoConfig.getHeadController(mDbean.getUser_avatar()));
 
-        setFoucesState();
+        setFocusState();
         setZanState();
     }
 
@@ -503,7 +503,7 @@ public class HnVideoDetailQnFragment extends HnViewPagerBaseFragment implements 
     /**
      * 设置关注状态
      */
-    private void setFoucesState() {
+    private void setFocusState() {
         if (mDbean == null || mTvFouse == null) return;
         if (HnApplication.getmUserBean() == null) {
             if (HnPrefUtils.getString(NetConstant.User.UID, "").equals(mDbean.getUser_id()))
@@ -521,7 +521,7 @@ public class HnVideoDetailQnFragment extends HnViewPagerBaseFragment implements 
     /**
      * 点赞
      */
-    private void clickFouces() {
+    private void clickFocus() {
         if (mDbean.isIs_follow()) {
             HnUserControl.cancelFollow(mDbean.getUser_id(), new HnUserControl.OnUserOperationListener() {
                 @Override
@@ -529,7 +529,7 @@ public class HnVideoDetailQnFragment extends HnViewPagerBaseFragment implements 
                     if (mActivity == null) return;
                     mDbean.setIs_follow(false);
                     EventBus.getDefault().post(new HnLiveEvent(1, HnLiveConstants.EventBus.Follow, mDbean.getUser_id()));
-                    setFoucesState();
+                    setFocusState();
                 }
 
                 @Override
@@ -545,7 +545,7 @@ public class HnVideoDetailQnFragment extends HnViewPagerBaseFragment implements 
                     if (mActivity == null) return;
                     mDbean.setIs_follow(true);
                     EventBus.getDefault().post(new HnLiveEvent(0, HnLiveConstants.EventBus.Follow, mDbean.getUser_id()));
-                    setFoucesState();
+                    setFocusState();
                 }
 
                 @Override
@@ -569,7 +569,7 @@ public class HnVideoDetailQnFragment extends HnViewPagerBaseFragment implements 
                     } else {
                         mDbean.setIs_follow(false);
                     }
-                    setFoucesState();
+                    setFocusState();
                 }
             }
         }
@@ -600,6 +600,15 @@ public class HnVideoDetailQnFragment extends HnViewPagerBaseFragment implements 
 
     }
 
+    /**
+     * 显示去充值提示框
+     */
+    private void showGoRechargeDialog() {
+        mCanClick = false;
+        mTvDialogDetail.setText("余额不足哦，充值后才可观看私密视频");
+        mRlPayDialog.setVisibility(View.VISIBLE);
+    }
+
 
     @Override
     public void requesting() {
@@ -616,8 +625,9 @@ public class HnVideoDetailQnFragment extends HnViewPagerBaseFragment implements 
             mVideoId = rspOrId;
             if (model != null && model.getD() != null) {
                 mDbean = model.getD();
-                setMessgae();
-                getVideoUrlAndPay();
+                setMessage();
+                // getVideoUrlAndPay();
+                mHnVideoBiz.getVideoUrl(mSwitchData.getId()); // 直接播放
             }
         } else if (HnVideoBiz.VideoUrl.equals(type)) {
             HnVideoUrlModel model = (HnVideoUrlModel) obj;
@@ -662,7 +672,9 @@ public class HnVideoDetailQnFragment extends HnViewPagerBaseFragment implements 
     @Override
     public void requestFail(String type, int code, String msg) {
         if (mActivity == null) return;
-        if (HnVideoBiz.VideoDetail.equals(type) || HnVideoBiz.VideoZan.equals(type) || HnVideoBiz.VideoComm.equals(type)
+        if (code == 10000) {
+            showGoRechargeDialog();
+        } else if (HnVideoBiz.VideoDetail.equals(type) || HnVideoBiz.VideoZan.equals(type) || HnVideoBiz.VideoComm.equals(type)
                 || HnVideoBiz.VideoShare.equals(type)) {
             HnToastUtils.showToastShort(msg);
         } else if (HnVideoBiz.VideoUrl.equals(type)) {

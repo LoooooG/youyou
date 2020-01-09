@@ -234,7 +234,7 @@
                 android:paddingLeft="@dimen/design_margin"
                 android:paddingRight="@dimen/design_margin"
                 android:paddingTop="@dimen/dp_10"
-                android:text="@string/live_cancel"
+                android:text="残忍拒绝"
                 android:textColor="@color/comm_text_color_black_s"
                 android:textSize="@dimen/comm_text_size_h" />
 
@@ -250,7 +250,7 @@
                 android:paddingLeft="@dimen/design_margin"
                 android:paddingRight="@dimen/design_margin"
                 android:paddingTop="@dimen/dp_10"
-                android:text="@string/live_countiune_look"
+                android:text="去充值"
                 android:textColor="@color/comm_text_color_main"
                 android:textSize="@dimen/comm_text_size_h" />
         </LinearLayout>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rl_title"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/main_color_bg">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@+id/mRlTop"
+            android:background="@color/main_color_bg"
+            android:gravity="center_vertical"
+            android:layout_alignParentBottom="true">
+
+            <ImageView
+                android:id="@+id/iv_shoot"
+                android:layout_width="@dimen/dp_22"
+                android:layout_height="@dimen/dp_22"
+                android:src="@drawable/icon_shoot"
+                android:layout_marginLeft="10dp"
+                android:layout_centerVertical="true"
+                android:visibility="gone"/>
+
+            <ImageView
+                android:id="@+id/iv_search"
+                android:layout_width="@dimen/dp_22"
+                android:layout_height="@dimen/dp_22"
+                android:src="@drawable/icon_search"
+                android:layout_marginRight="8dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:padding="2dp"
+                android:visibility="gone"/>
+
+            <com.hn.library.tab.SlidingTabLayout xmlns:tl="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/mSlidTab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/dp_10"
+                android:paddingRight="@dimen/dp_10"
+                tl:tl_divider_color="@null"
+                tl:tl_divider_padding="16dp"
+                tl:tl_indicator_color="@null"
+                tl:tl_indicator_height="0dp"
+                tl:tl_indicator_width_equal_title="true"
+                tl:tl_tab_padding="@dimen/dp_20"
+                tl:tl_tab_space_equal="false"
+                tl:tl_textBold="BOTH"
+                tl:tl_textSelectColor="@color/white"
+                tl:tl_textUnselectColor="@color/white_tran"
+                tl:tl_textsize="@dimen/comm_text_size_h"
+                tl:tl_underline_color="@null"
+                tl:tl_underline_height="0dp"
+                android:layout_centerInParent="true"/>
+
+            <ImageView
+                android:id="@+id/mIvTab_group"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/design_margin_h"
+                android:padding="10dp"
+                android:scaleType="center"
+                android:src="@drawable/home_more2"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <com.hn.library.refresh.PtrClassicFrameLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/mRefresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:ptr_mode="refresh"
+        android:layout_below="@id/rl_title">
+
+        <com.hotniao.live.widget.scollorlayout.ScrollableLayout
+            android:id="@+id/scrollable_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <!--<include-->
+                <!--android:id="@+id/mViewHead"-->
+                <!--layout="@layout/head_home_child_layout"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content" />-->
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/home_viewpager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/mViewHead" />
+        </com.hotniao.live.widget.scollorlayout.ScrollableLayout>
+
+    </com.hn.library.refresh.PtrClassicFrameLayout>
+
+</RelativeLayout>

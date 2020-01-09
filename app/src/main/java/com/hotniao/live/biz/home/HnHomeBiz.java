@@ -364,6 +364,58 @@ public class HnHomeBiz {
     }
 
     /**
+     * 获取首页视频列表
+     *
+     * @param page
+     * @param lng
+     * @param lat
+     * @param location  //1 首页热门 2我-小视频 0 其他
+     * @param city      //城市必传
+     * @param type      //分类必传
+     * @param userId    //获取其他用户视频必传
+     * @param priceType //	0 全部 1免费 2收费
+     */
+    public void getIndexVideo(int page, int location, String lng, String lat, String city, String type, String userId, String priceType) {
+        RequestParams param = new RequestParams();
+        param.put("page", page + "");
+
+        param.put("pagesize", location == 1 ? (10 + "") : (10 + ""));
+
+        param.put("location", location + "");
+
+        if (!TextUtils.isEmpty(lng)) param.put("lng", lng + "");
+        if (!TextUtils.isEmpty(lat)) param.put("lat", lat + "");
+        if (!TextUtils.isEmpty(city)) param.put("city", city + "");
+        if (!TextUtils.isEmpty(type)) param.put("type", type + "");
+        if (!TextUtils.isEmpty(userId)) param.put("user_id", userId + "");
+        if (!TextUtils.isEmpty(priceType)) param.put("price_type", priceType + "");
+
+
+        HnHttpUtils.postRequest(HnUrl.VIDEO_APP_FIRST, param, TAG, new HnResponseHandler<HnVideoModel>(HnVideoModel.class) {
+            @Override
+            public void hnSuccess(String response) {
+                if (model.getC() == 0) {
+                    if (listener != null) {
+                        listener.requestSuccess(HotVideo, response, model);
+                    }
+                } else {
+                    if (listener != null) {
+                        listener.requestFail(HotVideo, model.getC(), model.getM());
+                    }
+                }
+            }
+
+            @Override
+            public void hnErr(int errCode, String msg) {
+                if (listener != null) {
+                    listener.requestFail(HotVideo, errCode, msg);
+                }
+            }
+        });
+
+    }
+
+    /**
      * 删除视频
      */
     public void deleteVideo(final String video_id, final int position) {
