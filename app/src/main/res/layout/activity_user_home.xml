@@ -95,7 +95,7 @@
         android:layout_above="@id/mRlBottom"
         app:ptr_mode="refresh">
 
-        <com.hotniao.live.widget.scollorlayout.ScrollableLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        <com.hotniao.video.widget.scollorlayout.ScrollableLayout xmlns:app="http://schemas.android.com/apk/res-auto"
 
             android:id="@+id/scrollable_layout"
             android:layout_width="match_parent"
@@ -211,7 +211,7 @@
                 android:layout_height="wrap_content"
                 android:background="?attr/pageBg_color" />
 
-        </com.hotniao.live.widget.scollorlayout.ScrollableLayout>
+        </com.hotniao.video.widget.scollorlayout.ScrollableLayout>
     </com.hn.library.refresh.PtrClassicFrameLayout>
 
     <RelativeLayout

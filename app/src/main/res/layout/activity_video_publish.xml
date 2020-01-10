@@ -20,7 +20,7 @@
         android:orientation="vertical">
 
 
-        <com.hotniao.live.widget.squprogress.SquareProgressBar
+        <com.hotniao.video.widget.squprogress.SquareProgressBar
             android:id="@+id/mSp"
             android:layout_width="300dp"
             android:layout_height="180dp"
@@ -28,7 +28,7 @@
             android:layout_centerHorizontal="true"
             android:visibility="visible">
 
-        </com.hotniao.live.widget.squprogress.SquareProgressBar>
+        </com.hotniao.video.widget.squprogress.SquareProgressBar>
 
 
 

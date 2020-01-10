@@ -61,7 +61,7 @@ public abstract class BaseActivity extends BaseLayoutActivity implements OnReque
         mTheme = getTheme();
         if (HnPrefUtils.getInt(HnConstants.PERMISSION_SIZE, 7) != PermissionHelper.getPerSize(this) && null != savedInstanceState) {
             try {
-                Class classname = Class.forName("com.hotniao.live.activity.HnSplashActivity");
+                Class classname = Class.forName("com.hotniao.video.activity.HnSplashActivity");
                 Intent intent = new Intent(this,classname);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(intent);

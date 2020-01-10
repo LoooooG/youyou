@@ -4,7 +4,7 @@
     android:layout_height="fill_parent"
     android:background="#55000000"
     android:gravity="center"
-    tools:context="com.hotniao.live.HnMainActivity">
+    tools:context="com.hotniao.video.HnMainActivity">
 
     <ProgressBar
         android:layout_width="40dp"

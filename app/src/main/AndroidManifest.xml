@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.hotniao.live">
+    package="com.hotniao.video">
 
     <!-- Required -->
     <permission
-        android:name="com.hotniao.live.muliao.permission.JPUSH_MESSAGE"
+        android:name="com.hotniao.video.muliao.permission.JPUSH_MESSAGE"
         android:protectionLevel="signature" />
 
-    <uses-permission android:name="com.hotniao.live.muliao.permission.JPUSH_MESSAGE" />
+    <uses-permission android:name="com.hotniao.video.muliao.permission.JPUSH_MESSAGE" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
 
     <!--
@@ -507,7 +507,7 @@
                 <action android:name="cn.jpush.android.ui.PushActivity" />
 
                 <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="com.hotniao.live.muliao" />
+                <category android:name="com.hotniao.video.muliao" />
             </intent-filter>
         </activity>
         <activity
@@ -519,7 +519,7 @@
                 <action android:name="cn.jpush.android.ui.PushActivity" />
 
                 <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="com.hotniao.live.muliao" />
+                <category android:name="com.hotniao.video.muliao" />
             </intent-filter>
         </activity>
 
@@ -530,13 +530,13 @@
             <intent-filter>
                 <action android:name="cn.jpush.android.intent.DaemonService" />
 
-                <category android:name="com.hotniao.live.muliao" />
+                <category android:name="com.hotniao.video.muliao" />
             </intent-filter>
         </service>
 
         <provider
             android:name="cn.jpush.android.service.DataProvider"
-            android:authorities="com.hotniao.live.muliao.DataProvider"
+            android:authorities="com.hotniao.video.muliao.DataProvider"
             android:exported="true" />
         <!-- Required SDK核心功能 -->
         <receiver
@@ -545,7 +545,7 @@
             android:exported="false">
             <intent-filter android:priority="1000">
                 <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED_PROXY" /> <!-- Required  显示通知栏 -->
-                <category android:name="com.hotniao.live.muliao" />
+                <category android:name="com.hotniao.video.muliao" />
             </intent-filter>
             <intent-filter>
                 <action android:name="android.intent.action.USER_PRESENT" />
@@ -576,7 +576,7 @@
                 <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED" /> <!-- Required  用户接收SDK通知栏信息的intent -->
                 <action android:name="cn.jpush.android.intent.NOTIFICATION_OPENED" /> <!-- Required  用户打开自定义通知栏的intent -->
                 <action android:name="cn.jpush.android.intent.CONNECTION" /> <!-- 接收网络变化 连接/断开 since 1.6.3 -->
-                <category android:name="com.hotniao.live.muliao" />
+                <category android:name="com.hotniao.video.muliao" />
             </intent-filter>
         </receiver>
 

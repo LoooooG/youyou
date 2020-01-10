@@ -9,7 +9,7 @@
         android:layout_height="match_parent"
         app:ptr_mode="refresh">
 
-        <com.hotniao.live.widget.scollorlayout.ScrollableLayout
+        <com.hotniao.video.widget.scollorlayout.ScrollableLayout
             android:id="@+id/scrollable_layout"
             android:layout_width="match_parent"
 
@@ -46,7 +46,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
-        </com.hotniao.live.widget.scollorlayout.ScrollableLayout>
+        </com.hotniao.video.widget.scollorlayout.ScrollableLayout>
 
     </com.hn.library.refresh.PtrClassicFrameLayout>
 </LinearLayout>

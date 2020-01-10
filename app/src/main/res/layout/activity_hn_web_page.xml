@@ -62,7 +62,7 @@
         android:layout_below="@id/toolbar"
         app:isFirstVisible="true">
 
-        <com.hotniao.live.widget.HnWebViewWithProgress
+        <com.hotniao.video.widget.HnWebViewWithProgress
             android:id="@+id/detail_webview"
             android:layout_width="match_parent"
             android:layout_height="match_parent"

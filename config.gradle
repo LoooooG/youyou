@@ -17,7 +17,7 @@ def PersistentCookieJarVersion = "v1.0.1"
 def immersionbarVersion = "2.3.3-beta09"
 
 //根据项目修改应用ID，修改后重启As
-def appId = "com.hotniao.live.youyou"
+def appId = "com.hotniao.video.youyou"
 
 ext {
     appName = "悠悠直播"

@@ -1,4 +1,4 @@
-package com.hotniao.live;
+package com.hotniao.video;
 
 import android.content.Context;
 import android.os.Handler;
