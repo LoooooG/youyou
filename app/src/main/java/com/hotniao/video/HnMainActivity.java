@@ -48,6 +48,7 @@ import com.hotniao.video.fragment.HnMineFragment;
 import com.hotniao.video.fragment.HnMsgFragment;
 import com.hotniao.video.fragment.WaitingDevFragment;
 import com.hotniao.video.fragment.modify.HnActivityGroupFragment;
+import com.hotniao.video.fragment.modify.HnDiscoverFragment;
 import com.hotniao.video.fragment.modify.HnIndexVideoGroupFragment;
 import com.hotniao.video.model.HnSignStateModel;
 import com.hotniao.video.utils.HnAppConfigUtil;
@@ -101,7 +102,7 @@ public class HnMainActivity extends BaseActivity implements BaseRequestStateList
 
     public static HnLocationEntity mLocEntity;
     @BindView(R.id.ib_home)
-    ImageTextButton mIbHome; // 小视频
+    ImageTextButton mIbHome; // 发现
     @BindView(R.id.ib_msg)
     ImageTextButton mIbMsg; // 消息
     @BindView(R.id.ib_activity)
@@ -134,7 +135,8 @@ public class HnMainActivity extends BaseActivity implements BaseRequestStateList
     LinearLayout mLlUpload; // 上传视频
     //底部标签切换fragment
     private WaitingDevFragment waitingDevFragment;
-    private HnHomeChildFragment mHomeFragment; // 小视频
+    // private HnHomeChildFragment mHomeFragment; // 小视频
+    private HnDiscoverFragment mHomeFragment; // 发现
     private HnMsgFragment mMsgFragment; // 消息
     private HnActivityGroupFragment mActivityFragment; // 活动
     private HnMineFragment mMineFragment; // 我的
@@ -446,7 +448,7 @@ public class HnMainActivity extends BaseActivity implements BaseRequestStateList
 
         if (mHomeFragment == null) {
             // mHomeFragment，则创建一个并添加到界面上
-            mHomeFragment = new HnHomeChildFragment();
+            mHomeFragment = new HnDiscoverFragment();
             fragmentTransaction.add(R.id.content_layout, mHomeFragment);
         } else {
             // homeFrag不为空，则直接将它显示出来
