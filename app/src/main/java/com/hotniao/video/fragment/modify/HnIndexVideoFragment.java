@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
@@ -11,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 
+import com.bigkoo.convenientbanner.ConvenientBanner;
 import com.hn.library.base.BaseRequestStateListener;
 import com.hn.library.daynight.DayNightHelper;
 import com.hn.library.loadstate.HnLoadingLayout;
@@ -20,11 +22,13 @@ import com.hn.library.utils.HnToastUtils;
 import com.hn.library.view.HnSpacesItemDecoration;
 import com.hotniao.video.HnMainActivity;
 import com.hotniao.video.R;
+import com.hotniao.video.adapter.HnHomeHotExtAdapter;
 import com.hotniao.video.adapter.HnHomeVideoAdapter;
 import com.hotniao.video.base.BaseScollFragment;
 import com.hotniao.video.biz.home.HnHomeBiz;
 import com.hotniao.video.eventbus.HnSelectLiveCateEvent;
 import com.hotniao.video.fragment.HnHomeChildFragment;
+import com.hotniao.video.model.HnBannerModel;
 import com.hotniao.video.model.HnVideoModel;
 
 import org.greenrobot.eventbus.EventBus;
@@ -54,6 +58,16 @@ public class HnIndexVideoFragment extends BaseScollFragment implements HnLoading
     RelativeLayout mRlPer;
 
     private View mEmptyLayout;
+
+    /**
+     * 头部布局  广告位
+     */
+    private View mHeaderView;
+    private ConvenientBanner mBanner;
+    /**
+     * 广告数据源
+     */
+    private List<String> imgUrl = new ArrayList<>();
     /**
      * 页数
      */
@@ -109,6 +123,7 @@ public class HnIndexVideoFragment extends BaseScollFragment implements HnLoading
     protected void initData() {
         mPage = 1;
         getData();
+        mHnHomeBiz.getBanner(3);
         refreshUI();
     }
 
@@ -121,6 +136,12 @@ public class HnIndexVideoFragment extends BaseScollFragment implements HnLoading
         mRecyclerView.setLayoutManager(new GridLayoutManager(mActivity, 2));
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setAdapter(mAdapter);
+
+
+        mHeaderView = mActivity.getLayoutInflater().inflate(R.layout.bannerview, null);
+        mBanner = mHeaderView.findViewById(R.id.convenientBanner);
+        mAdapter.addHeaderView(mHeaderView);
+        com.hn.library.utils.HnUiUtils.setBannerHeight(mActivity, mBanner);
 
 
         /**空数据*/
@@ -173,6 +194,10 @@ public class HnIndexVideoFragment extends BaseScollFragment implements HnLoading
                 showEmptyView();
                 mActivity.setLoadViewState(HnLoadingLayout.Success, mLoading);
             }
+        } else if (HnHomeBiz.Banner.equals(type)) {
+            HnBannerModel model = (HnBannerModel) obj;
+            if (model.getD().getCarousel() == null || mBanner == null || mHnHomeBiz == null) return;
+            mHnHomeBiz.initViewpager(mBanner, imgUrl, model.getD().getCarousel());
         }
     }
 
@@ -199,6 +224,14 @@ public class HnIndexVideoFragment extends BaseScollFragment implements HnLoading
         List<HnVideoModel.DBean.ItemsBean> lives = data.getItems();
 
         if (lives != null && mAdapter != null) {
+//            if (mPage == 1 && lives.size() > 0) {
+//                mAdapter.removeHeaderView(mHeaderView);
+//                mAdapter = new HnHomeVideoAdapter();
+//                mRecyclerView.setLayoutManager(new LinearLayoutManager(mActivity));
+//                mRecyclerView.setAdapter(mAdapter);
+//                mAdapter.addHeaderView(mHeaderView);
+//            }
+
             if (lives.size() > 0) {
                 if (mPage == 1) {
                     mDatas.clear();
@@ -243,6 +276,7 @@ public class HnIndexVideoFragment extends BaseScollFragment implements HnLoading
         //根布局背景色
 //        mLoading.setBackgroundResource(background.resourceId);
         Resources resources = getResources();
+        mHeaderView.setBackgroundResource(background.resourceId);
 
         boolean isDay = mDayNightHelper.isDay();
     }
@@ -268,6 +302,7 @@ public class HnIndexVideoFragment extends BaseScollFragment implements HnLoading
     @Override
     public void pullToRefresh() {
         mPage = 1;
+        mHnHomeBiz.getBanner(3);
         getData();
     }
 
