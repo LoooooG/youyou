@@ -117,6 +117,10 @@ public class HnMineVideoFragment extends BaseScollFragment implements BaseReques
         view.findViewById(R.id.mRlPublish).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if (true) {
+                    HnToastUtils.showToast(getContext(), "该功能暂未开放", 2000);
+                    return;
+                }
                 if(!HnPrefUtils.getBoolean(NetConstant.User.IS_ANCHOR,false)){
                     HnAuthStateActivity.luncher(mActivity);
                     return;

@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
+import android.webkit.WebView;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -19,6 +20,7 @@ import com.hn.library.global.HnUrl;
 import com.hn.library.global.NetConstant;
 import com.hn.library.http.HnHttpUtils;
 import com.hn.library.utils.FrescoConfig;
+import com.hn.library.utils.HnLogUtils;
 import com.hn.library.utils.HnPrefUtils;
 import com.hn.library.utils.HnServiceErrorUtil;
 import com.hn.library.utils.HnToastUtils;
@@ -70,6 +72,8 @@ import butterknife.OnClick;
  */
 
 public class HnVideoDetailQnFragment extends HnViewPagerBaseFragment implements BaseRequestStateListener {
+    @BindView(R.id.mWebView)
+    WebView mWebView;
     @BindView(R.id.mVideoViewQn)
     PLVideoTextureView mVideoView;
     @BindView(R.id.mViewClick)
@@ -102,6 +106,7 @@ public class HnVideoDetailQnFragment extends HnViewPagerBaseFragment implements 
     private String mPlayUrl;
     private boolean mVideoPause = true;
     private boolean mPlaying = false;
+    private AVOptions mOptions;
 
 
     private HnInputTextMsgDialog mInputTextMsgDialog;
@@ -150,9 +155,9 @@ public class HnVideoDetailQnFragment extends HnViewPagerBaseFragment implements 
         mInputTextMsgDialog = new HnInputTextMsgDialog(mActivity, R.style.InputDialog);
         mInputTextMsgDialog.setmOnTextSendListener(new HnInputTextMsgDialog.OnTextSendListener() {
             @Override
-            public void onTextSend(String msg, boolean isRepleyUser) {
+            public void onTextSend(String msg, boolean isReplayUser) {
                 if (TextUtils.isEmpty(mVideoId)) return;
-                if (isRepleyUser) {
+                if (isReplayUser) {
                     mHnVideoBiz.commVideo(mVideoId, mFUserId , msg);
                     mFUserId = null;
                 } else {
@@ -176,13 +181,17 @@ public class HnVideoDetailQnFragment extends HnViewPagerBaseFragment implements 
         mActivity.getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         //设置显示模式
         mVideoView.setDisplayAspectRatio(PLVideoView.ASPECT_RATIO_FIT_PARENT);
-        AVOptions options = new AVOptions();
-        options.setInteger(AVOptions.KEY_LIVE_STREAMING, 0);
-        options.setInteger(AVOptions.KEY_PREPARE_TIMEOUT, 10 * 1000);
-        options.setInteger(AVOptions.KEY_MEDIACODEC, 0);//采用软解码
-        options.setInteger(AVOptions.KEY_MAX_CACHE_BUFFER_DURATION, 4000);
+        mOptions = new AVOptions();
+        mOptions.setInteger(AVOptions.KEY_LIVE_STREAMING, 0);
+        mOptions.setInteger(AVOptions.KEY_PREPARE_TIMEOUT, 10 * 1000);
+        mOptions.setInteger(AVOptions.KEY_MEDIACODEC, 0);//采用软解码
+        mOptions.setInteger(AVOptions.KEY_MAX_CACHE_BUFFER_DURATION, 4000);
 
-        mVideoView.setAVOptions(options);
+        // 设置偏好的视频格式，设置后会加快对应格式视频流的打开速度，但播放其他格式会出错
+        // m3u8 = 1, mp4 = 2, flv = 3
+        // mOptions.setInteger(AVOptions.KEY_PREFER_FORMAT, 1);
+
+        mVideoView.setAVOptions(mOptions);
         mVideoView.setOnInfoListener(mOnInfoListener);
         mVideoView.setOnErrorListener(mOnErrorListener);
         mVideoView.setLooping(true);
@@ -336,6 +345,7 @@ public class HnVideoDetailQnFragment extends HnViewPagerBaseFragment implements 
             case R.id.mIvPlay:
             case R.id.mViewClick:
                 if (!mCanClick) return;
+                if (mPlayUrl.contains(".m3u8")) return;
                 if (mPlaying) {
                     if (mVideoPause) {
                         mVideoView.start();
@@ -362,18 +372,24 @@ public class HnVideoDetailQnFragment extends HnViewPagerBaseFragment implements 
     }
 
     private void startPlay() {
-        if (mActivity == null) return;
-        try {
-
-
-            if (!TextUtils.isEmpty(mPlayUrl) && mVideoView != null) {
+        if (mActivity == null || TextUtils.isEmpty(mPlayUrl) || mVideoView == null) return;
+        if (mPlayUrl.contains(".m3u8")) {
+            mWebView.loadUrl(mPlayUrl);
+            mWebView.setVisibility(View.VISIBLE);
+            mIvBg.setVisibility(View.GONE);
+            mViewClick.setVisibility(View.GONE);
+            mIvPlay.setVisibility(View.GONE);
+        } else {
+            mWebView.setVisibility(View.GONE);
+            try {
                 mVideoView.setVideoPath(mPlayUrl);
+                HnLogUtils.i("mPlayUrl:" + mPlayUrl);
                 mVideoView.start();
                 mPlaying = true;
                 mVideoPause = false;
+            } catch (Exception e) {
+                e.printStackTrace();
             }
-        } catch (Exception e) {
-            e.printStackTrace();
         }
     }
 
@@ -634,6 +650,8 @@ public class HnVideoDetailQnFragment extends HnViewPagerBaseFragment implements 
             if (model.getD() != null && !TextUtils.isEmpty(model.getD().getUrl())) {
                 if (mRlPayDialog != null) mRlPayDialog.setVisibility(View.GONE);
                 mPlayUrl = model.getD().getUrl();
+//                mPlayUrl = "http://67vod.814876.com/2019/4d8fda27/m3u8.m3u8";
+//                mPlayUrl = "http://devimages.apple.com/iphone/samples/bipbop/bipbopall.m3u8";
                 mCanClick = true;
                 startPlay();
             }

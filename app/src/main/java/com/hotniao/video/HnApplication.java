@@ -125,7 +125,7 @@ public class HnApplication extends HnBaseApplication {
 
         HnLogUtils.init(BuildConfig.DEBUG, "Hn");
         //微信朋友圈和微信分享
-        PlatformConfig.setWeixin("wx1bff55e20ba7ff84", "816a3e43552058b85e42cd5b0957b973");//huoliao
+        PlatformConfig.setWeixin("wx53e6ccb79edec4e7", "ff59393a67e94ddfeb644d85a70ed0e7");//huoliao
         //QQ分享
         PlatformConfig.setQQZone("1108817124", "TXBQw3ZoF5EIfn98");//moyan
         //新浪分享

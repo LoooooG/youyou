@@ -20,7 +20,7 @@ def immersionbarVersion = "2.3.3-beta09"
 def appId = "com.hotniao.video.youyou"
 
 ext {
-    appName = "悠悠直播"
+    appName = "快点视频"
     compileSdkVersion = 26
     buildToolsVersion = "26.0.2"
     applicationId = appId

@@ -123,7 +123,7 @@ public class HnIndexVideoFragment extends BaseScollFragment implements HnLoading
     protected void initData() {
         mPage = 1;
         getData();
-        mHnHomeBiz.getBanner(3);
+        mHnHomeBiz.getBanner(1);
         refreshUI();
     }
 
@@ -302,7 +302,7 @@ public class HnIndexVideoFragment extends BaseScollFragment implements HnLoading
     @Override
     public void pullToRefresh() {
         mPage = 1;
-        mHnHomeBiz.getBanner(3);
+        mHnHomeBiz.getBanner(1);
         getData();
     }
 

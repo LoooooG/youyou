@@ -247,7 +247,7 @@ public class HnInviteChatBeforeFragment extends BaseFragment implements ITXLiveP
                 @Override
                 public void sureClick() {
                 }
-            }).setTitle(HnUiUtils.getString(com.videolibrary.R.string.main_chat)).setContent("请在设置中，允许悠悠直播访问你的相机和麦克风权限")
+            }).setTitle(HnUiUtils.getString(com.videolibrary.R.string.main_chat)).setContent("请在设置中，允许快点视频访问你的相机和麦克风权限")
                     .setRightText(HnUiUtils.getString(com.videolibrary.R.string.i_know)).show();
         }
 
