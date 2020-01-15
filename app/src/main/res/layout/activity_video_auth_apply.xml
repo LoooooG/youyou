@@ -118,14 +118,14 @@
         android:orientation="vertical"
         android:visibility="gone">
 
-        <com.hotniao.video.widget.squprogress.SquareProgressBar
+        <com.hotniao.svideo.widget.squprogress.SquareProgressBar
             android:id="@+id/mSqPro"
             android:layout_width="300dp"
             android:layout_height="180dp"
             android:layout_gravity="center_horizontal"
             android:visibility="visible">
 
-        </com.hotniao.video.widget.squprogress.SquareProgressBar>
+        </com.hotniao.svideo.widget.squprogress.SquareProgressBar>
 
         <LinearLayout
             android:id="@+id/mLlPublishing"

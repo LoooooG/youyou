@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.hotniao.video.activity.HnGeneralizeActivity">
+    tools:context="com.hotniao.svideo.activity.HnGeneralizeActivity">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

@@ -399,7 +399,7 @@ public class HnOnlineVideoChatFragment extends BaseFragment implements View.OnCl
                         mActivity.finish();
 
                     }
-                }).setTitle(HnUiUtils.getString(R.string.main_chat)).setContent("请在设置中，允许快点视频访问你的相机和麦克风权限")
+                }).setTitle(HnUiUtils.getString(R.string.main_chat)).setContent("请在设置中，允许多多视频访问你的相机和麦克风权限")
                         .setCanceledOnOutside(false).setRightText(HnUiUtils.getString(R.string.i_know)).show();
                 mHandler.postDelayed(new Runnable() {
                     @Override

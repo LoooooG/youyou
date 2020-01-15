@@ -1,4 +1,4 @@
-package com.hotniao.video;
+package com.hotniao.svideo;
 
 import android.content.Context;
 import android.os.Handler;
@@ -11,7 +11,7 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.hn.library.HnBaseApplication;
 import com.hn.library.loadstate.HnLoadingLayout;
 import com.hn.library.utils.HnLogUtils;
-import com.hotniao.video.R;
+import com.hotniao.svideo.R;
 import com.lqr.emoji.IImageLoader;
 import com.lqr.emoji.LQREmotionKit;
 import com.qiniu.pili.droid.streaming.StreamingEnv;

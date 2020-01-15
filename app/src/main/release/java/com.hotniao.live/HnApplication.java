@@ -1,4 +1,4 @@
-package com.hotniao.video;
+package com.hotniao.svideo;
 
 import android.content.Context;
 import android.os.Handler;

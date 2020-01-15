@@ -4,14 +4,14 @@
     android:background="@color/comm_text_color_black"
     android:layout_height="match_parent">
 
-    <com.hotniao.video.widget.imagepager.PinchImageViewPager
+    <com.hotniao.svideo.widget.imagepager.PinchImageViewPager
         android:id="@+id/view_pager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 
 
 
-    <com.hotniao.video.widget.imagepager.CircleIndicator
+    <com.hotniao.svideo.widget.imagepager.CircleIndicator
         android:id="@+id/circle_indicator_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

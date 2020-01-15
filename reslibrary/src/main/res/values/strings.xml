@@ -79,7 +79,7 @@
     <string name="choose_pay_method">选择付款方式</string>
     <string name="ali_pay">支付宝支付</string>
     <string name="weixin_pay">微信支付</string>
-    <string name="hotniao_account">快点视频账户</string>
+    <string name="hotniao_account">多多视频账户</string>
     <string name="balance">余额</string>
     <string name="earning_details">收益详情</string>
     <string name="expense_record">消费记录</string>
@@ -98,7 +98,7 @@
     <string name="cancle_focus">取消关注</string>
     <string name="cancle_focus_cannot_receive_live_msg">取消关注,将收不到Ta开播的信息,是否取消</string>
     <string name="not_open_vip">未开通会员</string>
-    <string name="app_vip_validity_to">快点视频会员,有效期至</string>
+    <string name="app_vip_validity_to">多多视频会员,有效期至</string>
     <string name="one_month">个月</string>
     <string name="now_to_open">立即开通</string>
     <string name="please_vip_meal">请选择会员套餐</string>
@@ -133,12 +133,12 @@
     <string name="people_look">人观看</string>
     <string name="my_admin">我的房管</string>
     <string name="add_admin">添加房管</string>
-    <string name="live_share_title">滴滴滴!老司机开播了,来不及解释了,小伙伴们快上车,我在快点视频直播</string>
-    <string name="live_share_content">【%1$s】正在快点视频直播间【%2$s】,快来围观吧...</string>
+    <string name="live_share_title">滴滴滴!老司机开播了,来不及解释了,小伙伴们快上车,我在多多视频直播</string>
+    <string name="live_share_content">【%1$s】正在多多视频直播间【%2$s】,快来围观吧...</string>
     <string name="buy">购买</string>
 
 
-    <string name="need_find_you_loction">快点视频需要访问你的位置权限</string>
+    <string name="need_find_you_loction">多多视频需要访问你的位置权限</string>
     <string name="with_draw_dayu_zreo">提现金额需大于0</string>
     <string name="live_share">直播分享</string>
     <string name="live_share_content_dialog">将打开 %1$s 进行分享?</string>
@@ -165,6 +165,6 @@
     <string name="you_not_open_location_service">您还没有开启定位服务</string>
     <string name="now_open">立即开启</string>
     <string name="set">设置</string>
-    <string name="allow_firebird_to_visit_location">点击“设置”前往系统设置允许快点视频访问你的位置</string>
-    <string name="open_the_location_service_to_allow_the_fire_bird_to_visit_the_location">打开“定位服务”来允许“快点视频”确定您的位置</string>
+    <string name="allow_firebird_to_visit_location">点击“设置”前往系统设置允许多多视频访问你的位置</string>
+    <string name="open_the_location_service_to_allow_the_fire_bird_to_visit_the_location">打开“定位服务”来允许“多多视频”确定您的位置</string>
 </resources>

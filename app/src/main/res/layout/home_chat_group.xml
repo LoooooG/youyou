@@ -79,7 +79,7 @@
         app:ptr_mode="refresh"
         android:layout_below="@id/rl_title">
 
-        <com.hotniao.video.widget.scollorlayout.ScrollableLayout
+        <com.hotniao.svideo.widget.scollorlayout.ScrollableLayout
             android:id="@+id/scrollable_layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -96,7 +96,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_below="@id/mViewHead" />
-        </com.hotniao.video.widget.scollorlayout.ScrollableLayout>
+        </com.hotniao.svideo.widget.scollorlayout.ScrollableLayout>
     </com.hn.library.refresh.PtrClassicFrameLayout>
 
 </RelativeLayout>

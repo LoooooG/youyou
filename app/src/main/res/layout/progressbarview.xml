@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.hotniao.video.widget.squprogress.SquareProgressView
+    <com.hotniao.svideo.widget.squprogress.SquareProgressView
         android:id="@+id/squareProgressBar1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.hotniao.video">
+    package="com.hotniao.svideo">
 
     <!-- Required -->
     <permission
-        android:name="com.hotniao.video.muliao.permission.JPUSH_MESSAGE"
+        android:name="com.hotniao.svideo.muliao.permission.JPUSH_MESSAGE"
         android:protectionLevel="signature" />
 
     <uses-permission android:name="com.hotniao.video.muliao.permission.JPUSH_MESSAGE" />
@@ -545,7 +545,7 @@
 
         <provider
             android:name="cn.jpush.android.service.DataProvider"
-            android:authorities="com.hotniao.video.muliao.DataProvider"
+            android:authorities="com.hotniao.svideo.muliao.DataProvider"
             android:exported="true" />
         <!-- Required SDK核心功能 -->
         <receiver

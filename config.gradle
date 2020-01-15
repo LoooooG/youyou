@@ -17,10 +17,10 @@ def PersistentCookieJarVersion = "v1.0.1"
 def immersionbarVersion = "2.3.3-beta09"
 
 //根据项目修改应用ID，修改后重启As
-def appId = "com.hotniao.video.youyou"
+def appId = "com.hotniao.svideo.duoduo"
 
 ext {
-    appName = "快点视频"
+    appName = "多多视频"
     compileSdkVersion = 26
     buildToolsVersion = "26.0.2"
     applicationId = appId
