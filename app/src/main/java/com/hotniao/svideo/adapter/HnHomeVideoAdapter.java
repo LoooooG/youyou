@@ -57,7 +57,7 @@ public class HnHomeVideoAdapter extends BaseQuickAdapter<HnVideoModel.DBean.Item
     protected void convert(final BaseViewHolder helper, final HnVideoModel.DBean.ItemsBean item) {
         ((FrescoImageView) helper.getView(R.id.mIvLogo)).setController(FrescoConfig.getController(item.getCover()));
         ((FrescoImageView) helper.getView(R.id.iv_avatar)).setController(FrescoConfig.getController(item.getUser_avatar()));
-//        helper.setText(R.id.mTvTitle, TextUtils.isEmpty(item.getTitle()) ? "没有标题哦~" : item.getTitle());
+        helper.setText(R.id.mTitle, TextUtils.isEmpty(item.getTitle()) ? "" : item.getTitle());
         helper.setText(R.id.mLikeNum, HnUtils.setNoPoint(item.getLike_num()));
         helper.setText(R.id.mTvName, item.getUser_nickname());
 
