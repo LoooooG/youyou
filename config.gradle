@@ -26,8 +26,8 @@ ext {
     applicationId = appId
     minSdkVersion = 19
     targetSdkVersion = 26
-    versionCode = 1
-    versionName = "1.0"
+    versionCode = 2
+    versionName = "1.1"
 
     //官方库  support包使用时版本统一
     supportV4 = "com.android.support:support-v4:${supportVersion}"

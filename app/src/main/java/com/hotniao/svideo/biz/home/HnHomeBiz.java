@@ -328,7 +328,7 @@ public class HnHomeBiz {
         RequestParams param = new RequestParams();
         param.put("page", page + "");
 
-        param.put("pagesize", location == 1 ? (10 + "") : (10 + ""));
+        param.put("pagesize", location == 1 ? (20 + "") : (20 + ""));
 
         param.put("location", location + "");
 
@@ -380,7 +380,7 @@ public class HnHomeBiz {
         RequestParams param = new RequestParams();
         param.put("page", page + "");
 
-        param.put("pagesize", location == 1 ? (10 + "") : (10 + ""));
+        param.put("pagesize", location == 1 ? (20 + "") : (20 + ""));
 
         param.put("location", location + "");
 

@@ -1,4 +1,4 @@
-package com.hotniao.svideo.fragment.modify;
+package com.hotniao.video.fragment.modify;
 
 import android.annotation.SuppressLint;
 import android.content.res.Resources;
@@ -17,7 +17,12 @@ import com.hn.library.base.BaseRequestStateListener;
 import com.hn.library.daynight.DayNightHelper;
 import com.hn.library.loadstate.HnLoadingLayout;
 import com.hn.library.refresh.PtrClassicFrameLayout;
+import com.hn.library.refresh.PtrDefaultHandler2;
 import com.hn.library.refresh.PtrFrameLayout;
+import com.hn.library.refresh.PtrHandler;
+import com.hn.library.refresh.PtrUIHandler;
+import com.hn.library.refresh.indicator.PtrIndicator;
+import com.hn.library.utils.HnLogUtils;
 import com.hn.library.utils.HnToastUtils;
 import com.hn.library.view.HnSpacesItemDecoration;
 import com.hotniao.svideo.HnMainActivity;
@@ -117,12 +122,24 @@ public class HnIndexVideoFragment extends BaseScollFragment implements HnLoading
         //事件监听
         initEvent();
         mDayNightHelper = new DayNightHelper();
+        mPtr.setPtrHandler(new PtrDefaultHandler2() {
+            @Override
+            public void onLoadMoreBegin(PtrFrameLayout frame) {
+                mPage += 1;
+                getData(mPage);
+            }
+
+            @Override
+            public void onRefreshBegin(PtrFrameLayout frame) {
+
+            }
+        });
     }
 
     @Override
     protected void initData() {
         mPage = 1;
-        getData();
+        getData(mPage);
         mHnHomeBiz.getBanner(1);
         refreshUI();
     }
@@ -158,9 +175,7 @@ public class HnIndexVideoFragment extends BaseScollFragment implements HnLoading
     protected void initEvent() {
         //刷新监听
         mPtr.disableWhenHorizontalMove(true);
-        mPtr.setMode(PtrFrameLayout.Mode.NONE);
-
-
+        mPtr.setMode(PtrFrameLayout.Mode.BOTH);
     }
 
 
@@ -224,14 +239,6 @@ public class HnIndexVideoFragment extends BaseScollFragment implements HnLoading
         List<HnVideoModel.DBean.ItemsBean> lives = data.getItems();
 
         if (lives != null && mAdapter != null) {
-//            if (mPage == 1 && lives.size() > 0) {
-//                mAdapter.removeHeaderView(mHeaderView);
-//                mAdapter = new HnHomeVideoAdapter();
-//                mRecyclerView.setLayoutManager(new LinearLayoutManager(mActivity));
-//                mRecyclerView.setAdapter(mAdapter);
-//                mAdapter.addHeaderView(mHeaderView);
-//            }
-
             if (lives.size() > 0) {
                 if (mPage == 1) {
                     mDatas.clear();
@@ -246,7 +253,7 @@ public class HnIndexVideoFragment extends BaseScollFragment implements HnLoading
             }
         }
         showEmptyView();
-//        HnUiUtils.setRefreshModeNone(mPtr, mPage, 10, mDatas.size());
+        // HnUiUtils.setRefreshMode(mPtr, mPage, 10, mDatas.size());
 
     }
 
@@ -303,15 +310,15 @@ public class HnIndexVideoFragment extends BaseScollFragment implements HnLoading
     public void pullToRefresh() {
         mPage = 1;
         mHnHomeBiz.getBanner(1);
-        getData();
+        getData(mPage);
     }
 
 
-    private void getData() {
+    private void getData(int page) {
         if (HnMainActivity.mLocEntity == null)
-            mHnHomeBiz.getIndexVideo(mPage, 1, null, null, null, mVideoType, null, null);
+            mHnHomeBiz.getIndexVideo(page, 1, null, null, null, mVideoType, null, null);
         else
-            mHnHomeBiz.getIndexVideo(mPage, 1, HnMainActivity.mLocEntity.getmLng(), HnMainActivity.mLocEntity.getmLat(), null, mVideoType, null, null);
+            mHnHomeBiz.getIndexVideo(page, 1, HnMainActivity.mLocEntity.getmLng(), HnMainActivity.mLocEntity.getmLat(), null, mVideoType, null, null);
     }
 
     /**

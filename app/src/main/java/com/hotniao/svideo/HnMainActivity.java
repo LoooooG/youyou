@@ -840,9 +840,6 @@ public class HnMainActivity extends BaseActivity implements BaseRequestStateList
 
     private void setVersion(HnConfigModel.DBean mDBean, String response) {
         //保存全局配置信息
-        if (true) {
-            return;
-        }
         if (mDBean != null) {
             if (!TextUtils.isEmpty(response))
                 HnPrefUtils.setString(HnConstants.Setting.USER_CONFIG_MSG, response);
