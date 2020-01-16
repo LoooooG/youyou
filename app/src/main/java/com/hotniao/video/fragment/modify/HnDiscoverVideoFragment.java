@@ -14,6 +14,7 @@ import com.hn.library.base.BaseRequestStateListener;
 import com.hn.library.daynight.DayNightHelper;
 import com.hn.library.loadstate.HnLoadingLayout;
 import com.hn.library.refresh.PtrClassicFrameLayout;
+import com.hn.library.refresh.PtrDefaultHandler2;
 import com.hn.library.refresh.PtrFrameLayout;
 import com.hn.library.utils.HnToastUtils;
 import com.hn.library.view.HnSpacesItemDecoration;
@@ -108,12 +109,25 @@ public class HnDiscoverVideoFragment extends BaseScollFragment implements HnLoad
         //事件监听
         initEvent();
         mDayNightHelper = new DayNightHelper();
+
+        mPtr.setPtrHandler(new PtrDefaultHandler2() {
+            @Override
+            public void onLoadMoreBegin(PtrFrameLayout frame) {
+                mPage += 1;
+                getData(mPage);
+            }
+
+            @Override
+            public void onRefreshBegin(PtrFrameLayout frame) {
+
+            }
+        });
     }
 
     @Override
     protected void initData() {
         mPage = 1;
-        getData();
+        getData(mPage);
         refreshUI();
     }
 
@@ -142,9 +156,7 @@ public class HnDiscoverVideoFragment extends BaseScollFragment implements HnLoad
     protected void initEvent() {
         //刷新监听
         mPtr.disableWhenHorizontalMove(true);
-        mPtr.setMode(PtrFrameLayout.Mode.NONE);
-
-
+        mPtr.setMode(PtrFrameLayout.Mode.BOTH);
     }
 
 
@@ -273,15 +285,15 @@ public class HnDiscoverVideoFragment extends BaseScollFragment implements HnLoad
     @Override
     public void pullToRefresh() {
         mPage = 1;
-        getData();
+        getData(mPage);
     }
 
 
-    private void getData() {
+    private void getData(int page) {
         if (HnMainActivity.mLocEntity == null)
-            mHnHomeBiz.getOneHomeHotVideo(mPage, 1, null, null, null, mCateId, null,null);
+            mHnHomeBiz.getOneHomeHotVideo(page, 1, null, null, null, mCateId, null,null);
         else
-            mHnHomeBiz.getOneHomeHotVideo(mPage, 1, HnMainActivity.mLocEntity.getmLng(), HnMainActivity.mLocEntity.getmLat(), null, mCateId, null,null);
+            mHnHomeBiz.getOneHomeHotVideo(page, 1, HnMainActivity.mLocEntity.getmLng(), HnMainActivity.mLocEntity.getmLat(), null, mCateId, null,null);
     }
 
     /**
