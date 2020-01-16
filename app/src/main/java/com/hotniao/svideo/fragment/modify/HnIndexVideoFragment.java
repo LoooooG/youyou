@@ -1,4 +1,4 @@
-package com.hotniao.video.fragment.modify;
+package com.hotniao.svideo.fragment.modify;
 
 import android.annotation.SuppressLint;
 import android.content.res.Resources;

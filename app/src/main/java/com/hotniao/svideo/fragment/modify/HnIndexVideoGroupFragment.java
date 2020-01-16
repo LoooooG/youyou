@@ -23,7 +23,6 @@ import com.hotniao.svideo.base.BaseScollFragment;
 import com.hotniao.svideo.biz.home.HnHomeBiz;
 import com.hotniao.svideo.biz.home.HnHomeCate;
 import com.hotniao.svideo.eventbus.HnSelectLiveCateEvent;
-import com.hotniao.svideo.fragment.homeHot.HnHomeHotVideoFragment;
 import com.hotniao.svideo.widget.scollorlayout.ScrollableLayout;
 
 import org.greenrobot.eventbus.EventBus;
