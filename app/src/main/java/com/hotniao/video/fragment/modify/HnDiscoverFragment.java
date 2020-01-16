@@ -61,16 +61,14 @@ public class HnDiscoverFragment extends BaseFragment implements ViewPager.OnPage
 
     @Override
     public int getContentViewId() {
-        if (!EventBus.getDefault().isRegistered(this)) {
-            EventBus.getDefault().register(this);
-        }
         return R.layout.fragment_home_discover;
     }
 
     @Override
     public void initView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        if (HnHomeCate.mCateData.size() < 1) {
-            HnHomeCate.getCateData();
+        EventBus.getDefault().register(this);
+        if (HnHomeCate.mVideoCateData.size() < 1) {
+            HnHomeCate.getVideoCateData();
             HnHomeCate.setOnCateListener(new HnHomeCate.OnCateListener() {
                 @Override
                 public void onSuccess() {
