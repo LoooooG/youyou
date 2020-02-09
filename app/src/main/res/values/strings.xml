@@ -39,9 +39,9 @@
     <string name="please_input_pwd">请输入6-16位登录密码</string>
     <string name="send_mess_suc">验证码已发送，请注意查收</string>
     <string name="log_aggre">登录代表您已同意</string>
-    <string name="log_pro">悠悠直播服务及隐私条款</string>
-    <string name="youbo_pro">《悠悠直播用户协议》</string>
-    <string name="youbo_pro_title">悠悠直播用户协议</string>
+    <string name="log_pro">快点视频服务及隐私条款</string>
+    <string name="youbo_pro">《快点视频用户协议》</string>
+    <string name="youbo_pro_title">快点视频用户协议</string>
     <string name="pwd1">密码</string>
     <string name="change_pwd1">修改密码</string>
     <string name="log_comple">完成</string>
@@ -297,7 +297,7 @@
     <string name="auth_imm">立即认证</string>
     <string name="auth_fai">重新申请</string>
     <string name="auth_fai_detail">请您按要求重新提交认证审核，不通过原因：</string>
-    <string name="auth_no_detail">根据相关法规,开直播需要实名认证\n 实名认证不涉及金钱账户\n认证信息悠悠直播会严格保密</string>
+    <string name="auth_no_detail">根据相关法规,开直播需要实名认证\n 实名认证不涉及金钱账户\n认证信息快点视频会严格保密</string>
     <string name="auth_suc_tip"> 审批流程大概需要2-7个工作日。审批通\n过时我们会以消息形式给您通知提示,\n请耐心等待。</string>
     <string name="live_rule">开播规则协议</string>
     <!--绑定新手机号相关-->
@@ -413,7 +413,7 @@
     <string name="str_start_download">开始下载...</string>
 
     <!--关于我们-->
-    <string name="str_about">关于悠悠直播</string>
+    <string name="str_about">关于快点视频</string>
     <string name="privacy_agreement">隐私协议</string>
     <string name="civilization_convention">文明公约</string>
     <string name="conntact_us">联系我们</string>
@@ -553,8 +553,8 @@
     <string name="fast_chat_need_money_more">需要%1$s%2$s/分钟</string>
     <string name="you_have_zan_end">您已经点过赞了</string>
     <string name="input_comm_content">输入评论内容</string>
-    <string name="here_have_a_small_video_have_open">这里有一个特别的悠悠直播小视频,你要不要来打开它</string>
-    <string name="is_heris_here_most_voluptuous_little_video">悠悠直播，最撩人的小视频都在这里</string>
+    <string name="here_have_a_small_video_have_open">这里有一个特别的快点视频小视频,你要不要来打开它</string>
+    <string name="is_heris_here_most_voluptuous_little_video">快点视频，最撩人的小视频都在这里</string>
     <string name="comm">评论</string>
     <string name="video_comm_num">评论  (%1$s)</string>
     <string name="he_hava_no_intro">TA还没有简介哦~</string>
@@ -567,8 +567,8 @@
     <string name="zan_you_video">赞了你</string>
     <string name="no_online">离线</string>
     <string name="weixin_pengyouquan">朋友圈</string>
-    <string name="join_this_app">入驻悠悠直播啦~</string>
-    <string name="join_this_app_invite_you">入驻了悠悠直播，并对你说，快跟我一起上车！</string>
+    <string name="join_this_app">入驻快点视频啦~</string>
+    <string name="join_this_app_invite_you">入驻了快点视频，并对你说，快跟我一起上车！</string>
     <string name="now_open_vip">立即开通</string>
     <string name="look_playback">观看回放</string>
     <string name="open_vip_can_look_video_now_open">开通VIP可继续观看，立即开通</string>
@@ -578,7 +578,7 @@
     <string name="not_enough_recharge_can_chat_fast">余额不足哦，充值后可与主播进行私密视频</string>
     <string name="cruel_refused_to">残忍拒绝</string>
     <string name="please_wait_time">请稍等...</string>
-    <string name="app_name_home">悠悠直播</string>
+    <string name="app_name_home">快点视频</string>
     <string name="video_show">作品</string>
     <string name="donot_pay_coin">免费</string>
     <string name="look_video_need_pay_shold_look">观看此视频需要%1$s%2$s，是否继续观看</string>

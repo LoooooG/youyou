@@ -161,6 +161,25 @@ public class HnHttpUtils {
         if (!TextUtils.isEmpty(token)) {
             client.addHeader("access_token", token);
         }
+        client.post(NetConstant.FILE_UPLOAD_IMG_API, param, httpResponseHandler);
+    }
+
+    /**
+     * 视频上传
+     */
+    public static void uploadVideo(String path, AsyncHttpResponseHandler httpResponseHandler) {
+        FileRequestParam param = new FileRequestParam();
+
+        try {
+            param.put("file", new File(path));
+        } catch (FileNotFoundException e) {
+
+        }
+        //头部添加token
+        String token = HnPrefUtils.getString(NetConstant.User.TOKEN, "");
+        if (!TextUtils.isEmpty(token)) {
+            client.addHeader("access_token", token);
+        }
         client.post(NetConstant.FILE_UPLOAD_API, param, httpResponseHandler);
     }
 

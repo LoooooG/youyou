@@ -106,6 +106,55 @@ public class HnUpLoadPhotoControl {
     }
 
     /**
+     * 普通上传
+     *
+     * @param file
+     * @param mListener
+     */
+    public static void upLoadVideo(final File file, final UpStutaListener mListener) {
+        HnHttpUtils.uploadVideo(file.getPath(), new AsyncHttpResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
+                try {
+                    String toReturn = (responseBody == null) ? null : new String(responseBody, "UTF-8");
+                    if (toReturn != null) {
+                        JSONObject js = new JSONObject(toReturn);
+                        JSONObject d = js.optJSONObject("data");
+                        String url = d.optString("url");
+
+                        if (1 == js.optInt("code")) {
+                            if (mListener != null) {
+                                mListener.uploadSuccess(url, toReturn, 1);
+                            }
+                        } else {
+                            if (mListener != null) {
+                                mListener.uploadError(1, "上传视频失败：" + js.optString("msg"));
+                            }
+                        }
+                    }
+                } catch (Exception e) {
+                    if (mListener != null) {
+                        mListener.uploadError(1, "上传视频失败");
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
+                try {
+                    String toReturn = (responseBody == null) ? null : new String(responseBody, "UTF-8");
+
+                    if (mListener != null) {
+                        mListener.uploadError(1, "上传视频失败");
+                    }
+                } catch (UnsupportedEncodingException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+    }
+
+    /**
      * 初始化腾讯上传
      */
     public static void initTenceUpload(String appid, String point) {

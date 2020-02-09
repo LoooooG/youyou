@@ -15,10 +15,12 @@ import com.hn.library.base.BaseActivity;
 import com.hn.library.base.EventBusBean;
 import com.hn.library.global.HnConstants;
 import com.hn.library.global.HnUrl;
+import com.hn.library.global.NetConstant;
 import com.hn.library.http.BaseResponseModel;
 import com.hn.library.http.HnHttpUtils;
 import com.hn.library.http.HnResponseHandler;
 import com.hn.library.manager.HnAppManager;
+import com.hn.library.utils.HnLogUtils;
 import com.hn.library.utils.HnToastUtils;
 import com.hotniao.video.HnMainActivity;
 import com.hotniao.video.R;
@@ -112,6 +114,38 @@ public class HnVideoPublishActivity extends BaseActivity {
         mImagUrl = getIntent().getStringExtra("imageUrl");
         mLocationEntity = getIntent().getParcelableExtra("location");
 
+        // uploadToTen();
+        uploadToServer();
+    }
+
+    private void uploadToServer() {
+        HnLogUtils.e("HnVideoPublishActivity >>> uploadToServer " + NetConstant.FILE_UPLOAD_API + " " + getIntent().getStringExtra("videoPath"));
+        HnUpLoadPhotoControl.upLoadVideo(new File(getIntent().getStringExtra("videoPath")), new HnUpLoadPhotoControl.UpStutaListener() {
+            @Override
+            public void uploadSuccess(final String key, Object token, int type) {
+                mRequestId = -1;
+//                if (!getIntent().getBooleanExtra("isSave", true))
+//                    FileUtils.deleteFile(getIntent().getStringExtra("videoPath"));
+                EventBus.getDefault().post(new HnDeleteVideoFileEvent(getIntent().getBooleanExtra("isSave", true)));
+                publish(key);
+            }
+
+            @Override
+            public void uploadProgress(int progress, int requestId) {
+                mRequestId = requestId;
+                mTvProgress.setText(progress + "");
+                mSp.setProgress(progress);
+            }
+
+            @Override
+            public void uploadError(int code, String msg) {
+                mRequestId = -1;
+                HnToastUtils.showToastShort(msg);
+            }
+        });
+    }
+
+    private void uploadToTen() {
         HnUpLoadPhotoControl.getTenSign(new File(getIntent().getStringExtra("videoPath")), HnUpLoadPhotoControl.UploadVideo, HnUpLoadPhotoControl.ReadPublic);
         HnUpLoadPhotoControl.setUpStutaListener(new HnUpLoadPhotoControl.UpStutaListener() {
             @Override
@@ -136,8 +170,8 @@ public class HnVideoPublishActivity extends BaseActivity {
                 HnToastUtils.showToastShort(msg);
             }
         });
-
     }
+
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {

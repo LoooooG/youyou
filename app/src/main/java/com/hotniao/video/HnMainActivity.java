@@ -305,8 +305,8 @@ public class HnMainActivity extends BaseActivity implements BaseRequestStateList
                 // hideFragments(fragmentTransaction);
                 videoAni = (ScaleAnimation) AnimationUtils.loadAnimation(this, R.anim.bottom_icon);
                 mIvUpload.startAnimation(videoAni);
-                // HnChooseVideoActivity.luncher(this, HnChooseVideoActivity.PublishVideo); // 选择视频，上传视频
-                HnToastUtils.showToast(this, "该功能暂未开放", 2000);
+                HnChooseVideoActivity.luncher(this, HnChooseVideoActivity.PublishVideo); // 选择视频，上传视频
+//                HnToastUtils.showToast(this, "该功能暂未开放", 2000);
                 break;
             case R.id.mLlVideo: // 丝友直播
                 hideFragments(fragmentTransaction);

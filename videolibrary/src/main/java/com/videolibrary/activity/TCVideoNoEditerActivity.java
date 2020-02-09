@@ -815,6 +815,42 @@ public class TCVideoNoEditerActivity extends BaseActivity implements View.OnClic
 //        ARouter.getInstance().build("/video/videoPublishBeforeActivity").with(bundle).navigation();
     }
 
+    private void publishVideoToServer() {
+        String fileName = HnDateUtils.getCurrentDate("yyyyMMdd").toUpperCase() + EncryptUtils.encryptMD5ToString(HnUtils.createRandom(false, 5)) + ".png";
+        outFileImage = HnPhotoUtils.bitmapToFile(HnPhotoUtils.getVideoBg(chooseVideoPath), fileName);
+        HnUpLoadPhotoControl.upLoadPhoto(outFileImage, new HnUpLoadPhotoControl.UpStutaListener() {
+            @Override
+            public void uploadSuccess(final String key, Object token, int type) {
+                Bundle bundle = new Bundle();
+                bundle.putString("imageUrl", key);
+                bundle.putString("videoPath", chooseVideoPath);
+                bundle.putString("title", mEtTitle.getText().toString().trim());
+                bundle.putString("cateid", mCateId);
+                bundle.putString("longTime", (mTXVideoInfo.duration / 1000) + "");
+                bundle.putBoolean("isSave", isSave);
+                bundle.putString("price", mEtPayMoney.getText().toString());
+                bundle.putInt("payType", mPayType);
+                if (mLocationEntity != null)
+                    bundle.putParcelable("location", mLocationEntity);
+                ARouter.getInstance().build("/app/videoPublishActivity").with(bundle).navigation();
+
+            }
+
+            @Override
+            public void uploadProgress(int progress, int requestId) {
+
+            }
+
+            @Override
+            public void uploadError(int code, String msg) {
+                HnToastUtils.showToastShort("封面" + msg);
+                if (mWorkProgressDialog != null && mWorkProgressDialog.isAdded()) {
+                    mWorkProgressDialog.dismiss();
+                }
+            }
+        });
+    }
+
 
     private void playVideo() {
         if (mCurrentState == STATE_RESUME) {
@@ -872,7 +908,8 @@ public class TCVideoNoEditerActivity extends BaseActivity implements View.OnClic
         mTXVideoEditer.stopPlay();
         mLayoutEditer.setEnabled(false);
 //        doTranscode();
-        publishVideo();
+//        publishVideo();
+        publishVideoToServer();
     }
 
 
