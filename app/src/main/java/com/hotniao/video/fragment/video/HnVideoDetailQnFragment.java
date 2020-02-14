@@ -1,5 +1,7 @@
 package com.hotniao.video.fragment.video;
 
+import android.content.pm.ActivityInfo;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.Display;
@@ -7,7 +9,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
+import android.webkit.WebChromeClient;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -28,6 +34,10 @@ import com.hn.library.utils.HnUiUtils;
 import com.hn.library.utils.HnUtils;
 import com.hn.library.view.CommDialog;
 import com.hn.library.view.FrescoImageView;
+import com.hotniao.livelibrary.config.HnLiveConstants;
+import com.hotniao.livelibrary.control.HnUserControl;
+import com.hotniao.livelibrary.model.event.HnFollowEvent;
+import com.hotniao.livelibrary.model.event.HnLiveEvent;
 import com.hotniao.video.HnApplication;
 import com.hotniao.video.R;
 import com.hotniao.video.activity.HnMyRechargeActivity;
@@ -40,10 +50,6 @@ import com.hotniao.video.model.HnVideoCommModel;
 import com.hotniao.video.model.HnVideoDetailModel;
 import com.hotniao.video.model.HnVideoRoomSwitchModel;
 import com.hotniao.video.model.HnVideoUrlModel;
-import com.hotniao.livelibrary.config.HnLiveConstants;
-import com.hotniao.livelibrary.control.HnUserControl;
-import com.hotniao.livelibrary.model.event.HnFollowEvent;
-import com.hotniao.livelibrary.model.event.HnLiveEvent;
 import com.pili.pldroid.player.AVOptions;
 import com.pili.pldroid.player.PLOnErrorListener;
 import com.pili.pldroid.player.PLOnInfoListener;
@@ -102,6 +108,8 @@ public class HnVideoDetailQnFragment extends HnViewPagerBaseFragment implements 
     TextView mTvDialogDetail;
     @BindView(R.id.mRlPayDialog)
     RelativeLayout mRlPayDialog;
+    @BindView(R.id.mFrameLayout)
+    FrameLayout mFrameLayout;
 
     private String mPlayUrl;
     private boolean mVideoPause = true;
@@ -158,7 +166,7 @@ public class HnVideoDetailQnFragment extends HnViewPagerBaseFragment implements 
             public void onTextSend(String msg, boolean isReplayUser) {
                 if (TextUtils.isEmpty(mVideoId)) return;
                 if (isReplayUser) {
-                    mHnVideoBiz.commVideo(mVideoId, mFUserId , msg);
+                    mHnVideoBiz.commVideo(mVideoId, mFUserId, msg);
                     mFUserId = null;
                 } else {
                     mHnVideoBiz.commVideo(mVideoId, null, msg);
@@ -173,6 +181,7 @@ public class HnVideoDetailQnFragment extends HnViewPagerBaseFragment implements 
 
 
     }
+
 
     /**
      * 初始化播放器
@@ -374,7 +383,12 @@ public class HnVideoDetailQnFragment extends HnViewPagerBaseFragment implements 
     private void startPlay() {
         if (mActivity == null || TextUtils.isEmpty(mPlayUrl) || mVideoView == null) return;
         if (mPlayUrl.contains(".m3u8")) {
+
+            initWebView();
             mWebView.loadUrl(mPlayUrl);
+//            HnWebActivity.luncher(getActivity(), getString(R.string.my_sign_in), "http://yyh5.youx1436.com/ckplayer/index.html?url=" + mPlayUrl, HnWebActivity.Banner);
+//            mWebView.getSettings().setMediaPlaybackRequiresUserGesture(false);
+//            mWebView.loadUrl("http://yyh5.youx1436.com/ckplayer/index.html?url=" + mPlayUrl);
             mWebView.setVisibility(View.VISIBLE);
             mIvBg.setVisibility(View.GONE);
             mViewClick.setVisibility(View.GONE);
@@ -717,5 +731,86 @@ public class HnVideoDetailQnFragment extends HnViewPagerBaseFragment implements 
         }
     }
 
+    private void initWebView() {
+        WebSettings settings = mWebView.getSettings();
+        settings.setJavaScriptEnabled(true);
+        settings.setJavaScriptCanOpenWindowsAutomatically(true);
+        settings.setPluginState(WebSettings.PluginState.ON);
+        //settings.setPluginsEnabled(true);
+        settings.setAllowFileAccess(true);
+        settings.setLoadWithOverviewMode(true);
+        settings.setUseWideViewPort(true);
+        settings.setCacheMode(WebSettings.LOAD_NO_CACHE);
+        settings.setCacheMode(WebSettings.LOAD_DEFAULT);
+        InsideWebChromeClient mInsideWebChromeClient = new InsideWebChromeClient();
+        InsideWebViewClient mInsideWebViewClient = new InsideWebViewClient();
+        //javascriptInterface = new JavascriptInterface();
+        //mWebView.addJavascriptInterface(javascriptInterface, "java2js_laole918");
+        mWebView.setWebChromeClient(mInsideWebChromeClient);
+        mWebView.setWebViewClient(mInsideWebViewClient);
+    }
 
+    private class InsideWebChromeClient extends WebChromeClient {
+        private View mCustomView;
+        private CustomViewCallback mCustomViewCallback;
+
+        @Override
+        public void onShowCustomView(View view, CustomViewCallback callback) {
+            super.onShowCustomView(view, callback);
+            if (mCustomView != null) {
+                callback.onCustomViewHidden();
+                return;
+            }
+            mCustomView = view;
+            mFrameLayout.addView(mCustomView);
+            mCustomViewCallback = callback;
+            mWebView.setVisibility(View.GONE);
+            getActivity().setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+        }
+
+        public void onHideCustomView() {
+            mWebView.setVisibility(View.VISIBLE);
+            if (mCustomView == null) {
+                return;
+            }
+            mCustomView.setVisibility(View.GONE);
+            mFrameLayout.removeView(mCustomView);
+            mCustomViewCallback.onCustomViewHidden();
+            mCustomView = null;
+            getActivity().setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+            super.onHideCustomView();
+        }
+    }
+
+    private class InsideWebViewClient extends WebViewClient {
+
+        @Override
+        public boolean shouldOverrideUrlLoading(WebView view, String url) {
+            // TODO Auto-generated method stub
+            view.loadUrl(url);
+            return true;
+        }
+
+        @Override
+        public void onPageFinished(WebView view, String url) {
+            super.onPageFinished(view, url);
+            //mWebView.loadUrl(javascript);
+        }
+
+    }
+
+    @Override
+    public void onConfigurationChanged(Configuration config) {
+        super.onConfigurationChanged(config);
+        switch (config.orientation) {
+            case Configuration.ORIENTATION_LANDSCAPE:
+                getActivity().getWindow().clearFlags(WindowManager.LayoutParams.FLAG_FORCE_NOT_FULLSCREEN);
+                getActivity().getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
+                break;
+            case Configuration.ORIENTATION_PORTRAIT:
+                getActivity().getWindow().clearFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
+                getActivity().getWindow().addFlags(WindowManager.LayoutParams.FLAG_FORCE_NOT_FULLSCREEN);
+                break;
+        }
+    }
 }
