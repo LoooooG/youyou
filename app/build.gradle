@@ -3,9 +3,9 @@ def config = rootProject.ext
 android {
     signingConfigs {
         signconfig {
-            keyAlias 'youyou'
+            keyAlias 'duoduo'
             keyPassword '123456'
-            storeFile file('youyou.jks')
+            storeFile file('duoduo.jks')
             storePassword '123456'
         }
     }
