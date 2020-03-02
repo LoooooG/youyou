@@ -142,7 +142,7 @@ public class HnUpLoadPhotoControl {
                     }
                 } catch (Exception e) {
                     if (mListener != null) {
-                        mListener.uploadError(1, "上传视频失败1");
+                        mListener.uploadError(1, "上传视频失败");
                     }
                 }
             }
@@ -153,7 +153,7 @@ public class HnUpLoadPhotoControl {
                     String toReturn = (responseBody == null) ? null : new String(responseBody, "UTF-8");
 
                     if (mListener != null) {
-                        mListener.uploadError(1, "上传视频失败2");
+                        mListener.uploadError(1, "上传视频失败");
                     }
                 } catch (UnsupportedEncodingException e) {
                     e.printStackTrace();
