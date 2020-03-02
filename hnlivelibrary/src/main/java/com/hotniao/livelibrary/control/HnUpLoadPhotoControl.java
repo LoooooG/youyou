@@ -30,6 +30,7 @@ import org.json.JSONObject;
 
 import java.io.File;
 import java.io.UnsupportedEncodingException;
+import java.util.Arrays;
 
 import cz.msebera.android.httpclient.Header;
 
@@ -102,6 +103,12 @@ public class HnUpLoadPhotoControl {
                     e.printStackTrace();
                 }
             }
+
+            @Override
+            public void onProgress(long bytesWritten, long totalSize) {
+                super.onProgress(bytesWritten, totalSize);
+                mListener.uploadProgress((int) (bytesWritten * 100 / totalSize), 1);
+            }
         });
     }
 
@@ -115,6 +122,7 @@ public class HnUpLoadPhotoControl {
         HnHttpUtils.uploadVideo(file.getPath(), new AsyncHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
+                HnLogUtils.e(Arrays.toString(responseBody));
                 try {
                     String toReturn = (responseBody == null) ? null : new String(responseBody, "UTF-8");
                     if (toReturn != null) {
@@ -134,7 +142,7 @@ public class HnUpLoadPhotoControl {
                     }
                 } catch (Exception e) {
                     if (mListener != null) {
-                        mListener.uploadError(1, "上传视频失败");
+                        mListener.uploadError(1, "上传视频失败1");
                     }
                 }
             }
@@ -145,11 +153,17 @@ public class HnUpLoadPhotoControl {
                     String toReturn = (responseBody == null) ? null : new String(responseBody, "UTF-8");
 
                     if (mListener != null) {
-                        mListener.uploadError(1, "上传视频失败");
+                        mListener.uploadError(1, "上传视频失败2");
                     }
                 } catch (UnsupportedEncodingException e) {
                     e.printStackTrace();
                 }
+            }
+
+            @Override
+            public void onProgress(long bytesWritten, long totalSize) {
+                super.onProgress(bytesWritten, totalSize);
+                mListener.uploadProgress((int) (bytesWritten * 100 / totalSize), 1);
             }
         });
     }

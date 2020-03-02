@@ -108,27 +108,29 @@ public class HnPhotoUtils {
         Bitmap bitmap = mmr.getFrameAtTime(0);
         return bitmap;
     }
+
     /**
      * 位图转文件
      */
     public static File bitmapToFile(Bitmap bm, String fileName) {
+        String path = Environment.getExternalStorageDirectory().getPath() + "/" + HnUtils.getPackageName() + "/images/";
+        File dirFile = new File(path);
+        if (!dirFile.exists()) {
+            dirFile.mkdirs();
+        }
+        File myCaptureFile = new File(path, fileName);
+        long len = myCaptureFile.length();
         try {
-            String path = Environment.getExternalStorageDirectory().getPath() + "/" + HnUtils.getPackageName() + "/images/";
-            File dirFile = new File(path);
-            if (!dirFile.exists()) {
-                dirFile.mkdirs();
-            }
-            File myCaptureFile = new File(path, fileName);
-            BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream(myCaptureFile));
+            FileOutputStream fops = new FileOutputStream(myCaptureFile);
+            BufferedOutputStream bos = new BufferedOutputStream(fops);
             bm.compress(Bitmap.CompressFormat.JPEG, 100, bos);
             bos.flush();
             bos.close();
             return myCaptureFile;
-        } catch (Exception e) {
+        } catch (IOException e) {
             e.printStackTrace();
-
+            return null;
         }
-        return null;
     }
 
     /**

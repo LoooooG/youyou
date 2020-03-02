@@ -224,7 +224,7 @@ public class HnChooseVideoActivity extends BaseActivity {
 
 
     private void loadVideoList() {
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
             mHandler.post(new Runnable() {
                 @Override
                 public void run() {
@@ -236,7 +236,7 @@ public class HnChooseVideoActivity extends BaseActivity {
             });
         } else {
             if (Build.VERSION.SDK_INT >= 23) {
-                ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, 1);
+                ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
             }
         }
     }
